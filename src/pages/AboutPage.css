@@ -1,0 +1,232 @@
+/* ============================================================
+   ABOUT PAGE STYLES — HIGH CONTRAST AUTOMOTIVE STUDIO
+   Best Car Accessories · NMS Road, Chennai
+   ============================================================ */
+
+.about-breadcrumb-wrap {
+  background: var(--bg-primary);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-hero {
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-primary);
+  background-image: url('/images/hero/hero-car-bg.webp');
+  background-size: cover;
+  background-position: center 40%;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(7, 9, 12, 0.85) 0%, 
+    rgba(16, 20, 25, 0.95) 75%, 
+    rgba(7, 9, 12, 0.98) 100%
+  );
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  max-width: 860px;
+}
+
+.about-hero__title {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  margin: var(--space-3) 0 var(--space-4);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.about-hero__subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 660px;
+  line-height: var(--line-height-relaxed);
+}
+
+.about-main__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: flex-start;
+}
+
+.about-main__text p {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  line-height: var(--line-height-relaxed);
+}
+
+.about-features {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.about-feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.about-feature__icon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.about-stat {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-stat__num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(103, 232, 249, 0.3);
+}
+
+.about-stat__label {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: var(--space-1) 0;
+}
+
+.about-stat__desc {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.about-img-wrap {
+  overflow: hidden;
+  padding: 0;
+  border-radius: var(--radius-md, 8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about-img-wrap img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.about-img-wrap:hover img {
+  transform: scale(1.03);
+}
+
+.about-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.about-services__col {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-services__col-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.about-services__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-services__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 992px) {
+  .about-main__grid {
+    grid-template-columns: 1fr;
+  }
+  .about-services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Why Choose Best Car Accessories (About Page) ── */
+.about-why-choose-page {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-page-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 992px) {
+  .about-page-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-page-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Visit Best Car Accessories & Maps (About Page) ── */
+.about-visit-page {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+
+@media (max-width: 580px) {
+  .about-services__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,42 @@
+.sec-divider-wrap {
+  width: 100%;
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.sec-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.sec-divider__num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  padding: 3px 9px;
+  background: rgba(109, 231, 255, 0.08);
+  border: 1px solid var(--border-cyan);
+  border-radius: 4px;
+}
+
+.sec-divider__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(109, 231, 255, 0.35) 0%, rgba(109, 231, 255, 0.05) 75%, transparent 100%);
+}
+
+.sec-divider__label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}

@@ -1,0 +1,110 @@
+/* ============================================================
+   PROCESS JOURNEY — 3D AUTOMOTIVE PROTOCOL
+   ============================================================ */
+
+.process-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.process-timeline {
+  margin-top: var(--space-10);
+}
+
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
+  position: relative;
+}
+
+.process-steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 40px;
+  right: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(109, 231, 255, 0.4) 0%, rgba(109, 231, 255, 0.1) 100%);
+  z-index: 0;
+}
+
+.process-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-5);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-3d);
+}
+
+.process-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 20px rgba(109, 231, 255, 0.15);
+}
+
+.process-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.process-number {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 10px rgba(109, 231, 255, 0.4);
+}
+
+.process-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.process-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  line-height: 1.25;
+}
+
+.process-desc {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .process-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-steps-grid::before {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}

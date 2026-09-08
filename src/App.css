@@ -1,0 +1,55 @@
+/* App-level styles */
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--space-4);
+}
+
+.app-loading__spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(103, 232, 249, 0.15);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  box-shadow: 0 0 16px rgba(103, 232, 249, 0.25);
+}
+
+.app-loading__text {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Skip link for accessibility — hidden offscreen unless keyboard focused */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-200%);
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 0.6rem 1.2rem;
+  z-index: 99999;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  transition: transform 0.15s ease-in-out;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}

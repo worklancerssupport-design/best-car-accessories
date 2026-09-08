@@ -1,0 +1,97 @@
+/* ============================================================
+   COUNT-UP STATS SECTION
+   Best Car Accessories
+   ============================================================ */
+
+.count-up-section {
+  background: var(--color-bg-dark-2);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-8) 0;
+}
+
+.count-up__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.count-up__item {
+  padding: var(--space-4) var(--space-5);
+  border-left: 2px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-base);
+}
+
+.count-up__item:first-child {
+  border-left-color: var(--color-accent);
+}
+
+.count-up__item:hover {
+  border-left-color: var(--color-accent);
+}
+
+.count-up__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.count-up__icon {
+  color: var(--color-accent);
+}
+
+.count-up__sub {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-metallic-light);
+  text-transform: uppercase;
+}
+
+.count-up__number {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1;
+  color: #ffffff;
+}
+
+.count-up__number-val {
+  color: #ffffff;
+}
+
+.count-up__suffix {
+  color: var(--color-accent);
+}
+
+.count-up__number--text .count-up__suffix {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.count-up__label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: var(--space-1);
+}
+
+@media (max-width: 900px) {
+  .count-up__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6) var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .count-up__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}

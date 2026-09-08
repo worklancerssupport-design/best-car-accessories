@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bestcaraccessorieschennai.in/sitemap.xml
+
+# Replace the domain above with actual domain before going live

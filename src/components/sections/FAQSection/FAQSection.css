@@ -1,0 +1,16 @@
+/* ============================================================
+   HOMEPAGE FAQ SECTION
+   ============================================================ */
+
+.hp-faq-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+.hp-faq-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+}

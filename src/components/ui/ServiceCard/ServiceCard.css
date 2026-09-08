@@ -1,0 +1,185 @@
+/* ============================================================
+   SERVICE CARD STYLES — HIGH-CONTRAST 3D AUTOMOTIVE CARD
+   Best Car Accessories · NMS Road, Chennai
+   ============================================================ */
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.12s ease-out, border-color var(--transition-base), box-shadow var(--transition-base);
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(103, 232, 249, 0.22);
+}
+
+.service-card--dark {
+  background: var(--bg-surface);
+}
+
+.service-card--light {
+  background: var(--bg-surface);
+}
+
+/* ── 3D Surface Light Reflection ── */
+.service-card__glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+}
+
+/* ── Image & Badges ── */
+.service-card__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.service-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  filter: brightness(0.95);
+}
+
+.service-card:hover .service-card__image {
+  transform: scale(1.05);
+  filter: brightness(1.02);
+}
+
+.service-card__top-bar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.service-card__index {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: rgba(7, 9, 12, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+}
+
+.service-card__badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--bg-primary);
+  background: var(--accent);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 10px rgba(103, 232, 249, 0.4);
+}
+
+/* ── Content ── */
+.service-card__content {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-card__title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--space-2);
+}
+
+.service-card__title a {
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.service-card:hover .service-card__title a,
+.service-card__title a:hover {
+  color: var(--accent);
+}
+
+.service-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  line-height: 1.58;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Footer Bar ── */
+.service-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: gap var(--transition-fast);
+}
+
+.service-card:hover .service-card__link {
+  gap: 10px;
+  text-shadow: 0 0 10px rgba(103, 232, 249, 0.5);
+}
+
+.service-card__arrow {
+  transition: transform var(--transition-fast);
+}
+
+.service-card:hover .service-card__arrow {
+  transform: translateX(3px);
+}
+
+.service-card__oem-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}

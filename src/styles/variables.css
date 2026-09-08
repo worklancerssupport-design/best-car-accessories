@@ -1,0 +1,158 @@
+/* ============================================================
+   CENTRALIZED DESIGN TOKENS — HIGH-CONTRAST 3D AUTOMOTIVE SYSTEM
+   Best Car Accessories · NMS Road, Chennai
+   ============================================================ */
+
+:root {
+  /* ── Core Color Tokens (Automotive Luxury Showroom Palette) ── */
+  --bg-primary: #080A0D;          /* Obsidian Black canvas */
+  --bg-secondary: #15191E;        /* Graphite elevated sections */
+  --bg-surface: #242A30;          /* Titanium card & container surfaces */
+  --bg-elevated: #2E3640;         /* Brushed Titanium / Hover states */
+
+  /* ── Text Contrast Tokens ── */
+  --text-primary: #F5F7F8;        /* Pearl White for Headings */
+  --text-secondary: #B9C1C8;      /* Brushed Silver for Subtitles & Body */
+  --text-muted: #6B7885;          /* Technical Muted Metallic Grey */
+
+  /* ── Electric Cyan / Ice Blue Accent ── */
+  --accent: #6DE7FF;              /* Electric Cyan / Ice Blue */
+  --accent-hover: #A5F3FC;        /* Vivid Ice Cyan Hover */
+  --accent-deep: #0284C7;         /* Deep Cyan */
+  --accent-light: rgba(109, 231, 255, 0.12);
+  --accent-glow: rgba(109, 231, 255, 0.35);
+
+  /* ── Secondary Automotive Accents ── */
+  --color-performance-amber: #FFB020;
+  --color-performance-green: #2EE672;
+  --color-performance-red: #FF4A5A;
+  --accent-warm: #FFB020;
+
+  /* ── Borders & Glass ── */
+  --border: rgba(185, 193, 200, 0.14);
+  --border-strong: rgba(109, 231, 255, 0.35);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-cyan: rgba(109, 231, 255, 0.25);
+
+  /* ── Backwards Compatibility Mapping ── */
+  --color-bg-obsidian: var(--bg-primary);
+  --color-bg-obsidian-soft: var(--bg-secondary);
+  --color-bg-graphite: var(--bg-secondary);
+  --color-bg-graphite-card: var(--bg-surface);
+  --color-bg-titanium: var(--bg-elevated);
+  --color-bg-titanium-hover: #37414D;
+
+  --color-bg-dark: var(--bg-primary);
+  --color-bg-dark-2: var(--bg-secondary);
+  --color-bg-dark-3: var(--bg-surface);
+  --color-bg-dark-4: var(--bg-elevated);
+  --color-bg-light: var(--bg-secondary);
+  --color-bg-white: var(--bg-surface);
+  --color-bg-section: var(--bg-secondary);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
+  --color-accent-glow: var(--accent-glow);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-dark: var(--text-primary);
+  --color-text-dark-secondary: var(--text-secondary);
+  --color-text-dark-muted: var(--text-muted);
+
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-light: var(--border-strong);
+  --color-border-hover: var(--accent);
+
+  /* ── Typography ── */
+  --font-display: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  --line-height-tight: 1.15;
+  --line-height-snug: 1.3;
+  --line-height-normal: 1.55;
+  --line-height-relaxed: 1.7;
+
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.12em;
+  --letter-spacing-widest: 0.22em;
+
+  /* ── Spacing ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --section-padding: clamp(4rem, 6vw, 6.5rem);
+
+  /* ── Borders & Radii ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── 3D & Depth Shadows ── */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.75);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.9);
+  --shadow-accent: 0 0 24px rgba(109, 231, 255, 0.25);
+  --shadow-3d: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px -5px rgba(109, 231, 255, 0.15);
+
+  /* ── 3D Transforms & Perspective ── */
+  --perspective: 1200px;
+  --transition-3d: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── Z-index ── */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 150;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+  /* ── Layout ── */
+  --container-max: 1280px;
+  --container-padding: clamp(1.25rem, 4vw, 2.5rem);
+  --header-height: 76px;
+  --header-height-scrolled: 62px;
+}

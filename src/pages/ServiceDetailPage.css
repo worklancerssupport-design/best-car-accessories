@@ -1,0 +1,546 @@
+/* ============================================================
+   SERVICE DETAIL PAGE STYLES — HIGH-CONTRAST 3D AUTOMOTIVE PRODUCT
+   Best Car Accessories · NMS Road, Chennai
+   ============================================================ */
+
+.sdp-hero-section {
+  background-color: var(--bg-primary);
+  padding: var(--space-4) 0 var(--space-10);
+  border-bottom: 1px solid var(--border);
+}
+
+.sdp-breadcrumb-bar {
+  margin-bottom: var(--space-5);
+}
+
+.sdp-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+
+/* ── Hero Left ── */
+.sdp-hero-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.sdp-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.sdp-meta-divider {
+  color: var(--border-strong);
+  font-size: 0.75rem;
+}
+
+.sdp-meta-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--text-secondary);
+}
+
+.sdp-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.12;
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-3);
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+}
+
+.sdp-hero-lead {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-5);
+  max-width: 580px;
+}
+
+/* ── Telemetry HUD Specs Strip ── */
+.sdp-telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.sdp-telemetry-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sdp-telemetry-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.sdp-telemetry-lbl {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.sdp-telemetry-val {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sdp-hero-quick-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--space-6);
+  padding: 0;
+}
+
+.sdp-hero-quick-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+}
+
+.sdp-quick-icon {
+  color: var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(103, 232, 249, 0.4);
+  border-radius: 50%;
+}
+
+.sdp-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.sdp-fitment-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+}
+
+.sdp-shield-icon {
+  color: var(--color-performance-green);
+  flex-shrink: 0;
+}
+
+/* ── Hero Right: 3D Media Box ── */
+.sdp-media-box {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  aspect-ratio: 16 / 11;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(103, 232, 249, 0.15);
+  border: 1px solid var(--border);
+  will-change: transform;
+}
+
+.sdp-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.sdp-media-box:hover .sdp-media-img {
+  transform: scale(1.04);
+}
+
+.sdp-media-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 2;
+}
+
+.sdp-media-overlay-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(7, 9, 12, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  z-index: 3;
+}
+
+.sdp-media-overlay-badge svg {
+  color: var(--accent);
+}
+
+/* ── Interactive Gallery Thumbnails ── */
+.sdp-media-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.sdp-media-thumb {
+  width: 72px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  background: var(--bg-surface);
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition-fast);
+}
+
+.sdp-media-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sdp-media-thumb:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.sdp-media-thumb--active {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* ── Detailed Content Layout ── */
+.sdp-content-section {
+  padding: var(--section-padding) 0;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.sdp-content-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: flex-start;
+}
+
+.sdp-full-desc {
+  font-size: var(--text-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.sdp-section-heading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+/* ── Advantages Grid ── */
+.sdp-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.sdp-benefit-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: border-color var(--transition-fast);
+}
+
+.sdp-benefit-card:hover {
+  border-color: var(--accent);
+}
+
+.sdp-benefit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sdp-benefit-check {
+  color: var(--accent);
+}
+
+.sdp-benefit-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.sdp-benefit-card p {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ── Installation Box ── */
+.sdp-installation-box {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+  border: 1px solid var(--border);
+}
+
+.sdp-inst-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.sdp-inst-icon {
+  color: var(--accent);
+}
+
+.sdp-inst-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.sdp-installation-box p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.sdp-inst-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ── Options Chips ── */
+.sdp-options-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.sdp-option-chip {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  max-width: 100%;
+}
+
+.sdp-option-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.sdp-option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sdp-option-label {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sdp-option-desc {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+/* ── Sidebar Sticky ── */
+.sdp-sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
+}
+
+.sdp-sidebar-card {
+  background: var(--bg-surface);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+}
+
+.sdp-sidebar-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+}
+
+.sdp-sidebar-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.sdp-sidebar-card p {
+  font-size: 0.84rem;
+  line-height: 1.58;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+.sdp-sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.sdp-sidebar-meta {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
+.sdp-sidebar-meta strong {
+  color: var(--text-primary);
+}
+
+/* ── In-Page Not Found Fallback ── */
+.sdp-not-found {
+  min-height: 70vh;
+  padding: var(--space-8) 0 var(--space-16);
+  background-color: var(--bg-primary);
+}
+
+.sdp-not-found-card {
+  margin-top: var(--space-6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-10) var(--space-6);
+}
+
+.sdp-not-found-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.sdp-not-found-desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+.sdp-not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+/* ── FAQ & Related ── */
+.sdp-faq-section {
+  padding: var(--section-padding) 0;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.sdp-related-section {
+  padding: var(--section-padding) 0;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .sdp-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sdp-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sdp-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sdp-sidebar {
+    position: static;
+  }
+
+  .sdp-telemetry-strip {
+    grid-template-columns: 1fr;
+  }
+}

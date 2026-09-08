@@ -1,0 +1,48 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { ChevronRight } from 'lucide-react';
+import './Breadcrumbs.css';
+
+export default function Breadcrumbs({ items = [] }) {
+  const schemaList = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.label,
+      "item": item.href ? `https://bestcaraccessories.com${item.href}` : undefined
+    }))
+  };
+
+  return (
+    <>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(schemaList)}
+        </script>
+      </Helmet>
+      
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <ol className="breadcrumbs__list">
+          {items.map((item, index) => {
+            const isLast = index === items.length - 1;
+            return (
+              <li key={index} className="breadcrumbs__item">
+                {isLast ? (
+                  <span className="breadcrumbs__current" aria-current="page">{item.label}</span>
+                ) : (
+                  <>
+                    <Link to={item.href} className="breadcrumbs__link">{item.label}</Link>
+                    <ChevronRight size={14} className="breadcrumbs__separator" />
+                  </>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
+    </>
+  );
+}
