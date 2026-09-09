@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { X, MessageCircle, ArrowRight } from 'lucide-react';
-import { business } from '../../../config/business';
 import './MobileMenu.css';
 
 export default function MobileMenu({ isOpen, onClose, whatsappUrl }) {

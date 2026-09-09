@@ -1,10 +1,10 @@
-import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import { business } from '../config/business';
+import business from '../data/business.json';
+import faqsData from '../data/faqs.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import CTASection from '../components/ui/CTASection/CTASection';
 import FAQ from '../components/ui/FAQ/FAQ';
+import ProcessJourney from '../components/sections/ProcessJourney/ProcessJourney';
 import './AboutPage.css';
 import { 
   CheckCircle2, 
@@ -21,13 +21,6 @@ import {
   MessageCircle, 
   ExternalLink 
 } from 'lucide-react';
-
-const FAQS = [
-  { q: 'How long has Best Car Accessories been operating?', a: 'We have been serving car owners in Chennai for over 15 years from our studio.' },
-  { q: 'What types of accessories do you offer?', a: 'We offer a comprehensive range of exterior and interior car accessories including lighting, infotainment, cameras, audio, seat covers, floor mats, ambient lighting, and complete interior customization.' },
-  { q: 'Where are you located?', a: `We are located at Palani Murugan Building, No: 21, Westcott Rd, next to Woodlands Theater, Royapettah, Chennai, Tamil Nadu 600014.` },
-  { q: 'How can I enquire about a specific accessory?', a: 'You can call us, WhatsApp us, or use the contact form on our website. Please include your car model and the accessories you are interested in.' },
-];
 
 const whyChooseFeatures = [
   {
@@ -141,9 +134,9 @@ export default function AboutPage() {
           <div className="about-main__visual">
             <div className="about-stats">
               {[
-                { num: '15+', label: 'Years of Experience', desc: 'Operating in Royapettah, Chennai' },
-                { num: '1000+', label: 'Clients Served', desc: 'Car owners across Chennai' },
-                { num: '40+', label: 'Accessory Categories', desc: 'Interior, exterior and custom mods' },
+                { num: `${business.stats.yearsExperience}+`, label: 'Years of Experience', desc: 'Operating in Royapettah, Chennai' },
+                { num: `${business.stats.clientsServed}+`, label: 'Clients Served', desc: 'Car owners across Chennai' },
+                { num: `${business.stats.accessoryCategories}+`, label: 'Accessory Categories', desc: 'Interior, exterior and custom mods' },
               ].map((s, i) => (
                 <div className="about-stat bracket-box" key={i}>
                   <div className="about-stat__num">{s.num}</div>
@@ -221,6 +214,9 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* How We Upgrade Your Car */}
+      <ProcessJourney />
+
       {/* Visit Best Car Accessories & Google Maps */}
       <section className="section section--dark about-visit-page">
         <div className="container">
@@ -261,8 +257,8 @@ export default function AboutPage() {
                   <Clock size={18} className="about-loc-icon" />
                   <div>
                     <strong>Working Hours</strong>
-                    <p>Monday – Saturday: 9:30 AM – 8:30 PM</p>
-                    <p>Sunday: 10:00 AM – 3:00 PM</p>
+                    <p>{business.hours.weekdays.days}: {business.hours.weekdays.open} – {business.hours.weekdays.close}</p>
+                    <p>{business.hours.sunday.days}: {business.hours.sunday.open} – {business.hours.sunday.close}</p>
                   </div>
                 </div>
 
@@ -335,7 +331,7 @@ export default function AboutPage() {
           <span className="section-label">Common Questions</span>
           <h2 className="section-title">About Best Car Accessories</h2>
           <div className="divider" />
-          <FAQ faqs={FAQS} />
+          <FAQ faqs={faqsData.about} />
         </div>
       </section>
 

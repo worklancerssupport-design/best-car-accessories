@@ -1,0 +1,19 @@
+{
+  "flowingMenu": [
+    { "label": "Exterior Accessories", "href": "/exterior-car-accessories-chennai", "image": "/images/exterior/fog-light-projector-chennai.webp" },
+    { "label": "Interior Customization", "href": "/interior-car-accessories-chennai", "image": "/images/interior/car-ambient-light-chennai.webp" },
+    { "label": "Lighting & Electrical", "href": "/exterior-car-accessories-chennai#lighting", "image": "/images/exterior/led-headlight-upgrade-chennai.webp" },
+    { "label": "Infotainment & Audio", "href": "/interior-car-accessories-chennai#entertainment", "image": "/images/interior/infotainment-systems-chennai.webp" },
+    { "label": "Cameras & Safety Systems", "href": "/interior-car-accessories-chennai#technology", "image": "/images/interior/360-car-camera-chennai.webp" }
+  ],
+  "categories": {
+    "exterior": {
+      "label": "Exterior Accessories",
+      "href": "/exterior-car-accessories-chennai"
+    },
+    "interior": {
+      "label": "Interior Customization",
+      "href": "/interior-car-accessories-chennai"
+    }
+  }
+}

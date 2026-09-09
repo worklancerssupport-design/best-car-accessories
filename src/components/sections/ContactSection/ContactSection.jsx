@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { business } from '../../../config/business';
+import business from '../../../data/business.json';
+import formsData from '../../../data/forms.json';
 import './ContactSection.css';
 
 export default function ContactSection() {
@@ -129,13 +130,9 @@ export default function ContactSection() {
                 <label htmlFor="hp-service">Service / Accessory Interested In</label>
                 <select id="hp-service" name="service" value={formData.service} onChange={handleChange}>
                   <option value="">Select an upgrade...</option>
-                  <option value="Exterior Fog Lights / LEDs">Exterior: Fog Lights / LED Headlights</option>
-                  <option value="Exterior Spoilers / Bumpers">Exterior: Spoilers / Bumpers / Roof Rails</option>
-                  <option value="Interior Ambient Lighting">Interior: 18-Zone Ambient Lighting</option>
-                  <option value="Interior Seat Covers">Interior: Custom Leather Seat Covers</option>
-                  <option value="Audio & Infotainment">Electronics: Infotainment & Audio Setup</option>
-                  <option value="Cameras & Safety">Safety: 360° Camera & Dashcam</option>
-                  <option value="Complete Custom Package">Complete Custom Package</option>
+                  {formsData.quickEnquiryServices.map((s, i) => (
+                    <option key={i} value={s.value}>{s.label}</option>
+                  ))}
                 </select>
               </div>
 

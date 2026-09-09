@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
-import ServiceCard from '../ServiceCard/ServiceCard';
-import { exteriorAccessories } from '../../../data/exteriorAccessories';
-import { interiorAccessories } from '../../../data/interiorAccessories';
+import exteriorData from '../../../data/products/exterior.json';
+import interiorData from '../../../data/products/interior.json';
 import './RelatedServices.css';
 
 // Accepts slugs array OR full service objects array
 export default function RelatedServices({ slugs = [], services: servicesProp, currentSlug, title = 'Related Accessories' }) {
-  const allServices = [...exteriorAccessories, ...interiorAccessories];
+  const allServices = [...exteriorData.items, ...interiorData.items];
 
   // If slugs provided, look up service objects
   let services = servicesProp;

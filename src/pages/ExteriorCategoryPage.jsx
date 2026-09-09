@@ -1,22 +1,17 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { exteriorAccessories } from '../data/exteriorAccessories';
-import { business } from '../config/business';
+import exteriorData from '../data/products/exterior.json';
+import business from '../data/business.json';
+import faqsData from '../data/faqs.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import CTASection from '../components/ui/CTASection/CTASection';
 import FAQ from '../components/ui/FAQ/FAQ';
 import ServiceCard from '../components/ui/ServiceCard/ServiceCard';
 import './CategoryPage.css';
-import { Search, ArrowRight, Shield, Zap, Sparkles, Sliders } from 'lucide-react';
+import { Search } from 'lucide-react';
 
-const CATEGORY_FAQS = [
-  { q: 'Can exterior accessories be installed on any car?', a: 'Most accessories are available for a wide range of car models. Compatibility is checked before installation. Some items are vehicle-specific.' },
-  { q: 'Do you handle all wiring without cutting factory wires?', a: 'Yes. All electrical accessories are installed with proper OEM relays, couplers, fuses, and clean heat-shrink wiring to protect warranty.' },
-  { q: 'Can I enquire about an accessory before visiting?', a: 'Yes. WhatsApp your car model and the accessory you are interested in, and we will get back to you with availability and options.' },
-  { q: 'How long does exterior accessory installation take?', a: 'Installation time varies depending on the accessory (1 to 3 hours typical). Contact us with your requirements for an exact time estimate.' },
-  { q: 'Do you offer aftercare and fitment checks?', a: 'Yes. Every vehicle fitment is inspected and tested thoroughly before handover, and our team is always on standby for adjustments.' },
-];
+const CATEGORY_FAQS = faqsData.exterior;
 
 const FILTER_TAGS = ['All', 'Lighting', 'Protection', 'Styling', 'Utility'];
 
@@ -53,7 +48,7 @@ export default function ExteriorCategoryPage() {
   const [activeTag, setActiveTag] = useState('All');
 
   const filteredServices = useMemo(() => {
-    let list = exteriorAccessories;
+    let list = exteriorData.items;
     if (activeTag !== 'All') {
       const group = EXTERIOR_GROUPS.find(g => g.id === activeTag.toLowerCase());
       if (group) {
@@ -159,7 +154,7 @@ export default function ExteriorCategoryPage() {
           {isGroupedView ? (
             // Grouped Visual View (Lighting, Protection, Styling, Utility)
             EXTERIOR_GROUPS.map((group, groupIdx) => {
-              const groupItems = exteriorAccessories.filter(s => group.slugs.includes(s.slug));
+              const groupItems = exteriorData.items.filter(s => group.slugs.includes(s.slug));
               if (groupItems.length === 0) return null;
 
               return (

@@ -1,6 +1,6 @@
 import CustomCursor from './components/ui/CustomCursor/CustomCursor';
 import { Suspense, lazy } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
 import ScrollToTop from './components/layout/ScrollToTop/ScrollToTop';
@@ -16,6 +16,7 @@ const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const FranchisePage = lazy(() => import('./pages/FranchisePage'));
+const ReviewsPage = lazy(() => import('./pages/ReviewsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function LoadingSpinner() {
@@ -43,8 +44,7 @@ function App() {
             <Route path="/interior-car-accessories-chennai" element={<InteriorCategoryPage />} />
             <Route path="/interior-car-accessories-chennai/:slug" element={<ServiceDetailPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
-            {/* Reviews only appear on homepage; redirect /reviews to homepage #reviews per rule */}
-            <Route path="/reviews" element={<Navigate to="/#reviews" replace />} />
+            <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/franchise" element={<FranchisePage />} />
             <Route path="*" element={<NotFoundPage />} />

@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { business } from '../config/business';
+import business from '../data/business.json';
+import formsData from '../data/forms.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import CTASection from '../components/ui/CTASection/CTASection';
 import './FranchisePage.css';
 import { Send, CheckCircle2, Users, TrendingUp, Award, MapPin } from 'lucide-react';
-import { contactConfig } from '../config/contact';
-
-const INVESTMENTS = ['I am exploring options', 'Below ₹5 Lakhs', '₹5–10 Lakhs', '₹10–20 Lakhs', '₹20 Lakhs+'];
 
 function validate(form) {
   const errors = {};
@@ -38,15 +36,14 @@ export default function FranchisePage() {
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setLoading(true);
     try {
-      if (contactConfig.web3formsKey) {
+      if (business.forms.web3formsKey) {
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ access_key: contactConfig.web3formsKey, ...form, subject: `Franchise Enquiry from ${form.name} — ${form.city}, ${form.state}` }),
+          body: JSON.stringify({ access_key: business.forms.web3formsKey, ...form, subject: `Franchise Enquiry from ${form.name} — ${form.city}, ${form.state}` }),
         });
         if (!res.ok) throw new Error('Failed');
       } else {
-        console.log('[Franchise Form]', form);
         await new Promise(r => setTimeout(r, 800));
       }
       setSuccess(true);
@@ -175,7 +172,7 @@ export default function FranchisePage() {
                   <label htmlFor="f-investment">Investment Interest</label>
                   <select id="f-investment" name="investment" value={form.investment} onChange={handleChange}>
                     <option value="">Select an option</option>
-                    {INVESTMENTS.map(i => <option key={i} value={i}>{i}</option>)}
+                    {formsData.franchiseInvestments.map(i => <option key={i} value={i}>{i}</option>)}
                   </select>
                 </div>
                 <div className="franchise-form__field">

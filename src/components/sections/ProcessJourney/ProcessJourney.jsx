@@ -1,34 +1,6 @@
-import React from 'react';
 import SectionDivider from '../../ui/SectionDivider/SectionDivider';
+import processSteps from '../../../data/process.json';
 import './ProcessJourney.css';
-
-const steps = [
-  { 
-    id: '01', 
-    title: 'Choose Your Accessory',
-    desc: 'Browse our catalogue of 40+ exterior and interior upgrades online or directly in our Royapettah showroom.'
-  },
-  { 
-    id: '02', 
-    title: 'Discuss Requirements',
-    desc: 'Share your vehicle make, model year, and driving requirements with our veteran automotive technicians.'
-  },
-  { 
-    id: '03', 
-    title: 'Select Custom Setup',
-    desc: 'Select verified accessories, tailored trim finishes, and precision coupler-compatible configurations.'
-  },
-  { 
-    id: '04', 
-    title: 'Precision Fitment',
-    desc: 'Zero wire-cutting installation with factory couplers, neat wiring looms, and seamless flush integration.'
-  },
-  { 
-    id: '05', 
-    title: 'Testing & Handover',
-    desc: 'Complete electronic diagnostic testing, feature calibration check, and road-ready keys handover.'
-  }
-];
 
 const ProcessJourney = () => {
   return (
@@ -47,7 +19,7 @@ const ProcessJourney = () => {
 
         <div className="process-timeline">
           <div className="process-steps-grid">
-            {steps.map((step) => (
+            {processSteps.map((step) => (
               <div key={step.id} className="process-card card-3d">
                 <div className="process-card-top">
                   <span className="process-number">{step.id}</span>

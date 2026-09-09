@@ -1,0 +1,745 @@
+{
+  "items": [
+    {
+      "id": "int-01",
+      "name": "Roof LED & VIP Light",
+      "slug": "roof-led-vip-light",
+      "category": "interior",
+      "shortDescription": "Transform your car's ceiling with premium roof LED lighting and VIP-style interior illumination.",
+      "description": "Roof LED and VIP lighting systems replace or supplement your vehicle's standard interior ceiling lighting with premium, even illumination. VIP light kits create a luxurious cabin atmosphere reminiscent of high-end executive vehicles, with soft, distributed lighting across the entire roof liner.",
+      "benefits": [
+        "Creates a premium, luxury cabin atmosphere",
+        "Even, soft illumination across the entire ceiling",
+        "Significantly better than standard single bulb interiors",
+        "Multiple colour temperature options",
+        "Low power consumption with long lifespan",
+        "Works well combined with ambient lighting systems"
+      ],
+      "installation": "Roof LED and VIP light installation involves carefully routing LED strips along the roof liner channels, connecting to the vehicle's interior lighting circuit, and ensuring all connections are concealed for a clean OEM-like finish.",
+      "options": [
+        { "label": "Basic Roof LED Strip", "description": "Single or dual LED strips along the headliner" },
+        { "label": "VIP Full Roof Light Kit", "description": "Complete VIP-style distributed roof lighting" },
+        { "label": "RGB Roof LED", "description": "Colour-changing RGB roof lights with controller" }
+      ],
+      "image": "/images/interior/roof-vip-light-1.jpg",
+      "imageAlt": "Roof LED and VIP interior car lighting in Chennai",
+      "gallery": [
+        "/images/interior/roof-vip-light-1.jpg",
+        "/images/interior/roof-vip-light-og.jpg"
+      ],
+      "relatedServices": ["ambient-lights", "door-foot-lights", "dashboard-door-pad-customization", "steering-covers-controls"],
+      "faqs": [
+        { "q": "Will roof LEDs drain my battery?", "a": "Modern LED interior lights consume very little power and should not cause battery drain concerns under normal usage." },
+        { "q": "Can I choose the colour of the roof LEDs?", "a": "Various colour options are available including warm white, cool white, and RGB colour-changing variants." },
+        { "q": "Will the installation require removing the headliner?", "a": "Minor adjustments to the headliner may be required for clean routing, but the process is carefully managed to preserve the original appearance." }
+      ],
+      "showInNav": true,
+      "navName": "Roof LED & VIP Lighting",
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-02",
+      "name": "Steering Covers & Controls",
+      "slug": "steering-covers-controls",
+      "category": "interior",
+      "shortDescription": "Upgrade your steering wheel with premium covers and add multi-function steering controls for audio and hands-free use.",
+      "description": "A quality steering cover transforms the feel of your daily drive, offering improved grip, comfort, and aesthetic appeal. Steering wheel controls allow you to manage audio, Bluetooth calls, and infotainment functions without taking your hands off the wheel.",
+      "benefits": [
+        "Improved steering grip and comfort",
+        "Protects original steering wheel from wear",
+        "Steering controls improve driving safety",
+        "Hands-free call management",
+        "Audio control without looking away from the road",
+        "Available in leather, perforated leather, and wood-grain options"
+      ],
+      "installation": "Steering covers are fitted by carefully stretching the cover over the wheel and stitching or securing it in place. Steering controls are mounted on the steering column with wireless or wired connection to the audio/infotainment system.",
+      "options": [
+        { "label": "Leather Steering Cover", "description": "Premium leather wrap for the steering wheel" },
+        { "label": "Perforated Leather Cover", "description": "Breathable perforated leather for sporty grip" },
+        { "label": "Wood Grain Cover", "description": "Classic wood grain finish steering cover" },
+        { "label": "Steering Control Module", "description": "Multi-function controls for audio and calls" }
+      ],
+      "image": "/images/interior/steering-covers-1.jpg",
+      "imageAlt": "Steering cover and multi-function steering controls in Chennai",
+      "gallery": [
+        "/images/interior/steering-covers-1.jpg",
+        "/images/interior/steering-covers-2.jpg"
+      ],
+      "relatedServices": ["infotainment-systems", "speakers", "center-seat-arm-rest", "floor-mats"],
+      "faqs": [
+        { "q": "Will a steering cover fit my steering wheel size?", "a": "Steering covers are available in multiple sizes. We select the correct size for your vehicle's wheel diameter." },
+        { "q": "Do steering controls work with aftermarket infotainment systems?", "a": "Most aftermarket infotainment systems include a steering control input. Compatibility is verified during installation." },
+        { "q": "Are wood grain steering covers slippery?", "a": "Quality wood grain covers use textured surfaces on the grip areas to maintain adequate grip." }
+      ],
+      "showInNav": true,
+      "navName": "Steering Covers & Controls",
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-03",
+      "name": "Infotainment Systems",
+      "slug": "infotainment-systems",
+      "category": "interior",
+      "shortDescription": "Upgrade to a modern infotainment system with Android Auto, Apple CarPlay, navigation, and Bluetooth in 7\" to 10.1\" screens.",
+      "description": "Modern infotainment systems transform the in-car experience with large touchscreen displays, Android Auto and Apple CarPlay integration, built-in navigation, Bluetooth audio and calls, and rear camera compatibility. Available in standard single-DIN, double-DIN, and vehicle-specific OEM replacement formats from 7\" to 10.1\" screen sizes.",
+      "benefits": [
+        "Large touchscreen display for easy interaction",
+        "Android Auto and Apple CarPlay connectivity",
+        "Built-in GPS navigation",
+        "Bluetooth audio and hands-free calling",
+        "Rear camera input for parking safety",
+        "Significant upgrade over basic factory systems"
+      ],
+      "installation": "Infotainment systems are installed using vehicle-specific fitting kits, ensuring correct panel integration. All existing vehicle functions such as AC controls and steering wheel controls are preserved where possible. Wiring includes power, ground, antenna, and camera connections.",
+      "options": [
+        { "label": "FMBT 7\" System", "description": "7-inch FMBT format infotainment system" },
+        { "label": "9\" Android System", "description": "9-inch Android-based infotainment with CarPlay" },
+        { "label": "10.1\" Large Format", "description": "Full 10.1-inch premium infotainment unit" },
+        { "label": "Dual Knob System", "description": "Dual knob control infotainment for specific vehicles" }
+      ],
+      "image": "/images/interior/infotainment-1.png",
+      "imageAlt": "Android touchscreen infotainment system installation in Chennai",
+      "gallery": [
+        "/images/interior/infotainment-1.png",
+        "/images/interior/infotainment-2.jpg",
+        "/images/interior/infotainment-3.webp"
+      ],
+      "relatedServices": ["oem-infotainment", "speakers", "woofers-amplifiers", "dash-cameras-ai-dongles", "steering-covers-controls"],
+      "faqs": [
+        { "q": "Will an aftermarket system fit in my car's dashboard?", "a": "We use vehicle-specific fitting kits to ensure correct integration with your dashboard without modification." },
+        { "q": "Does it support Apple CarPlay and Android Auto?", "a": "Most modern aftermarket units support both Apple CarPlay and Android Auto. Availability varies by unit." },
+        { "q": "What happens to my AC controls after installation?", "a": "We ensure that all essential vehicle controls remain accessible after installation." },
+        { "q": "Can I enquire about screen size options via WhatsApp?", "a": "Yes, share your car model and we can advise on the best options available." }
+      ],
+      "showInNav": true,
+      "navName": "Infotainment & Android Systems",
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-04",
+      "name": "Dash Cameras & AI Dongles",
+      "slug": "dash-cameras-ai-dongles",
+      "category": "interior",
+      "shortDescription": "Install front or dual-channel dash cameras and AI safety dongles for complete driving documentation and driver monitoring.",
+      "description": "Dash cameras provide continuous video recording of your drive, which can be invaluable in the event of an accident or dispute. Dual-channel cameras record both front and rear simultaneously. AI dongles add driver behaviour monitoring, fatigue detection, and advanced safety alerts.",
+      "benefits": [
+        "Continuous recording of all driving events",
+        "Evidence protection in accidents or disputes",
+        "Dual cameras cover front and rear simultaneously",
+        "AI dongles monitor driver fatigue and behaviour",
+        "Loop recording ensures storage is managed automatically",
+        "Wide-angle lenses capture full lane width"
+      ],
+      "installation": "Dash cameras are mounted on the windshield, wired to a fused power source (either constant or ignition-switched), with cables neatly routed and hidden along the pillar and headliner.",
+      "options": [
+        { "label": "Front Camera Only", "description": "Single front-facing dash camera" },
+        { "label": "Front + Rear Dual Camera", "description": "Simultaneous front and rear recording" },
+        { "label": "AI Dongle (Driver Monitoring)", "description": "AI-powered driver behaviour and safety monitoring" },
+        { "label": "4K Premium Front Camera", "description": "High resolution front dash camera" }
+      ],
+      "image": "/images/interior/dashcam-ai-1.jpg",
+      "imageAlt": "Dash camera and AI safety dongle installation in Chennai",
+      "gallery": [
+        "/images/interior/dashcam-ai-1.jpg",
+        "/images/interior/dashcam-ai-2.jpg"
+      ],
+      "relatedServices": ["oem-camera-360-camera", "reverse-camera-sensor", "infotainment-systems", "oem-infotainment"],
+      "faqs": [
+        { "q": "Does the dash camera record when the car is parked?", "a": "Many units support parking mode with motion detection recording when wired with a constant power connection." },
+        { "q": "Where does the footage get stored?", "a": "Dash cameras use microSD cards for loop recording. We recommend Class 10 or higher rated cards." },
+        { "q": "Can the dash camera footage be used in insurance claims?", "a": "Dash camera footage can serve as supporting evidence. We recommend checking your insurer's policies regarding video evidence." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-05",
+      "name": "OEM Infotainment with Camera & AI",
+      "slug": "oem-infotainment",
+      "category": "interior",
+      "shortDescription": "Upgrade to OEM-style infotainment systems with integrated reverse camera and AI features for a factory-fit look.",
+      "description": "OEM-style infotainment systems are designed to integrate seamlessly with specific vehicle models, matching the dashboard design language and retaining all factory controls. These systems include integrated reverse camera support and AI-enhanced features while maintaining the vehicle's premium aesthetic.",
+      "benefits": [
+        "Seamless integration with factory dashboard aesthetics",
+        "Retains all OEM controls and steering functions",
+        "Integrated reverse camera support",
+        "Factory-quality appearance and build",
+        "AI-enhanced navigation and voice features",
+        "Preserves vehicle's resale value better than universal units"
+      ],
+      "installation": "OEM-style installations use vehicle-specific plug-and-play connectors where available, preserving factory wiring harnesses and control functions. Installation is clean with no visible aftermarket indicators.",
+      "options": [
+        { "label": "OEM Replacement Unit", "description": "Vehicle-specific OEM-style replacement infotainment" },
+        { "label": "OEM + Reverse Camera", "description": "OEM unit with integrated reverse camera" },
+        { "label": "OEM + Reverse Camera + AI", "description": "Full OEM replacement with camera and AI dongle" }
+      ],
+      "image": "/images/interior/oem-infotainment-1.jpg",
+      "imageAlt": "OEM style touchscreen infotainment with camera and AI in Chennai",
+      "gallery": [
+        "/images/interior/oem-infotainment-1.jpg",
+        "/images/interior/oem-infotainment-2.jpg"
+      ],
+      "relatedServices": ["infotainment-systems", "dash-cameras-ai-dongles", "oem-camera-360-camera", "steering-covers-controls"],
+      "faqs": [
+        { "q": "Is OEM-style infotainment available for all cars?", "a": "OEM-style units are available for a wide range of popular car models. Availability depends on your specific vehicle." },
+        { "q": "Does it look factory-fitted?", "a": "Yes, OEM-style units are designed to blend seamlessly with the existing dashboard design." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-06",
+      "name": "Ambient Lights",
+      "slug": "ambient-lights",
+      "category": "interior",
+      "shortDescription": "Create a premium cabin atmosphere with multi-zone ambient lighting systems ranging from 10 to 18-piece LED kits.",
+      "description": "Ambient lighting is one of the most impactful interior upgrades available, transforming the cabin from functional to genuinely luxurious. Available in 10 to 18-piece kits covering door pockets, footwells, dashboard, centre console, and rear seats, these systems create the warm, layered lighting found in premium European vehicles.",
+      "benefits": [
+        "Transforms the cabin into a premium environment",
+        "Multiple colour options and colour-changing modes",
+        "Covers all major interior zones",
+        "Improves night-time cabin visibility for small items",
+        "Reduces driver fatigue during night driving",
+        "Creates an atmosphere comparable to premium European cars"
+      ],
+      "installation": "Ambient light installation involves routing ultra-thin LED strips or individual LED modules through door card channels, under the dashboard, and beneath seats, all wired to a central controller connected to the ignition circuit.",
+      "options": [
+        { "label": "10-Piece Ambient Kit", "description": "10-piece ambient light covering key interior zones" },
+        { "label": "14-Piece Ambient Kit", "description": "Extended 14-zone ambient lighting kit" },
+        { "label": "18-Piece Full Kit", "description": "Comprehensive 18-zone full cabin ambient lighting" },
+        { "label": "RGB Controller Upgrade", "description": "App or remote-controlled RGB ambient system" }
+      ],
+      "image": "/images/interior/ambient-lights-jeep.jpg",
+      "imageAlt": "Multi-zone automotive ambient lighting in Chennai",
+      "gallery": [
+        "/images/interior/ambient-lights-jeep.jpg",
+        "/images/interior/ambient-lights-kit.jpg"
+      ],
+      "relatedServices": ["roof-led-vip-light", "door-foot-lights", "dashboard-door-pad-customization", "infotainment-systems"],
+      "faqs": [
+        { "q": "How many zones does an 18-piece kit cover?", "a": "A full 18-piece kit typically covers front footwells, rear footwells, front door pockets, rear door pockets, dashboard, centre console area, and additional accent positions." },
+        { "q": "Can I control the colour via my phone?", "a": "RGB ambient systems with Bluetooth or app control are available for full smartphone colour management." },
+        { "q": "Will ambient lighting installation be visible as aftermarket?", "a": "Professional installation routes all cables through factory channels for a clean, OEM-quality appearance." }
+      ],
+      "showInNav": true,
+      "navName": "18-Zone Ambient Lighting",
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-07",
+      "name": "Dashboard & Door Pad Customization",
+      "slug": "dashboard-door-pad-customization",
+      "category": "interior",
+      "shortDescription": "Customize your dashboard and door panels with premium materials, finishes, and accents for a personalized interior.",
+      "description": "Dashboard and door pad customization involves applying premium materials, trim inserts, or finishing touches to the interior surfaces most visible to occupants. This can include wood grain inserts, carbon-look trim, leatherette padding, or complete colour changes to door pads and dashboard panels.",
+      "benefits": [
+        "Dramatically personalizes the interior appearance",
+        "Premium materials transform the feel of the cabin",
+        "Covers factory panels with higher-quality aesthetics",
+        "Wide range of materials and finishes available",
+        "Reversible customization options available",
+        "Covers scratched or faded factory plastic trims"
+      ],
+      "installation": "Customization involves careful removal of factory trim panels, professional application of selected materials, and precise refitting for a factory-quality appearance.",
+      "options": [
+        { "label": "Carbon Look Trim Inserts", "description": "Carbon fibre look trim inserts for dashboard and doors" },
+        { "label": "Wood Grain Trim", "description": "Classic wood grain finish for a luxury look" },
+        { "label": "Leatherette Door Pad Upgrade", "description": "Leatherette padding and stitching on door panels" },
+        { "label": "Full Interior Colour Change", "description": "Comprehensive colour change for all interior surfaces" }
+      ],
+      "image": "/images/interior/dashboard-custom-1.jpg",
+      "imageAlt": "Car dashboard and door pad customization in Chennai",
+      "gallery": [
+        "/images/interior/dashboard-custom-1.jpg",
+        "/images/interior/dashboard-custom-2.jpg",
+        "/images/interior/dashboard-custom-3.jpg"
+      ],
+      "relatedServices": ["premium-car-seat-covers", "ambient-lights", "steering-covers-controls", "center-seat-arm-rest"],
+      "faqs": [
+        { "q": "Can the original factory trim be restored?", "a": "Many customization options are reversible, depending on the material and application method chosen." },
+        { "q": "What finishes are available for dashboard trim?", "a": "Options typically include carbon look, wood grain, brushed metal, piano black, and leatherette among others." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-08",
+      "name": "Sun Control Films",
+      "slug": "sun-control-films",
+      "category": "interior",
+      "shortDescription": "Apply professional sun control window films to reduce heat, glare, and UV entering your car's cabin.",
+      "description": "Sun control films are one of the most practical and popular car accessories in India's climate. Applied to side and rear windows, they reduce solar heat gain, block harmful UV rays, reduce interior glare, and improve privacy while helping keep the cabin cooler.",
+      "benefits": [
+        "Significantly reduces heat entering the cabin",
+        "Blocks up to 99% of harmful UV rays",
+        "Reduces reliance on air conditioning",
+        "Improves interior privacy",
+        "Reduces glare for all occupants",
+        "Protects interior materials from UV fading"
+      ],
+      "installation": "Professional wet-application technique is used for bubble-free, edge-to-edge film application. Proper curing time is observed before windows are operated.",
+      "options": [
+        { "label": "Standard Sun Control Film", "description": "Basic heat and UV reducing film" },
+        { "label": "Premium Heat Rejection Film", "description": "High-performance film with superior heat rejection" },
+        { "label": "Ceramic Film", "description": "Premium ceramic technology for maximum heat and UV rejection" },
+        { "label": "Privacy Film (Dark)", "description": "High privacy tint with heat rejection" }
+      ],
+      "image": "/images/interior/sun-control-films-1.jpg",
+      "imageAlt": "3M Sun control film installation for car in Chennai",
+      "gallery": [
+        "/images/interior/sun-control-films-1.jpg",
+        "/images/interior/sun-control-films-2.jpg"
+      ],
+      "relatedServices": ["windshield-anti-glare-film", "dashboard-door-pad-customization", "premium-car-seat-covers"],
+      "faqs": [
+        { "q": "Is window film legal in India?", "a": "Film darkness regulations apply in India. We recommend using legally compliant film grades. Please check current local motor vehicle regulations before proceeding." },
+        { "q": "How long does window film last?", "a": "Quality films last for several years. Lifespan depends on film quality, installation quality, and environmental conditions." },
+        { "q": "Will film affect my car's defogger or antenna?", "a": "Professional installation avoids damaging rear defogger elements and antenna wires integrated into glass." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-09",
+      "name": "Floor Mats",
+      "slug": "floor-mats",
+      "category": "interior",
+      "shortDescription": "Protect your car's carpet with premium 7D or 3D moulded floor mats custom-fitted to your vehicle model.",
+      "description": "Premium floor mats are essential for keeping your car's interior clean and protected. Available in 3D moulded rubber and premium 7D or 5D carpet/rubber hybrid formats, they provide complete coverage of the floor area with raised edges to contain dirt, dust, and water.",
+      "benefits": [
+        "Protects original carpet from dirt and wear",
+        "Raised edges contain spills and debris",
+        "3D/7D moulded designs provide complete floor coverage",
+        "Easy to remove and clean",
+        "Prevents original carpet from premature wear",
+        "Custom-fit for specific car models"
+      ],
+      "installation": "Floor mats are selected based on your vehicle model for precise fit and coverage. Anti-slip backing ensures they stay in position during normal use.",
+      "options": [
+        { "label": "3D Rubber Floor Mats", "description": "Moulded rubber mats for rugged protection" },
+        { "label": "5D Carpet Floor Mats", "description": "Premium carpet mats with rubber backing" },
+        { "label": "7D Ultra Premium Mats", "description": "Top-tier multi-layer ultra-premium floor mats" }
+      ],
+      "image": "/images/interior/floor-mats-1.jpg",
+      "imageAlt": "Premium 7D custom car floor mats in Chennai",
+      "gallery": [
+        "/images/interior/floor-mats-1.jpg",
+        "/images/interior/floor-mats-2.jpg",
+        "/images/interior/floor-mats-3.jpg"
+      ],
+      "relatedServices": ["premium-car-seat-covers", "steering-covers-controls", "neck-pillows-seat-cushions"],
+      "faqs": [
+        { "q": "Are 7D floor mats worth the premium price?", "a": "7D mats offer superior coverage, aesthetics, and durability compared to basic rubber mats. The decision depends on your usage and preference." },
+        { "q": "Are these custom-fit for my car model?", "a": "Yes, we select mats matched to your specific vehicle model for proper coverage." }
+      ],
+      "showInNav": true,
+      "navName": "Custom 7D Floor Mats",
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-10",
+      "name": "Speakers",
+      "slug": "speakers",
+      "category": "interior",
+      "shortDescription": "Upgrade your car's audio with premium component or coaxial speakers for significantly improved sound quality.",
+      "description": "Factory speakers are almost always a compromise. Upgrading to quality component or coaxial speakers dramatically improves audio clarity, soundstage, and overall listening experience. Available in sizes to match your vehicle's existing speaker positions.",
+      "benefits": [
+        "Dramatically improved audio clarity and detail",
+        "Better mid-range and high-frequency reproduction",
+        "Wider soundstage",
+        "Compatible with factory or aftermarket head units",
+        "Significant improvement over factory speakers",
+        "Available in sizes to suit your vehicle"
+      ],
+      "installation": "Speakers are selected to match existing mounting positions. Installation involves removing factory units, fitting adaptor rings if required, and making proper wiring connections to maintain polarity.",
+      "options": [
+        { "label": "Coaxial Speakers (Entry)", "description": "Full-range coaxial upgrade speakers" },
+        { "label": "Component Speakers (Mid)", "description": "Separate tweeter and woofer component systems" },
+        { "label": "Component Speakers (Premium)", "description": "High-quality component speaker systems" }
+      ],
+      "image": "/images/interior/speakers-1.jpg",
+      "imageAlt": "High-end component and coaxial car speakers in Chennai",
+      "gallery": [
+        "/images/interior/speakers-1.jpg",
+        "/images/interior/speakers-2.png"
+      ],
+      "relatedServices": ["woofers-amplifiers", "infotainment-systems", "steering-covers-controls"],
+      "faqs": [
+        { "q": "Will aftermarket speakers work with my factory head unit?", "a": "Yes, replacement speakers work with both factory and aftermarket head units." },
+        { "q": "How much better are aftermarket speakers?", "a": "Even entry-level aftermarket speakers are typically a significant improvement over factory units in clarity and detail." }
+      ],
+      "showInNav": true,
+      "navName": "Component Speakers & Audio",
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-11",
+      "name": "Woofers, Amplifiers & Wiring",
+      "slug": "woofers-amplifiers",
+      "category": "interior",
+      "shortDescription": "Add deep bass with subwoofers and enhance your system with power amplifiers and proper audio wiring.",
+      "description": "A quality subwoofer and amplifier system transforms the audio experience in your vehicle, adding deep, controlled bass reproduction that factory systems cannot deliver. Proper audio wiring is essential for clean, noise-free power delivery to the amplifier and speakers.",
+      "benefits": [
+        "Deep, controlled bass reproduction",
+        "Amplified power for significantly louder, cleaner audio",
+        "Removes distortion caused by underpowered factory systems",
+        "Proper wiring eliminates electrical noise",
+        "Can be installed without replacing existing head unit",
+        "Dramatically enhances overall audio enjoyment"
+      ],
+      "installation": "Amplifiers require proper power wiring from the battery with appropriate fusing, signal connections from the head unit, and speaker output connections. Subwoofers are typically installed in the boot with sealed or ported enclosures.",
+      "options": [
+        { "label": "Single Subwoofer", "description": "One subwoofer with suitable enclosure" },
+        { "label": "Amplifier", "description": "Mono or multi-channel power amplifier" },
+        { "label": "Subwoofer + Amplifier Package", "description": "Complete bass upgrade package" },
+        { "label": "Audio Wiring Kit", "description": "Complete amplifier wiring kit with power cable, RCA, and remote wire" }
+      ],
+      "image": "/images/interior/woofers-amplifiers-1.webp",
+      "imageAlt": "Car subwoofer, trunk amplifier and custom wiring setup in Chennai",
+      "gallery": [
+        "/images/interior/woofers-amplifiers-1.webp",
+        "/images/interior/woofers-amplifiers-2.png"
+      ],
+      "relatedServices": ["speakers", "infotainment-systems", "steering-covers-controls"],
+      "faqs": [
+        { "q": "Will a subwoofer drain my battery?", "a": "A properly installed amplifier and subwoofer with correct fusing and suitable electrical upgrades (if needed) should not cause battery issues during normal driving." },
+        { "q": "Where is the subwoofer installed?", "a": "Subwoofers are typically installed in the boot area in a suitable enclosure. We consider space requirements based on your vehicle." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-12",
+      "name": "Neck Pillows, Seat Cushions & Wooden Beads",
+      "slug": "neck-pillows-seat-cushions",
+      "category": "interior",
+      "shortDescription": "Add comfort with premium neck pillows, seat cushions, and traditional wooden bead seat covers.",
+      "description": "Comfort accessories like neck pillows, lumbar cushions, and seat cushions make long drives significantly more comfortable. Wooden bead seat covers offer both comfort and traditional styling, providing airflow behind the driver's back.",
+      "benefits": [
+        "Improved comfort on long drives",
+        "Neck pillows reduce strain during long journeys",
+        "Lumbar support cushions help with lower back comfort",
+        "Wooden bead covers improve airflow against the seat back",
+        "Easy to install and remove",
+        "Various designs and materials available"
+      ],
+      "installation": "These comfort accessories are attached to the seat using straps, hooks, or buckle systems without any permanent modification.",
+      "options": [
+        { "label": "Neck/Head Rest Pillows", "description": "Soft support pillows for headrests" },
+        { "label": "Lumbar Cushion", "description": "Lower back support cushion for driver and passenger" },
+        { "label": "Seat Cushion", "description": "Full seat cushion for added comfort" },
+        { "label": "Wooden Bead Seat Cover", "description": "Traditional bead seat cover for airflow and comfort" }
+      ],
+      "image": "/images/interior/neck-pillows-1.jpg",
+      "imageAlt": "Memory foam neck rest pillows and seat cushions in Chennai",
+      "gallery": [
+        "/images/interior/neck-pillows-1.jpg",
+        "/images/interior/neck-pillows-2.webp",
+        "/images/interior/neck-pillows-3.jpg"
+      ],
+      "relatedServices": ["premium-car-seat-covers", "floor-mats", "center-seat-arm-rest", "steering-covers-controls"],
+      "faqs": [
+        { "q": "Are neck pillows compatible with side airbags?", "a": "We recommend checking whether your vehicle has side curtain or seat-mounted airbags before adding accessories that may interfere with airbag deployment paths." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-13",
+      "name": "Mobile Holder & Door Foot Lights",
+      "slug": "mobile-holder-door-foot-lights",
+      "category": "interior",
+      "shortDescription": "Add a sturdy mobile holder for safe phone use and door foot lights for a premium entry illumination effect.",
+      "description": "A quality mobile holder keeps your phone securely positioned for navigation while keeping hands on the wheel. Door foot lights create a premium entry experience by illuminating the ground area when doors open, adding a luxury finishing touch.",
+      "benefits": [
+        "Mobile holder enables safe GPS navigation",
+        "Reduces distraction from phone handling",
+        "Door foot lights add premium entry experience",
+        "Available in wireless charging holder variants",
+        "Magnetic mounts for quick phone attachment",
+        "LED foot lights have long lifespan and low power draw"
+      ],
+      "installation": "Mobile holders attach to dashboard vents, suction cup mounts, or dedicated dash mounts. Door foot lights are installed in the door sill area with wiring connected to the door open circuit.",
+      "options": [
+        { "label": "Magnetic Mobile Holder", "description": "Dashboard or vent-mounted magnetic phone holder" },
+        { "label": "Wireless Charging Holder", "description": "Phone holder with integrated wireless charging" },
+        { "label": "Door Foot LED Lights", "description": "LED foot lights installed in door sill area" }
+      ],
+      "image": "/images/interior/door-foot-lights-1.jpg",
+      "imageAlt": "LED door foot lights and mobile holder in Chennai",
+      "gallery": [
+        "/images/interior/door-foot-lights-1.jpg",
+        "/images/interior/door-foot-lights-2.jpg"
+      ],
+      "relatedServices": ["ambient-lights", "roof-led-vip-light", "door-logo-lights", "infotainment-systems"],
+      "faqs": [
+        { "q": "Will a dashboard mobile holder block airbag deployment?", "a": "Mount positions should be selected to avoid blocking airbag zones. We advise on safe mount positions for your vehicle." },
+        { "q": "Do door foot lights turn on automatically?", "a": "Yes, they are wired to the door open signal so they illuminate when any door is opened." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-14",
+      "name": "Foot Step Patti & Ceramic Stickers",
+      "slug": "foot-step-patti",
+      "category": "interior",
+      "shortDescription": "Protect door entry sills with foot step patti strips and add ceramic sticker accents for interior decoration.",
+      "description": "Door sill protectors (foot step patti) are essential for preventing entry scuff marks on door sills — one of the most commonly damaged interior areas. Ceramic stickers provide decorative accent details to various interior surfaces.",
+      "benefits": [
+        "Prevents scuff marks on door entry sills",
+        "Protects original paint and plastic at entry points",
+        "Easy to clean",
+        "Available in chrome, carbon look, and illuminated variants",
+        "Ceramic stickers add personalized decorative touches",
+        "Durable materials for long-term protection"
+      ],
+      "installation": "Sill protectors use adhesive tape for clean fitment on door sill surfaces. Illuminated variants include additional LED wiring to the door open circuit.",
+      "options": [
+        { "label": "Standard Sill Protectors", "description": "Basic chrome or ABS sill protection strips" },
+        { "label": "Carbon Look Sill Guards", "description": "Carbon look patterned sill protectors" },
+        { "label": "Illuminated Sill Protectors", "description": "LED-lit sill guards for premium entry effect" },
+        { "label": "Ceramic Sticker Accents", "description": "Decorative ceramic accent stickers for interior" }
+      ],
+      "image": "/images/interior/footstep-patti-1.jpg",
+      "imageAlt": "Foot step patti sill protector and ceramic stickers in Chennai",
+      "gallery": [
+        "/images/interior/footstep-patti-1.jpg",
+        "/images/interior/footstep-patti-2.jpg"
+      ],
+      "relatedServices": ["mobile-holder-door-foot-lights", "door-visors-side-claddings", "floor-mats", "ambient-lights"],
+      "faqs": [
+        { "q": "Will sill protectors damage my door's paint?", "a": "Quality adhesive-backed sill protectors do not damage paint when properly installed and removed." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-15",
+      "name": "Parcel Trays & Wooden Box",
+      "slug": "parcel-trays",
+      "category": "interior",
+      "shortDescription": "Add rear parcel trays for privacy and cargo management, or a premium wooden center console box.",
+      "description": "Parcel trays cover the boot/rear window shelf area for privacy and to keep items hidden. Wooden center console boxes add both storage and premium aesthetic value to the vehicle interior, creating additional organised storage space.",
+      "benefits": [
+        "Parcel trays provide rear cargo privacy",
+        "Hides items from view in boot area",
+        "Wooden box adds premium storage in the cabin",
+        "Improves interior organisation",
+        "Custom finishes available",
+        "Adds practical and aesthetic value simultaneously"
+      ],
+      "installation": "Parcel trays are fitted using vehicle-specific mounting clips. Wooden console boxes are positioned between front seats with appropriate securing methods.",
+      "options": [
+        { "label": "Rear Parcel Tray", "description": "Privacy tray for rear window shelf area" },
+        { "label": "Wooden Center Console Box", "description": "Premium wooden storage box for center console area" }
+      ],
+      "image": "/images/interior/parcel-trays-1.jpg",
+      "imageAlt": "Car parcel trays and wooden console box in Chennai",
+      "gallery": [
+        "/images/interior/parcel-trays-1.jpg",
+        "/images/interior/parcel-trays-2.jpg"
+      ],
+      "relatedServices": ["center-seat-arm-rest", "floor-mats", "premium-car-seat-covers", "seat-organizers-vacuum-cleaners"],
+      "faqs": [
+        { "q": "Is the parcel tray specific to my car model?", "a": "Parcel trays are model-specific for correct fitment on the rear shelf." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-16",
+      "name": "Center Seat, Arm Rest & Gear Knobs",
+      "slug": "center-seat-arm-rest",
+      "category": "interior",
+      "shortDescription": "Add a center armrest for front occupant comfort and upgrade your gear and steering knobs.",
+      "description": "A center armrest significantly improves front occupant comfort on long journeys by providing elbow support. Quality gear knobs and steering knobs add premium touch points to the driver's immediate interaction area, transforming the driving feel.",
+      "benefits": [
+        "Center armrest reduces arm fatigue on long drives",
+        "Provides useful storage in armrest compartments",
+        "Leather or premium material covered variants available",
+        "Gear knob upgrade transforms the driving experience feel",
+        "Leather, wood, or sport knob options",
+        "Model-specific fitment available"
+      ],
+      "installation": "Center armrests attach using the handbrake or seat mounting points depending on the vehicle. Gear knobs replace the existing knob by threading on or using vehicle-specific attachment methods.",
+      "options": [
+        { "label": "Universal Center Armrest", "description": "Adjustable center armrest for front seats" },
+        { "label": "Model-Specific Armrest", "description": "Vehicle-specific armrest for clean integration" },
+        { "label": "Leather Gear Knob", "description": "Premium leather gear shift knob" },
+        { "label": "Sport / Custom Gear Knob", "description": "Sporty or custom-design shift knob" },
+        { "label": "Steering Knob (Spinner)", "description": "Steering wheel assistance knob" }
+      ],
+      "image": "/images/interior/armrest-gear-1.jpg",
+      "imageAlt": "Center seat armrest and custom gear knobs in Chennai",
+      "gallery": [
+        "/images/interior/armrest-gear-1.jpg",
+        "/images/interior/armrest-gear-2.jpg",
+        "/images/interior/armrest-gear-3.jpg"
+      ],
+      "relatedServices": ["premium-car-seat-covers", "floor-mats", "steering-covers-controls", "parcel-trays"],
+      "faqs": [
+        { "q": "Will a universal armrest fit my car?", "a": "Universal armrests can fit most vehicles but model-specific units provide a more integrated look and feel." },
+        { "q": "Can I replace a gear knob on an automatic car?", "a": "Some automatic vehicles allow gear selector knob replacement while others have integrated designs. We check compatibility first." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-17",
+      "name": "Magnetic / Roller Curtains & Air Fresheners",
+      "slug": "curtains-air-fresheners",
+      "category": "interior",
+      "shortDescription": "Protect rear passengers with window curtains and keep your cabin smelling fresh with premium air fresheners.",
+      "description": "Magnetic and roller window curtains provide sun protection and privacy for rear passengers without permanent window tinting. Premium air fresheners maintain a pleasant cabin environment, available in various formats including vent-mounted, rear-view mirror hung, and diffuser types.",
+      "benefits": [
+        "Magnetic curtains provide on-demand sun and privacy protection",
+        "Roller curtains integrate cleanly into window channels",
+        "Easily removable without any permanent modification",
+        "Air fresheners maintain a pleasant driving environment",
+        "Wide variety of fragrance options available",
+        "Useful for rear passengers particularly with children"
+      ],
+      "installation": "Magnetic curtains use built-in magnets to attach to door frames without any modification. Roller curtains may require small channel brackets.",
+      "options": [
+        { "label": "Magnetic Window Curtains", "description": "Sun and privacy curtains using magnetic attachment" },
+        { "label": "Roller Window Curtains", "description": "Roll-up curtains for rear windows" },
+        { "label": "Vent-Mounted Air Freshener", "description": "Fresh fragrance unit clipped to air vents" },
+        { "label": "Premium Cabin Diffuser", "description": "Long-lasting cabin fragrance diffuser" }
+      ],
+      "image": "/images/interior/curtains-air-1.jpg",
+      "imageAlt": "Magnetic window rolling curtains and air fresheners in Chennai",
+      "gallery": [
+        "/images/interior/curtains-air-1.jpg",
+        "/images/interior/curtains-air-2.webp",
+        "/images/interior/curtains-air-3.jpg"
+      ],
+      "relatedServices": ["sun-control-films", "premium-car-seat-covers", "neck-pillows-seat-cushions"],
+      "faqs": [
+        { "q": "Do magnetic curtains work on all cars?", "a": "Magnetic curtains work on most vehicles with steel door frames. Compatibility may vary on vehicles with aluminium doors." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-18",
+      "name": "OEM Camera & 360° Camera",
+      "slug": "oem-camera-360-camera",
+      "category": "interior",
+      "shortDescription": "Install OEM-style cameras or a full 360° surround view system for complete parking visibility.",
+      "description": "OEM-style cameras provide factory-quality camera installation that integrates seamlessly with your existing or aftermarket infotainment system. A 360° surround view system uses four cameras (front, rear, and both sides) to generate a bird's-eye composite view, making parking in tight spaces significantly easier.",
+      "benefits": [
+        "360° view eliminates all blind spots during parking",
+        "Surround view generated from four cameras",
+        "OEM-style units provide factory-quality appearance",
+        "Integrates with existing or aftermarket displays",
+        "Significantly reduces parking-related incidents",
+        "Front camera visibility for low-slung bumpers"
+      ],
+      "installation": "360° camera systems require installation of four cameras (front grille, rear, and both door mirrors or pillars), plus a processing unit and display connection. OEM cameras are installed in the original camera positions.",
+      "options": [
+        { "label": "OEM-Style Reverse Camera", "description": "Factory-look reverse camera" },
+        { "label": "Front Camera", "description": "Front grille-mounted camera for forward visibility" },
+        { "label": "360° Surround View System", "description": "Four-camera 360-degree bird's eye view system" }
+      ],
+      "image": "/images/interior/360-camera-1.jpg",
+      "imageAlt": "360 degree surround view camera and OEM reverse camera in Chennai",
+      "gallery": [
+        "/images/interior/360-camera-1.jpg",
+        "/images/interior/360-camera-2.jpg"
+      ],
+      "relatedServices": ["dash-cameras-ai-dongles", "reverse-camera-sensor", "infotainment-systems", "oem-infotainment"],
+      "faqs": [
+        { "q": "Does a 360° camera work while driving?", "a": "360° systems typically work at low speeds. Some units remain active above certain speeds for manoeuvring assistance." },
+        { "q": "What display does the 360° view appear on?", "a": "The 360° view integrates with your infotainment display — either the factory screen (where compatible) or an aftermarket unit." }
+      ],
+      "showInNav": true,
+      "navName": "360\u00b0 Cameras & Dashcams",
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-19",
+      "name": "Seat Organizers, Vacuum Cleaners & Remote Lock",
+      "slug": "seat-organizers-vacuum-cleaners",
+      "category": "interior",
+      "shortDescription": "Add practical car organizers, a portable vacuum cleaner, and remote central locking for everyday convenience.",
+      "description": "Practical accessories like seat organizers, portable car vacuum cleaners, and remote central locking systems add everyday convenience to your vehicle. Seat organizers keep the rear passenger area tidy. Portable vacuum cleaners maintain interior cleanliness. Remote locking adds the convenience of keyless central locking to vehicles that lack it.",
+      "benefits": [
+        "Seat organizers keep the rear cabin tidy",
+        "Tablet and phone holders integrated in many organizers",
+        "Portable vacuum cleaners maintain interior cleanliness easily",
+        "Remote lock adds modern convenience to older vehicles",
+        "Power window kits add one-touch window operation",
+        "All practical additions that improve daily usability"
+      ],
+      "installation": "Seat organizers attach to front seat backs. Remote lock systems replace or augment existing door lock actuators with wiring to a central control module. Power window kits install in door panels.",
+      "options": [
+        { "label": "Rear Seat Organizer", "description": "Multi-pocket organizer for rear of front seats" },
+        { "label": "Car Vacuum Cleaner", "description": "Portable 12V or cordless car vacuum" },
+        { "label": "Remote Central Lock Kit", "description": "Remote locking for vehicles without factory keyless entry" },
+        { "label": "Power Window Kit", "description": "Electric power window system" }
+      ],
+      "image": "/images/interior/seat-organizers-vacuum-cleaners-chennai.webp",
+      "imageAlt": "Seat organizer, vacuum cleaner and remote lock in Chennai",
+      "relatedServices": ["premium-car-seat-covers", "floor-mats", "center-seat-arm-rest", "parcel-trays"],
+      "faqs": [
+        { "q": "Can remote central locking be added to older cars?", "a": "Yes, remote central lock kits can be added to most vehicles. Compatibility depends on the vehicle's existing locking mechanism." },
+        { "q": "Do power window kits work on manual window cars?", "a": "Power window kits can be installed on vehicles with manual windows, though the door panels need to accommodate the motor and regulator." }
+      ],
+      "showInNav": false,
+      "navName": null,
+      "megaMenuGroup": null
+    },
+    {
+      "id": "int-20",
+      "name": "Premium Car Seat Covers",
+      "slug": "premium-car-seat-covers",
+      "category": "interior",
+      "shortDescription": "Transform your interior with custom-fit premium seat covers in leather, leatherette, or fabric to suit your style.",
+      "description": "Premium car seat covers are among the most impactful single interior upgrade you can make. They transform the appearance of your cabin, protect original upholstery, and significantly improve seating comfort. Available in full leatherette, genuine leather alternatives, fabric blends, and custom stitching patterns.",
+      "benefits": [
+        "Transforms the entire interior appearance",
+        "Protects original upholstery from wear and stains",
+        "Improved seating comfort with quality foam backing",
+        "Custom stitching and colour options available",
+        "Easier to clean than original upholstery",
+        "Covers worn or damaged original seats effectively"
+      ],
+      "installation": "Seat covers are custom-cut for your specific vehicle model, with precise openings for headrests, armrests, seat controls, and airbags. Professional fitting ensures a taut, wrinkle-free finish.",
+      "options": [
+        { "label": "Leatherette Seat Covers", "description": "Premium synthetic leather covers with padding" },
+        { "label": "Perforated Leatherette", "description": "Breathable perforated finish for Chennai's climate" },
+        { "label": "Two-Tone Custom Covers", "description": "Two-colour combination with contrasting stitching" },
+        { "label": "Full Custom Themed Covers", "description": "Fully customised design with premium materials" }
+      ],
+      "image": "/images/interior/seat-covers-1.jpg",
+      "imageAlt": "Custom-fit premium car seat covers in Chennai",
+      "gallery": [
+        "/images/interior/seat-covers-1.jpg",
+        "/images/interior/seat-covers-2.webp",
+        "/images/interior/seat-covers-3.jpg"
+      ],
+      "relatedServices": ["floor-mats", "steering-covers-controls", "neck-pillows-seat-cushions", "dashboard-door-pad-customization", "center-seat-arm-rest"],
+      "faqs": [
+        { "q": "Will seat covers affect side airbag deployment?", "a": "We use airbag-compatible seat covers with specific seam provisions where required for your vehicle model." },
+        { "q": "Are the covers machine washable?", "a": "Most leatherette covers are wipe-clean. Fabric covers may be removable for washing depending on the design." },
+        { "q": "Can I choose a custom colour combination?", "a": "Yes, two-tone and custom colour combinations with contrasting stitching are available." },
+        { "q": "How long does installation take?", "a": "Installation time varies depending on the vehicle model and cover type. We recommend discussing timing during your enquiry." }
+      ],
+      "showInNav": true,
+      "navName": "Premium Seat Covers",
+      "megaMenuGroup": null
+    }
+  ]
+}

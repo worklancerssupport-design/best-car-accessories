@@ -1,19 +1,10 @@
 import { Helmet } from 'react-helmet-async';
-import { business } from '../config/business';
+import business from '../data/business.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import CTASection from '../components/ui/CTASection/CTASection';
+import reviewsData from '../data/reviews.json';
 import './ReviewsPage.css';
 import { Star, ExternalLink } from 'lucide-react';
-
-// Placeholder review data — replace with real Google Reviews API integration
-const PLACEHOLDER_REVIEWS = [
-  { initials: 'RK', name: 'Rajesh K.', rating: 5, text: 'Got ambient lights and seat covers installed here. The quality of work is really good and the team was helpful in choosing the right options for my car.', note: '[Placeholder — replace with actual review]' },
-  { initials: 'PS', name: 'Priya S.', rating: 5, text: 'Visited for an infotainment system upgrade. They explained all the options clearly and the installation was clean. Happy with the result.', note: '[Placeholder — replace with actual review]' },
-  { initials: 'AM', name: 'Arjun M.', rating: 5, text: 'Good range of accessories available. Got fog lights and door visors installed. The work was neat and professionally done.', note: '[Placeholder — replace with actual review]' },
-  { initials: 'LR', name: 'Lakshmi R.', rating: 5, text: 'Recommended by a friend. The shop has a wide variety and they were patient with my questions about seat covers and floor mats.', note: '[Placeholder — replace with actual review]' },
-  { initials: 'KV', name: 'Karthik V.', rating: 5, text: '360 degree camera installation was done here. Good service and they ensured everything was working properly before I left.', note: '[Placeholder — replace with actual review]' },
-  { initials: 'MD', name: 'Meena D.', rating: 5, text: 'Installed DRL lights and a reverse sensor here. Clean wiring job and the team was helpful throughout the process.', note: '[Placeholder — replace with actual review]' },
-];
 
 function StarRating({ rating }) {
   return (
@@ -71,8 +62,8 @@ export default function ReviewsPage() {
       <section className="section section--light reviews-grid-section">
         <div className="container">
           <div className="reviews-grid">
-            {PLACEHOLDER_REVIEWS.map((review, i) => (
-              <article className="review-card" key={i}>
+            {reviewsData.reviews.map((review, i) => (
+              <article className="review-card" key={review.id || i}>
                 <div className="review-card__header">
                   <div
                     className="review-card__avatar"
@@ -87,7 +78,6 @@ export default function ReviewsPage() {
                   </div>
                 </div>
                 <p className="review-card__text">{review.text}</p>
-                <p className="review-card__placeholder-note">{review.note}</p>
               </article>
             ))}
           </div>

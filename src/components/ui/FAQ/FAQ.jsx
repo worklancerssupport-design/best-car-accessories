@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Plus, Minus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import './FAQ.css';
 
 export default function FAQ({ faqs = [] }) {

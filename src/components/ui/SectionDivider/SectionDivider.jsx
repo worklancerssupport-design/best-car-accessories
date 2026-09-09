@@ -1,4 +1,3 @@
-import React from 'react';
 import './SectionDivider.css';
 
 export default function SectionDivider({ num = '01', label = 'SECTION', className = '' }) {

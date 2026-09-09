@@ -1,0 +1,51 @@
+{
+  "name": "Best Car Accessories",
+  "tagline": "Premium Car Accessories & Customization",
+  "location": "Royapettah, Chennai",
+  "phone": "+91 98400 12345",
+  "whatsapp": "919840012345",
+  "email": "enquiry@bestcaraccessories.in",
+  "address": "Palani Murugan Building, No: 21, Westcott Rd, next to Woodlands Theater, Royapettah, Chennai, Tamil Nadu 600014",
+  "mapUrl": "https://maps.google.com/maps?q=Palani+Murugan+Building,+No:+21,+Westcott+Rd,+next+to+Woodlands+Theater,+Royapettah,+Chennai,+Tamil+Nadu+600014&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Palani+Murugan+Building,+No:+21,+Westcott+Rd,+next+to+Woodlands+Theater,+Royapettah,+Chennai,+Tamil+Nadu+600014",
+  "googleBusinessUrl": "",
+  "googleReviewsUrl": "",
+  "instagram": "https://www.instagram.com/best_car_accessories_nms/",
+  "instagramHandle": "@best_car_accessories_nms",
+  "instagramUsername": "best_car_accessories_nms",
+  "social": {
+    "instagram": "https://www.instagram.com/best_car_accessories_nms/",
+    "facebook": "",
+    "youtube": "",
+    "twitter": ""
+  },
+  "yearsExperience": 15,
+  "clientsServed": 1000,
+  "accessoryCategories": 20,
+  "siteUrl": "https://bestcaraccessorieschennai.in",
+  "siteName": "Best Car Accessories Chennai",
+  "hours": {
+    "weekdays": {
+      "days": "Monday - Saturday",
+      "open": "9:30 AM",
+      "close": "8:30 PM"
+    },
+    "sunday": {
+      "days": "Sunday",
+      "open": "10:00 AM",
+      "close": "3:00 PM"
+    }
+  },
+  "stats": {
+    "yearsExperience": 15,
+    "clientsServed": 1000,
+    "accessoryCategories": 20
+  },
+  "forms": {
+    "web3formsKey": "",
+    "emailjsServiceId": "",
+    "emailjsTemplateId": "",
+    "emailjsPublicKey": "",
+    "fallbackEmail": ""
+  }
+}

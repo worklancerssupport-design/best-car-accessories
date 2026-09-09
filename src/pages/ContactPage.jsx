@@ -1,17 +1,11 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { business } from '../config/business';
+import business from '../data/business.json';
+import formsData from '../data/forms.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import CTASection from '../components/ui/CTASection/CTASection';
 import './ContactPage.css';
 import { MapPin, Phone, MessageCircle, Mail, Send, CheckCircle2 } from 'lucide-react';
-import { contactConfig } from '../config/contact';
-
-const SERVICES = [
-  'Exterior Car Accessories', 'Interior Car Accessories', 'LED Headlights / DRL', 'Fog Lights',
-  'Infotainment System', 'Speakers / Audio', 'Ambient Lights', 'Seat Covers',
-  'Floor Mats', 'Dash Camera', '360° Camera', 'Reverse Camera', 'Car Customization', 'Other',
-];
 
 function validate(form) {
   const errors = {};
@@ -43,15 +37,14 @@ export default function ContactPage() {
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setLoading(true);
     try {
-      if (contactConfig.web3formsKey) {
+      if (business.forms.web3formsKey) {
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ access_key: contactConfig.web3formsKey, ...form, subject: `Enquiry from ${form.name} — ${form.service}` }),
+          body: JSON.stringify({ access_key: business.forms.web3formsKey, ...form, subject: `Enquiry from ${form.name} — ${form.service}` }),
         });
         if (!res.ok) throw new Error('Submission failed');
       } else {
-        console.log('[Contact Form] Submission (no API key configured):', form);
         await new Promise(r => setTimeout(r, 800));
       }
       setSuccess(true);
@@ -194,7 +187,7 @@ export default function ContactPage() {
                   <label htmlFor="service">Service Interested In *</label>
                   <select id="service" name="service" value={form.service} onChange={handleChange}>
                     <option value="">Select a service</option>
-                    {SERVICES.map(s => <option key={s} value={s}>{s}</option>)}
+                    {formsData.contactServices.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
                   {errors.service && <span className="contact-form__field-error">{errors.service}</span>}
                 </div>

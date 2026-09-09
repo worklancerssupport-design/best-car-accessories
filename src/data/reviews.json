@@ -1,0 +1,78 @@
+{
+  "rating": "4.9",
+  "totalReviews": "1,000+",
+  "totalReviewsLabel": "upgrades delivered in Chennai",
+  "reviews": [
+    {
+      "id": 1,
+      "initials": "RK",
+      "name": "Rajesh K.",
+      "car": "Hyundai Creta",
+      "mod": "18-Zone Ambient Lighting & Audio Damping",
+      "rating": 5,
+      "text": "Got ambient lighting and complete door damping done. The craftsmanship is top-notch with zero wire cutting. Completely changed the night driving feel."
+    },
+    {
+      "id": 2,
+      "initials": "PS",
+      "name": "Priya S.",
+      "car": "Kia Seltos",
+      "mod": "Custom Leather Seat Covers & 7D Mats",
+      "rating": 5,
+      "text": "The bucket fitment of the seat covers feels like OEM factory finish. Very polite team on Westcott Road who explained the material differences patiently."
+    },
+    {
+      "id": 3,
+      "initials": "AM",
+      "name": "Arjun M.",
+      "car": "Mahindra Scorpio-N",
+      "mod": "Bi-LED Projector Fog Lamps Upgrade",
+      "rating": 5,
+      "text": "Highway visibility at night was a challenge before this upgrade. The fog projector throw is razor sharp with clean cutoff lines. Worth every rupee."
+    },
+    {
+      "id": 4,
+      "initials": "KV",
+      "name": "Karthik V.",
+      "car": "Tata Nexon",
+      "mod": "Android Infotainment & 360 Camera",
+      "rating": 5,
+      "text": "360 camera calibration in narrow Chennai streets is spot on. Neat coupler-to-coupler harness. Installed 360 camera and touchscreen system."
+    },
+    {
+      "id": 5,
+      "initials": "LR",
+      "name": "Lakshmi R.",
+      "car": "Toyota Innova Crysta",
+      "mod": "Roof Rails, Side Steps & Armrest",
+      "rating": 5,
+      "text": "Solid heavy-duty side foot steps installed for family convenience. Sturdy fitment with zero rattle over rough roads. Highly recommend."
+    },
+    {
+      "id": 6,
+      "initials": "SN",
+      "name": "Suresh N.",
+      "car": "Honda City",
+      "mod": "Component Audio & Sun Control Film",
+      "rating": 5,
+      "text": "Audio staging and heat rejection film installation was clean. The workshop is well organized and delivery was on time."
+    }
+  ],
+  "highlights": [
+    {
+      "name": "Rajesh K.",
+      "car": "Hyundai Creta",
+      "text": "Ambient lighting and door damping — top-notch craftsmanship with zero wire cutting."
+    },
+    {
+      "name": "Karthik V.",
+      "car": "Tata Nexon",
+      "text": "360 camera calibration in narrow Chennai streets is spot on. Neat coupler-to-coupler harness."
+    },
+    {
+      "name": "Priya S.",
+      "car": "Kia Seltos",
+      "text": "Bucket-fit seat covers feel like OEM factory finish. Very patient and professional team."
+    }
+  ]
+}

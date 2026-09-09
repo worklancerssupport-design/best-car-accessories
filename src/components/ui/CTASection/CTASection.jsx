@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MessageCircle, ArrowRight } from 'lucide-react';
-import { business } from '../../../config/business';
+import business from '../../../data/business.json';
 import './CTASection.css';
 
 export default function CTASection({

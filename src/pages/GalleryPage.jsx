@@ -1,36 +1,16 @@
 import { useState, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { business } from '../config/business';
+import business from '../data/business.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
+import galleryData from '../data/gallery.json';
 import './GalleryPage.css';
 import { X, ZoomIn } from 'lucide-react';
-
-const CATEGORIES = ['All', 'Exterior', 'Interior', 'Lighting', 'Infotainment', 'Audio', 'Cameras', 'Seat Covers'];
-
-const GALLERY_ITEMS = [
-  { id: 1, src: '/images/exterior/fog-light-projector-chennai.webp', alt: 'Fog light projector installation', category: 'Exterior' },
-  { id: 2, src: '/images/interior/ambient-lights-jeep.jpg', alt: 'Jeep Compass multi-zone ambient lighting installation', category: 'Lighting' },
-  { id: 3, src: '/images/interior/seat-covers-1.jpg', alt: 'Premium custom-fit car seat covers', category: 'Seat Covers' },
-  { id: 4, src: '/images/exterior/led-headlight-upgrade-chennai.webp', alt: 'LED headlight upgrade', category: 'Exterior' },
-  { id: 5, src: '/images/interior/infotainment-1.png', alt: 'Android touchscreen infotainment system', category: 'Infotainment' },
-  { id: 6, src: '/images/interior/360-camera-1.jpg', alt: '360 degree surround view camera setup', category: 'Cameras' },
-  { id: 7, src: '/images/interior/ambient-lights-kit.jpg', alt: 'Symphony multi-color cabin ambient lighting', category: 'Lighting' },
-  { id: 8, src: '/images/interior/speakers-1.jpg', alt: 'High-end component car speaker upgrade', category: 'Audio' },
-  { id: 9, src: '/images/interior/roof-vip-light-1.jpg', alt: 'Roof LED starlight & VIP lighting setup', category: 'Lighting' },
-  { id: 10, src: '/images/interior/roof-vip-light-og.jpg', alt: 'Luxury cabin roof & dashboard ambient illumination', category: 'Lighting' },
-  { id: 11, src: '/images/interior/dashboard-custom-1.jpg', alt: 'Dashboard and door pad leatherette customization', category: 'Interior' },
-  { id: 12, src: '/images/interior/floor-mats-1.jpg', alt: 'Premium 7D all-weather car floor mats', category: 'Interior' },
-  { id: 13, src: '/images/interior/woofers-amplifiers-1.webp', alt: 'Car subwoofer, boot amplifier and wiring system', category: 'Audio' },
-  { id: 14, src: '/images/interior/dashcam-ai-1.jpg', alt: 'Dash camera and AI safety monitor installation', category: 'Cameras' },
-  { id: 15, src: '/images/interior/door-foot-lights-1.jpg', alt: 'LED door welcome foot lights', category: 'Lighting' },
-  { id: 16, src: '/images/interior/footstep-patti-1.jpg', alt: 'Foot step patti sill protectors & ceramic stickers', category: 'Interior' },
-];
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [lightbox, setLightbox] = useState(null);
 
-  const filtered = activeCategory === 'All' ? GALLERY_ITEMS : GALLERY_ITEMS.filter(i => i.category === activeCategory);
+  const filtered = activeCategory === 'All' ? galleryData.items : galleryData.items.filter(i => i.category === activeCategory);
 
   const openLightbox = useCallback((item) => setLightbox(item), []);
   const closeLightbox = useCallback(() => setLightbox(null), []);
@@ -68,7 +48,7 @@ export default function GalleryPage() {
       <section className="section section--white gallery-filter-section">
         <div className="container">
           <div className="gallery-filters">
-            {CATEGORIES.map(cat => (
+            {galleryData.categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}

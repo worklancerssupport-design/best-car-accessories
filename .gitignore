@@ -57,9 +57,15 @@ coverage/
 ehthumbs.db
 Thumbs.db
 
+# Project docs
+project/
+
 # Misc
 *.tgz
 *.tar.gz
 .cache/
 .temp/
 tmp/
+
+# skills
+EDIT_CONSOLE.md

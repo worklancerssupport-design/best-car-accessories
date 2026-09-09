@@ -1,15 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Award, Users, Grid, Wrench } from 'lucide-react';
+import business from '../../../data/business.json';
 import './CountUpStats.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const defaultStats = [
-  { number: 15, suffix: '+', label: 'Years of Experience', sub: 'ESTABLISHED IN CHENNAI', icon: Award },
-  { number: 1000, suffix: '+', label: 'Clients Served', sub: 'ACROSS TAMIL NADU', icon: Users },
-  { number: 20, suffix: '+', label: 'Accessory Categories', sub: 'EXTERIOR & INTERIOR', icon: Grid },
+  { number: business.stats.yearsExperience, suffix: '+', label: 'Years of Experience', sub: 'ESTABLISHED IN CHENNAI', icon: Award },
+  { number: business.stats.clientsServed, suffix: '+', label: 'Clients Served', sub: 'ACROSS TAMIL NADU', icon: Users },
+  { number: business.stats.accessoryCategories, suffix: '+', label: 'Accessory Categories', sub: 'EXTERIOR & INTERIOR', icon: Grid },
   { number: null, suffix: 'OEM', label: 'Certified Fitment', sub: 'ZERO WIRE TAMPERING', icon: Wrench },
 ];
 

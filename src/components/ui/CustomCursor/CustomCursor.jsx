@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import './CustomCursor.css';
 
 export default function CustomCursor() {
@@ -6,7 +6,6 @@ export default function CustomCursor() {
   const [hovered, setHovered] = useState(false);
   const [cursorText, setCursorText] = useState('');
   const [visible, setVisible] = useState(false);
-  const cursorRef = useRef(null);
 
   useEffect(() => {
     // Only run on non-touch devices
@@ -49,7 +48,6 @@ export default function CustomCursor() {
       style={{
         transform: `translate3d(${pos.x}px, ${pos.y}px, 0)`
       }}
-      ref={cursorRef}
     >
       <div className="custom-cursor__dot" />
       {cursorText && <span className="custom-cursor__text">{cursorText}</span>}

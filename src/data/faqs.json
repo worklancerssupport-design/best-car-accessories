@@ -1,0 +1,86 @@
+{
+  "homepage": [
+    {
+      "q": "Will accessory installations void my new car warranty?",
+      "a": "No. We strictly follow OEM coupler-to-coupler fitment with zero wire cutting or slicing. All electronic accessories are connected via dedicated plug-and-play harnesses with individual inline fuses, preserving your manufacturer electrical warranty."
+    },
+    {
+      "q": "How long does a typical installation take?",
+      "a": "Minor upgrades (fog lamps, floor mats, dashcams) take 1 to 2 hours. Full customization packages (ambient lighting, Android infotainment, 360\u00b0 camera, custom seat covers) typically require 4 to 6 hours for meticulous calibration."
+    },
+    {
+      "q": "Do you offer custom bucket fit seat covers for all car models?",
+      "a": "Yes. We manufacture and stitch custom-fit seat covers tailored to the exact seat contour and airbag specifications of every car model, available in perforated Nappa leather, premium PU, and microfiber finishes."
+    },
+    {
+      "q": "Where is your showroom located in Chennai?",
+      "a": "Our workshop and showroom is at Palani Murugan Building, No: 21, Westcott Rd, next to Woodlands Theater, Royapettah, Chennai, Tamil Nadu 600014. We have dedicated bay parking for customer car fitment."
+    },
+    {
+      "q": "How do I get a quote or book a fitment slot?",
+      "a": "You can click \"Get a Quote\" or message us on WhatsApp with your vehicle model and required accessories. Our technicians will share detailed upgrade options and confirm an installation slot."
+    }
+  ],
+  "about": [
+    {
+      "q": "How long has Best Car Accessories been operating?",
+      "a": "We have been serving car owners in Chennai for over 15 years from our studio."
+    },
+    {
+      "q": "What types of accessories do you offer?",
+      "a": "We offer a comprehensive range of exterior and interior car accessories including lighting, infotainment, cameras, audio, seat covers, floor mats, ambient lighting, and complete interior customization."
+    },
+    {
+      "q": "Where are you located?",
+      "a": "We are located at Palani Murugan Building, No: 21, Westcott Rd, next to Woodlands Theater, Royapettah, Chennai, Tamil Nadu 600014."
+    },
+    {
+      "q": "How can I enquire about a specific accessory?",
+      "a": "You can call us, WhatsApp us, or use the contact form on our website. Please include your car model and the accessories you are interested in."
+    }
+  ],
+  "exterior": [
+    {
+      "q": "Can exterior accessories be installed on any car?",
+      "a": "Most accessories are available for a wide range of car models. Compatibility is checked before installation. Some items are vehicle-specific."
+    },
+    {
+      "q": "Do you handle all wiring without cutting factory wires?",
+      "a": "Yes. All electrical accessories are installed with proper OEM relays, couplers, fuses, and clean heat-shrink wiring to protect warranty."
+    },
+    {
+      "q": "Can I enquire about an accessory before visiting?",
+      "a": "Yes. WhatsApp your car model and the accessory you are interested in, and we will get back to you with availability and options."
+    },
+    {
+      "q": "How long does exterior accessory installation take?",
+      "a": "Installation time varies depending on the accessory (1 to 3 hours typical). Contact us with your requirements for an exact time estimate."
+    },
+    {
+      "q": "Do you offer aftercare and fitment checks?",
+      "a": "Yes. Every vehicle fitment is inspected and tested thoroughly before handover, and our team is always on standby for adjustments."
+    }
+  ],
+  "interior": [
+    {
+      "q": "Can interior accessories be added to any car?",
+      "a": "Most interior accessories are engineered with vehicle-specific frames and harnesses. We verify exact compatibility before recommending upgrades."
+    },
+    {
+      "q": "Do you offer bespoke custom seat cover stitching?",
+      "a": "Yes. We provide bespoke tailoring with custom colour accents, diamond or honeycomb quilting, perforation, and OEM bucket styling."
+    },
+    {
+      "q": "Will infotainment upgrades void my car's factory warranty?",
+      "a": "No. All our touchscreen infotainment systems use 100% plug-and-play vehicle-specific wiring couplers with zero wire cutting."
+    },
+    {
+      "q": "How does 18-zone ambient lighting work?",
+      "a": "Our symphony ambient lighting kits run through factory concealed channels, controlled seamlessly via smartphone app or dashboard controls with 64+ colors and rhythm modes."
+    },
+    {
+      "q": "Can I get a sound damping and audio upgrade together?",
+      "a": "Yes, multi-layer acoustic door damping combined with component speakers significantly eliminates road noise and elevates bass punch."
+    }
+  ]
+}

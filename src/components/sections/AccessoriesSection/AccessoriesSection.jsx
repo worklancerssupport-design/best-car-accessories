@@ -1,26 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Layers } from 'lucide-react';
+import { ArrowRight, Layers } from 'lucide-react';
 import FlowingMenu from '../../FlowingMenu/FlowingMenu';
 import ServiceCard from '../../ui/ServiceCard/ServiceCard';
 import SectionDivider from '../../ui/SectionDivider/SectionDivider';
-import { exteriorAccessories } from '../../../data/exteriorAccessories';
-import { interiorAccessories } from '../../../data/interiorAccessories';
+import exteriorData from '../../../data/products/exterior.json';
+import interiorData from '../../../data/products/interior.json';
+import navigation from '../../../data/navigation.json';
 import './AccessoriesSection.css';
-
-const FLOWING_MENU_ITEMS = [
-  { label: 'Exterior Accessories', href: '/exterior-car-accessories-chennai', image: '/images/exterior/fog-light-projector-chennai.webp' },
-  { label: 'Interior Customization', href: '/interior-car-accessories-chennai', image: '/images/interior/car-ambient-light-chennai.webp' },
-  { label: 'Lighting & Electrical', href: '/exterior-car-accessories-chennai#lighting', image: '/images/exterior/led-headlight-upgrade-chennai.webp' },
-  { label: 'Infotainment & Audio', href: '/interior-car-accessories-chennai#entertainment', image: '/images/interior/infotainment-systems-chennai.webp' },
-  { label: 'Cameras & Safety Systems', href: '/interior-car-accessories-chennai#technology', image: '/images/interior/360-car-camera-chennai.webp' },
-];
 
 export default function AccessoriesSection() {
   const [activeTab, setActiveTab] = useState('exterior');
 
-  const featuredExterior = exteriorAccessories.slice(0, 4);
-  const featuredInterior = interiorAccessories.slice(0, 4);
+  const featuredExterior = exteriorData.items.slice(0, 4);
+  const featuredInterior = interiorData.items.slice(0, 4);
 
   return (
     <section className="accessories-section" id="accessories">
@@ -41,7 +34,7 @@ export default function AccessoriesSection() {
 
         {/* Centerpiece: FlowingMenu */}
         <div className="accessories-flowing-wrap">
-          <FlowingMenu items={FLOWING_MENU_ITEMS} />
+          <FlowingMenu items={navigation.flowingMenu} />
         </div>
 
         {/* Category Quick Preview Grid with Switcher */}

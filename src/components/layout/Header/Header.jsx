@@ -1,31 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, ChevronDown, MessageCircle, ArrowRight, ShieldCheck } from 'lucide-react';
-import { business } from '../../../config/business';
+import business from '../../../data/business.json';
+import exteriorProducts from '../../../data/products/exterior.json';
+import interiorProducts from '../../../data/products/interior.json';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import './Header.css';
 
-const exteriorNavItems = [
-  { name: 'Fog Lights & Projectors', slug: 'fog-light-fog-projector' },
-  { name: 'LED Headlights Upgrade', slug: 'headlight-led-upgrade' },
-  { name: 'DRL & Daytime Lights', slug: 'drl-headlight-fog' },
-  { name: 'Rear Spoilers & Tail Lights', slug: 'rear-spoiler-tail-light' },
-  { name: 'Front & Rear Bumpers', slug: 'front-rear-bumpers' },
-  { name: 'Roof Rails & Antennas', slug: 'roof-rails-sharkfin-antenna' },
-  { name: 'Side Foot Steps', slug: 'side-foot-steps' },
-  { name: 'Number Plates & Frames', slug: 'number-plates-frames' },
-];
+const exteriorNavItems = exteriorProducts.items
+  .filter(p => p.showInNav)
+  .map(p => ({ name: p.navName || p.name, slug: p.slug }));
 
-const interiorNavItems = [
-  { name: 'Premium Seat Covers', slug: 'premium-car-seat-covers' },
-  { name: '18-Zone Ambient Lighting', slug: 'ambient-lights' },
-  { name: 'Infotainment & Android Systems', slug: 'infotainment-systems' },
-  { name: 'Component Speakers & Audio', slug: 'speakers' },
-  { name: '360° Cameras & Dashcams', slug: 'oem-camera-360-camera' },
-  { name: 'Custom 7D Floor Mats', slug: 'floor-mats' },
-  { name: 'Steering Covers & Controls', slug: 'steering-covers-controls' },
-  { name: 'Roof LED & VIP Lighting', slug: 'roof-led-vip-light' },
-];
+const interiorNavItems = interiorProducts.items
+  .filter(p => p.showInNav)
+  .map(p => ({ name: p.navName || p.name, slug: p.slug }));
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);

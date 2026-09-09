@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle, RotateCcw, ZoomIn, ZoomOut, Play, Pause, Palette } from 'lucide-react';
-import { business } from '../../../config/business';
+import business from '../../../data/business.json';
 import './PremiumHero.css';
 
 // Automotive Studio Custom Wrap Finishes

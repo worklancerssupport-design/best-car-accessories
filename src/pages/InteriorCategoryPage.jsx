@@ -1,22 +1,17 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { interiorAccessories } from '../data/interiorAccessories';
-import { business } from '../config/business';
+import interiorData from '../data/products/interior.json';
+import business from '../data/business.json';
+import faqsData from '../data/faqs.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import CTASection from '../components/ui/CTASection/CTASection';
 import FAQ from '../components/ui/FAQ/FAQ';
 import ServiceCard from '../components/ui/ServiceCard/ServiceCard';
 import './CategoryPage.css';
-import { Search, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { Search } from 'lucide-react';
 
-const CATEGORY_FAQS = [
-  { q: 'Can interior accessories be added to any car?', a: 'Most interior accessories are engineered with vehicle-specific frames and harnesses. We verify exact compatibility before recommending upgrades.' },
-  { q: 'Do you offer bespoke custom seat cover stitching?', a: 'Yes. We provide bespoke tailoring with custom colour accents, diamond or honeycomb quilting, perforation, and OEM bucket styling.' },
-  { q: 'Will infotainment upgrades void my car’s factory warranty?', a: 'No. All our touchscreen infotainment systems use 100% plug-and-play vehicle-specific wiring couplers with zero wire cutting.' },
-  { q: 'How does 18-zone ambient lighting work?', a: 'Our symphony ambient lighting kits run through factory concealed channels, controlled seamlessly via smartphone app or dashboard controls with 64+ colors and rhythm modes.' },
-  { q: 'Can I get a sound damping and audio upgrade together?', a: 'Yes, multi-layer acoustic door damping combined with component speakers significantly eliminates road noise and elevates bass punch.' },
-];
+const CATEGORY_FAQS = faqsData.interior;
 
 const FILTER_TAGS = ['All', 'Lighting', 'Infotainment', 'Vision', 'Comfort', 'Upholstery'];
 
@@ -59,7 +54,7 @@ export default function InteriorCategoryPage() {
   const [activeTag, setActiveTag] = useState('All');
 
   const filteredServices = useMemo(() => {
-    let list = interiorAccessories;
+    let list = interiorData.items;
     if (activeTag !== 'All') {
       const group = INTERIOR_GROUPS.find(g => g.id === activeTag.toLowerCase());
       if (group) {
@@ -165,7 +160,7 @@ export default function InteriorCategoryPage() {
           {isGroupedView ? (
             // Grouped Visual View (5 Groups)
             INTERIOR_GROUPS.map((group) => {
-              const groupItems = interiorAccessories.filter(s => group.slugs.includes(s.slug));
+              const groupItems = interiorData.items.filter(s => group.slugs.includes(s.slug));
               if (groupItems.length === 0) return null;
 
               return (

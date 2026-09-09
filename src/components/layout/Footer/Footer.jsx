@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, MapPin, Phone, MessageCircle, ArrowRight, Shield, Clock } from 'lucide-react';
-import { business } from '../../../config/business';
+import { Instagram, MapPin, Phone, MessageCircle, Clock } from 'lucide-react';
+import business from '../../../data/business.json';
 import './Footer.css';
 
 export default function Footer() {

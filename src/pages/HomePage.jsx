@@ -1,15 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import Hero from '../components/sections/Hero/Hero';
 import CountUpStats from '../components/ui/CountUpStats/CountUpStats';
-import AboutSection from '../components/sections/AboutSection/AboutSection';
 import AccessoriesSection from '../components/sections/AccessoriesSection/AccessoriesSection';
-import ProcessJourney from '../components/sections/ProcessJourney/ProcessJourney';
+import ReviewsStrip from '../components/ui/ReviewsStrip/ReviewsStrip';
 import Gallery from '../components/sections/Gallery/Gallery';
-import InstagramFeed from '../components/sections/InstagramFeed/InstagramFeed';
-import ReviewSection from '../components/sections/ReviewSection/ReviewSection';
 import FAQSection from '../components/sections/FAQSection/FAQSection';
 import ContactSection from '../components/sections/ContactSection/ContactSection';
-import { business } from '../config/business';
+import business from '../data/business.json';
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
@@ -50,28 +47,19 @@ export default function HomePage() {
       {/* 02. Trust / Numbers */}
       <CountUpStats />
 
-      {/* 03. Automotive Intro & Story */}
-      <AboutSection />
-
-      {/* 04. Accessories Catalogue & FlowingMenu */}
+      {/* 03. Accessories Catalogue & FlowingMenu */}
       <AccessoriesSection />
 
-      {/* 07. Customization Experience (Process) */}
-      <ProcessJourney />
+      {/* 04. Compact Reviews Trust Strip */}
+      <ReviewsStrip />
 
-      {/* 08. Featured Work (3D Gallery) */}
-      <Gallery />
+      {/* 05. Featured Work (Compact Gallery) */}
+      <Gallery compact={true} />
 
-      {/* 09. Instagram Showcase */}
-      <InstagramFeed />
-
-      {/* 10. Customer Experiences (Verified Reviews Carousel) */}
-      <ReviewSection />
-
-      {/* 11. Frequently Asked Questions */}
+      {/* 06. Frequently Asked Questions */}
       <FAQSection />
 
-      {/* 12. Final Consultation & Quote CTA */}
+      {/* 07. Final Consultation & Quote CTA */}
       <ContactSection />
     </>
   );

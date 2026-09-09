@@ -50,6 +50,22 @@
   margin-bottom: var(--space-10);
 }
 
+.gallery-asym-grid--compact {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 992px) {
+  .gallery-asym-grid--compact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .gallery-asym-grid--compact {
+    grid-template-columns: 1fr;
+  }
+}
+
 .gallery-card {
   position: relative;
   border-radius: var(--radius-lg);

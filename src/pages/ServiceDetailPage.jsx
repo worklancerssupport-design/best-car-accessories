@@ -9,9 +9,6 @@ import {
   ShieldCheck, 
   Cpu,
   Clock,
-  Layers,
-  Sparkles,
-  Award,
   AlertCircle,
   Home
 } from 'lucide-react';
@@ -19,18 +16,18 @@ import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import FAQ from '../components/ui/FAQ/FAQ';
 import CTASection from '../components/ui/CTASection/CTASection';
 import RelatedServices from '../components/ui/RelatedServices/RelatedServices';
-import { exteriorAccessories } from '../data/exteriorAccessories';
-import { interiorAccessories } from '../data/interiorAccessories';
-import { business } from '../config/business';
+import exteriorData from '../data/products/exterior.json';
+import interiorData from '../data/products/interior.json';
+import business from '../data/business.json';
 import './ServiceDetailPage.css';
 
-export default function ServiceDetailPage({ category }) {
+export default function ServiceDetailPage() {
   const { slug } = useParams();
   const mediaRef = useRef(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0, active: false });
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const allServices = [...exteriorAccessories, ...interiorAccessories];
+  const allServices = [...exteriorData.items, ...interiorData.items];
   const service = allServices.find((s) => s.slug === slug);
 
   // Reset selected image when navigating between services
