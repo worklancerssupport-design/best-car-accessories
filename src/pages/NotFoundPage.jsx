@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './NotFoundPage.css';
-import { Home } from 'lucide-react';
+import { Home, Wrench } from 'lucide-react';
 
 export default function NotFoundPage() {
   return (
@@ -12,16 +12,30 @@ export default function NotFoundPage() {
       </Helmet>
       <section className="nfp-section">
         <div className="container nfp-inner">
-          <div className="nfp-road">
-            <div className="nfp-road__stripe" />
-            <div className="nfp-road__stripe" />
-            <div className="nfp-road__stripe" />
+          <span className="nfp-badge">
+            <span className="nfp-badge__dot" aria-hidden="true" />
+            Error 404 · Off Route
+          </span>
+
+          <h1 className="nfp-404" aria-label="404 error">
+            <span className="nfp-404-digit">4</span>
+            <span className="nfp-404-digit nfp-404-digit--accent">0</span>
+            <span className="nfp-404-digit">4</span>
+          </h1>
+
+          <div className="nfp-road" aria-hidden="true">
+            <span className="nfp-road__stripe" />
+            <span className="nfp-road__stripe" />
+            <span className="nfp-road__stripe" />
           </div>
+
           <div className="nfp-content">
-            <div className="nfp-404">404</div>
-            <h1 className="nfp-title">Looks like this road doesn't exist.</h1>
+            <h2 className="nfp-title">
+              Looks like this <span className="nfp-title__accent">road</span> doesn't exist.
+            </h2>
             <p className="nfp-subtitle">
-              The page you are looking for may have been moved or the URL may be incorrect.
+              The page you are looking for may have been moved, renamed, or the URL may be incorrect.
+              Let's get you back on the right track.
             </p>
             <div className="nfp-actions">
               <Link to="/" className="btn btn-primary btn-lg">
@@ -29,6 +43,7 @@ export default function NotFoundPage() {
                 Back to Home
               </Link>
               <Link to="/exterior-car-accessories-chennai" className="btn btn-secondary btn-lg">
+                <Wrench size={18} />
                 Browse Accessories
               </Link>
             </div>

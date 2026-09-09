@@ -30,25 +30,23 @@ export default function ServiceDetailPage() {
   const allServices = [...exteriorData.items, ...interiorData.items];
   const service = allServices.find((s) => s.slug === slug);
 
-  // Reset selected image when navigating between services
   useEffect(() => {
     setSelectedImage(null);
   }, [slug]);
 
-  // In-page fallback if service slug is not found (NEVER render a blank page)
   if (!service) {
     return (
-      <section className="sdp-not-found section--dark">
+      <section className="sd-not-found section--dark">
         <div className="container">
           <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Accessories', href: '/exterior-car-accessories-chennai' }, { label: 'Not Found' }]} />
-          <div className="sdp-not-found-card bracket-box">
-            <AlertCircle size={44} className="text-cyan mb-3" />
+          <div className="sd-not-found__card">
+            <AlertCircle size={44} className="text-accent mb-3" />
             <span className="tech-tag tech-tag--accent">SERVICE NOT FOUND</span>
-            <h1 className="sdp-not-found-title">Accessory Specification Not Found</h1>
-            <p className="sdp-not-found-desc">
+            <h1 className="sd-not-found__title">Accessory Specification Not Found</h1>
+            <p className="sd-not-found__desc">
               The requested accessory specification could not be located. Explore our 40 comprehensive exterior and interior automotive upgrades below.
             </p>
-            <div className="sdp-not-found-actions">
+            <div className="sd-not-found__actions">
               <Link to="/exterior-car-accessories-chennai" className="btn btn-primary">
                 <span>Exterior Accessories (20)</span>
                 <ArrowRight size={15} />
@@ -57,7 +55,7 @@ export default function ServiceDetailPage() {
                 <span>Interior Customization (20)</span>
                 <ArrowRight size={15} />
               </Link>
-              <Link to="/" className="btn btn-outline-dark">
+              <Link to="/" className="btn btn-outline">
                 <Home size={15} />
                 <span>Return Home</span>
               </Link>
@@ -135,70 +133,65 @@ export default function ServiceDetailPage() {
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
 
-      {/* ── 3D Mini-Product Hero Section ── */}
-      <section className="sdp-hero-section section--dark">
+      <section className="sd-hero section--dark">
         <div className="container">
-          
-          {/* Breadcrumb row */}
-          <div className="sdp-breadcrumb-bar">
+          <div className="sd-breadcrumb">
             <Breadcrumbs items={breadcrumbs} />
           </div>
 
-          <div className="sdp-hero-grid">
-            
-            {/* LEFT: Information, specs & CTAs */}
-            <div className="sdp-hero-left">
-              <div className="sdp-hero-meta">
+          <div className="sd-hero__grid">
+            <div className="sd-hero__left">
+              <div className="sd-hero__meta">
                 <span className="tech-tag tech-tag--accent">{categoryLabel}</span>
-                <span className="sdp-meta-divider">/</span>
-                <span className="sdp-meta-tag">NMS ROAD · CHENNAI</span>
+                <span className="sd-hero__meta-divider">/</span>
+                <span className="sd-hero__meta-tag">NMS ROAD · CHENNAI</span>
               </div>
 
-              <h1 className="sdp-hero-title">{service.name}</h1>
-              <p className="sdp-hero-lead">{service.shortDescription}</p>
+              <h1 className="sd-hero__title">
+                <span className="sd-hero__title-accent">{service.name.split(' ')[0]}</span>{' '}
+                {service.name.split(' ').slice(1).join(' ')}
+              </h1>
+              <p className="sd-hero__lead">{service.shortDescription}</p>
 
-              {/* Technical Telemetry HUD Specs Strip */}
-              <div className="sdp-telemetry-strip">
-                <div className="sdp-telemetry-item">
-                  <Cpu size={16} className="sdp-telemetry-icon" />
+              <div className="sd-telemetry">
+                <div className="sd-telemetry__item">
+                  <Cpu size={16} className="sd-telemetry__icon" />
                   <div>
-                    <span className="sdp-telemetry-lbl">FITMENT TYPE</span>
-                    <strong className="sdp-telemetry-val">Plug & Play OEM+</strong>
+                    <span className="sd-telemetry__label">FITMENT TYPE</span>
+                    <strong className="sd-telemetry__value">Plug &amp; Play OEM+</strong>
                   </div>
                 </div>
-                <div className="sdp-telemetry-item">
-                  <Clock size={16} className="sdp-telemetry-icon" />
+                <div className="sd-telemetry__item">
+                  <Clock size={16} className="sd-telemetry__icon" />
                   <div>
-                    <span className="sdp-telemetry-lbl">INSTALL TIME</span>
-                    <strong className="sdp-telemetry-val">1 – 3 Hours</strong>
+                    <span className="sd-telemetry__label">INSTALL TIME</span>
+                    <strong className="sd-telemetry__value">1 – 3 Hours</strong>
                   </div>
                 </div>
-                <div className="sdp-telemetry-item">
-                  <ShieldCheck size={16} className="sdp-telemetry-icon" />
+                <div className="sd-telemetry__item">
+                  <ShieldCheck size={16} className="sd-telemetry__icon" />
                   <div>
-                    <span className="sdp-telemetry-lbl">FACTORY WARRANTY</span>
-                    <strong className="sdp-telemetry-val">100% Intact</strong>
+                    <span className="sd-telemetry__label">FACTORY WARRANTY</span>
+                    <strong className="sd-telemetry__value">100% Intact</strong>
                   </div>
                 </div>
               </div>
 
-              {/* Quick Benefits Ticklist */}
               {service.benefits && service.benefits.length > 0 && (
-                <ul className="sdp-hero-quick-list">
+                <ul className="sd-quick-list">
                   {service.benefits.slice(0, 3).map((benefit, i) => (
                     <li key={i}>
-                      <CheckCircle size={15} className="sdp-quick-icon" />
+                      <CheckCircle size={15} className="sd-quick-list__icon" />
                       <span>{benefit}</span>
                     </li>
                   ))}
                 </ul>
               )}
 
-              {/* Action Buttons */}
-              <div className="sdp-hero-buttons">
+              <div className="sd-hero__actions">
                 <Link to="/contact" className="btn btn-primary btn-lg">
                   <span>Get Exact Quote</span>
-                  <ArrowRight size={16} className="btn-arrow" />
+                  <ArrowRight size={16} className="btn-icon" />
                 </Link>
                 <a 
                   href={whatsappUrl} 
@@ -211,16 +204,15 @@ export default function ServiceDetailPage() {
                 </a>
               </div>
 
-              <div className="sdp-fitment-note">
-                <ShieldCheck size={16} className="sdp-shield-icon" />
+              <div className="sd-fitment-note">
+                <ShieldCheck size={16} className="sd-fitment-note__icon" />
                 <span>Zero wire cut · Heat-resistant sleeves · Tested before delivery</span>
               </div>
             </div>
 
-            {/* RIGHT: 3D Media Box with Perspective Tilt */}
-            <div className="sdp-hero-right">
+            <div className="sd-hero__right">
               <div 
-                className="sdp-media-box bracket-box"
+                className="sd-media-box"
                 ref={mediaRef}
                 onMouseMove={handleMediaMove}
                 onMouseLeave={handleMediaLeave}
@@ -235,35 +227,34 @@ export default function ServiceDetailPage() {
                   src={selectedImage || service.image || '/images/exterior/placeholder.webp'}
                   alt={service.imageAlt || service.name}
                   loading="eager"
-                  className="sdp-media-img"
+                  className="sd-image"
                   onError={(e) => {
                     e.target.src = '/images/exterior/placeholder.webp';
                   }}
                 />
                 {tilt.active && (
                   <div 
-                    className="sdp-media-glare"
+                    className="sd-media-box__glare"
                     style={{
-                      background: `radial-gradient(circle at ${(tilt.x + 0.5) * 100}% ${(tilt.y + 0.5) * 100}%, rgba(103, 232, 249, 0.25) 0%, transparent 65%)`
+                      background: `radial-gradient(circle at ${(tilt.x + 0.5) * 100}% ${(tilt.y + 0.5) * 100}%, rgba(230, 57, 70, 0.22) 0%, transparent 65%)`
                     }}
                   />
                 )}
-                <div className="sdp-media-overlay-badge">
+                <div className="sd-media-box__badge">
                   <Wrench size={14} />
                   <span>Certified Automotive Fitting · NMS Road Studio</span>
                 </div>
               </div>
 
-              {/* Gallery Thumbnails (if multiple images present) */}
               {service.gallery && service.gallery.length > 1 && (
-                <div className="sdp-media-thumbs" aria-label="Product Image Gallery">
+                <div className="sd-thumbs" aria-label="Product Image Gallery">
                   {service.gallery.map((imgUrl, idx) => {
                     const isActive = (selectedImage || service.image) === imgUrl;
                     return (
                       <button
                         key={idx}
                         type="button"
-                        className={`sdp-media-thumb ${isActive ? 'sdp-media-thumb--active' : ''}`}
+                        className={`sd-thumbs__item ${isActive ? 'sd-thumbs__item--active' : ''}`}
                         onClick={() => setSelectedImage(imgUrl)}
                         aria-label={`View photo ${idx + 1}`}
                       >
@@ -274,32 +265,28 @@ export default function ServiceDetailPage() {
                 </div>
               )}
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ── Detailed Technical Specifications ── */}
-      <section className="sdp-content-section section--dark-2">
+      <section className="sd-content section--dark-alt">
         <div className="container">
-          <div className="sdp-content-grid">
-            
-            <div className="sdp-content-main">
-              <span className="section-label">Engineering & Craftsmanship</span>
+          <div className="sd-content__grid">
+            <div className="sd-content__main">
+              <span className="section-label">Engineering &amp; Craftsmanship</span>
               <h2 className="section-title">Upgrade Specifications</h2>
               <div className="divider" />
-              <p className="sdp-full-desc">{service.description}</p>
+              <p className="sd-content__desc">{service.description}</p>
 
-              {/* All Benefits */}
               {service.benefits && service.benefits.length > 0 && (
-                <div className="sdp-benefits-wrap">
-                  <h3 className="sdp-section-heading">Key Technical Advantages</h3>
-                  <div className="sdp-benefits-grid">
+                <div className="sd-features">
+                  <h3 className="sd-content__heading">Key Technical Advantages</h3>
+                  <div className="sd-features__grid">
                     {service.benefits.map((benefit, i) => (
-                      <div className="sdp-benefit-card" key={i}>
-                        <div className="sdp-benefit-header">
-                          <CheckCircle size={16} className="sdp-benefit-check" />
-                          <span className="sdp-benefit-num">0{i + 1}</span>
+                      <div className="sd-features__card" key={i}>
+                        <div className="sd-features__card-header">
+                          <CheckCircle size={16} className="sd-features__icon" />
+                          <span className="sd-features__num">0{i + 1}</span>
                         </div>
                         <p>{benefit}</p>
                       </div>
@@ -308,15 +295,14 @@ export default function ServiceDetailPage() {
                 </div>
               )}
 
-              {/* Installation & Craftsmanship */}
               {service.installation && (
-                <div className="sdp-installation-box bracket-box">
-                  <div className="sdp-inst-header">
-                    <Wrench size={20} className="sdp-inst-icon" />
-                    <h3 className="sdp-inst-title">Installation & Fitment Process</h3>
+                <div className="sd-installation">
+                  <div className="sd-installation__header">
+                    <Wrench size={20} className="sd-installation__icon" />
+                    <h3 className="sd-installation__title">Installation &amp; Fitment Process</h3>
                   </div>
                   <p>{service.installation}</p>
-                  <div className="sdp-inst-badges">
+                  <div className="sd-installation__badges">
                     <span className="tech-tag tech-tag--accent">Zero Void Warranty</span>
                     <span className="tech-tag">Heat-Resistant Sleeving</span>
                     <span className="tech-tag">Diagnostic Tested</span>
@@ -324,20 +310,19 @@ export default function ServiceDetailPage() {
                 </div>
               )}
 
-              {/* Product Options / Variants */}
               {service.options && service.options.length > 0 && (
-                <div className="sdp-options-wrap">
-                  <h3 className="sdp-section-heading">Available Configurations & Brands</h3>
-                  <div className="sdp-options-chips">
+                <div className="sd-options">
+                  <h3 className="sd-content__heading">Available Configurations &amp; Brands</h3>
+                  <div className="sd-options__list">
                     {service.options.map((option, i) => {
                       const label = typeof option === 'object' && option !== null ? option.label : option;
                       const description = typeof option === 'object' && option !== null ? option.description : null;
                       return (
-                        <div className="sdp-option-chip" key={i}>
-                          <span className="sdp-option-bullet" />
-                          <div className="sdp-option-content">
-                            <strong className="sdp-option-label">{label}</strong>
-                            {description && <span className="sdp-option-desc">{description}</span>}
+                        <div className="sd-options__chip" key={i}>
+                          <span className="sd-options__bullet" />
+                          <div className="sd-options__content">
+                            <strong className="sd-options__label">{label}</strong>
+                            {description && <span className="sd-options__desc">{description}</span>}
                           </div>
                         </div>
                       );
@@ -347,60 +332,55 @@ export default function ServiceDetailPage() {
               )}
             </div>
 
-            {/* Sidebar Sticky Consultation Box */}
-            <aside className="sdp-sidebar">
-              <div className="sdp-sidebar-card bracket-box">
-                <span className="sdp-sidebar-tag">INSTANT CONSULTATION</span>
+            <aside className="sd-sidebar">
+              <div className="sd-sidebar__card">
+                <span className="sd-sidebar__tag">INSTANT CONSULTATION</span>
                 <h3>Customized for Your Car</h3>
                 <p>Send our technicians your car model, manufacturing year, and preferred upgrades for quick pricing and slot confirmation.</p>
                 
-                <div className="sdp-sidebar-actions">
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" style={{ width: '100%', justifyContent: 'center' }}>
+                <div className="sd-sidebar__actions">
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp sd-sidebar__action">
                     <MessageCircle size={16} />
                     <span>WhatsApp Inquiry</span>
                   </a>
-                  <Link to="/contact" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+                  <Link to="/contact" className="btn btn-primary sd-sidebar__action">
                     <span>Book Fitment Slot</span>
                   </Link>
                 </div>
 
-                <div className="sdp-sidebar-meta">
+                <div className="sd-sidebar__meta">
                   <div><strong>Studio:</strong> NMS Road, Chennai</div>
                   <div><strong>Estimated Time:</strong> 1 – 3 Hours</div>
-                  <div><strong>Fitment:</strong> 100% Plug & Play Couplers</div>
+                  <div><strong>Fitment:</strong> 100% Plug &amp; Play Couplers</div>
                   <div><strong>Testing:</strong> Handover Inspection Included</div>
                 </div>
               </div>
             </aside>
-
           </div>
         </div>
       </section>
 
-      {/* ── FAQs ── */}
       {service.faqs && service.faqs.length > 0 && (
-        <section className="sdp-faq-section section--dark">
+        <section className="sd-faq section--dark">
           <div className="container" style={{ maxWidth: '840px' }}>
-            <div className="text-center" style={{ marginBottom: 'var(--space-6)' }}>
-              <span className="section-label">Questions & Answers</span>
+            <div className="sd-faq__header">
+              <span className="section-label">Questions &amp; Answers</span>
               <h2 className="section-title">Frequently Asked Questions</h2>
-              <div className="divider" style={{ margin: '0.5rem auto 1rem' }} />
+              <div className="divider sd-faq__divider" />
             </div>
             <FAQ faqs={service.faqs} />
           </div>
         </section>
       )}
 
-      {/* ── Related Services ── */}
       {service.relatedServices && service.relatedServices.length > 0 && (
-        <section className="sdp-related-section section--dark-2">
+        <section className="sd-related section--dark-alt">
           <div className="container">
             <RelatedServices slugs={service.relatedServices} currentSlug={service.slug} />
           </div>
         </section>
       )}
 
-      {/* ── Closing CTA ── */}
       <CTASection
         title={`Upgrade Your Vehicle with ${service.name}`}
         subtitle="Visit Best Car Accessories on NMS Road, Chennai for professional consultation and flawless fitment."

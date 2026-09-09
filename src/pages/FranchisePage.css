@@ -1,228 +1,398 @@
 /* ============================================================
-   FRANCHISE PAGE STYLES — HIGH CONTRAST AUTOMOTIVE
+   FRANCHISE PAGE — DARK AUTOMOTIVE LUXURY
    Best Car Accessories · NMS Road, Chennai
    ============================================================ */
 
-.franchise-breadcrumb-wrap { 
-  background: var(--bg-primary); 
-  padding: var(--space-4) 0; 
-  border-bottom: 1px solid var(--border); 
+.franchise-breadcrumb-wrap {
+  background: var(--bg-primary);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .franchise-hero {
-  position: relative; 
-  min-height: 40vh; 
-  display: flex; 
+  position: relative;
+  min-height: 52vh;
+  display: flex;
   align-items: center;
-  background: var(--bg-primary);
+  background-color: var(--bg-primary);
+  background-image: url('/hero_car.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
   border-bottom: 1px solid var(--border);
+}
+
+.franchise-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-overlay);
+}
+
+.franchise-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-20) 0;
+  max-width: 820px;
+}
+
+.franchise-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: var(--space-3) 0 var(--space-5);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-tight);
+  text-transform: uppercase;
+}
+
+.franchise-hero__title-accent {
+  color: var(--text-primary);
+}
+
+.franchise-hero__subtitle {
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  opacity: var(--opacity-whisper);
+  max-width: 640px;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ============================================================
+   WHY PARTNER SECTION (4 cards)
+   ============================================================ */
+
+.franchise-why {
+  background-color: var(--bg-canvas);
+  border-bottom: 1px solid var(--border);
+}
+
+.franchise-why__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-12);
+}
+
+.franchise-why__header .divider {
+  width: 80px;
+  height: 2px;
+  background: var(--brand-red);
+  margin: var(--space-4) 0 var(--space-6);
+  border-radius: var(--radius-full);
+  opacity: var(--opacity-medium);
+}
+
+.franchise-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.franchise-why__card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-7) var(--space-5);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: all var(--transition-base);
+  position: relative;
   overflow: hidden;
 }
 
-.franchise-hero__overlay { 
-  position: absolute; 
-  inset: 0; 
-  background: linear-gradient(135deg, rgba(7,9,12,0.95) 0%, rgba(16,20,25,0.95) 100%); 
-}
-
-.franchise-hero__content { 
-  position: relative; 
-  z-index: 2; 
-  padding-top: 4rem; 
-  padding-bottom: 4rem; 
-}
-
-.franchise-hero__title { 
-  font-size: clamp(2.2rem, 4.5vw, 3.6rem); 
-  font-weight: 900; 
-  color: var(--text-primary); 
-  margin: var(--space-3) 0 var(--space-4); 
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.franchise-hero__subtitle { 
-  font-size: var(--text-lg); 
-  color: var(--text-secondary); 
-  max-width: 620px; 
-  line-height: var(--line-height-relaxed); 
-}
-
-.franchise-why__grid { 
-  display: grid; 
-  grid-template-columns: repeat(4, 1fr); 
-  gap: var(--space-5); 
-  margin-top: var(--space-8); 
-}
-
-.franchise-why__card { 
-  background: var(--bg-surface); 
-  border: 1px solid var(--border); 
-  border-radius: var(--radius-xl); 
-  padding: var(--space-6); 
-  transition: all var(--transition-base);
+.franchise-why__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--brand-red);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--transition-base);
+  opacity: var(--opacity-medium);
 }
 
 .franchise-why__card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-  transform: translateY(-3px);
+  border-color: var(--border-strong);
+  background: var(--bg-elevated);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
-.franchise-why__icon { 
-  width: 52px; 
-  height: 52px; 
-  background: var(--accent-light); 
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-md); 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  color: var(--accent); 
-  margin-bottom: var(--space-4); 
+.franchise-why__card:hover::after {
+  transform: scaleY(1);
 }
 
-.franchise-why__card h3 { 
-  font-family: var(--font-display);
-  font-size: var(--text-lg); 
-  font-weight: 800; 
+.franchise-why__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+  transition: all var(--transition-base);
+}
+
+.franchise-why__card:hover .franchise-why__icon {
+  background: var(--bg-canvas);
   color: var(--text-primary);
-  margin-bottom: var(--space-2); 
+  border-color: var(--border-strong);
 }
 
-.franchise-why__card p { 
-  font-size: var(--text-sm); 
-  color: var(--text-secondary); 
-  line-height: var(--line-height-relaxed); 
+.franchise-why__card h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-lead);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
-.franchise-why__note { 
-  margin-top: var(--space-8); 
+.franchise-why__card p {
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  opacity: var(--opacity-medium);
+  line-height: var(--line-height-relaxed);
+}
+
+.franchise-why__note {
+  margin-top: var(--space-10);
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-surface);
+  border-left: 2px solid var(--border-strong);
+  border-radius: var(--radius-md);
   font-family: var(--font-mono);
-  font-size: var(--text-xs); 
-  color: var(--text-muted); 
-  font-style: italic; 
+  font-size: var(--text-tiny);
+  color: var(--text-secondary);
+  opacity: var(--opacity-medium);
+  line-height: var(--line-height-relaxed);
 }
 
-.franchise-form-wrap { 
-  display: grid; 
-  grid-template-columns: 1fr 1.4fr; 
-  gap: clamp(2rem, 5vw, 4rem); 
-  align-items: flex-start; 
+/* ============================================================
+   FORM SECTION
+   ============================================================ */
+
+.franchise-form-section {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
 }
 
-.franchise-form-text p { 
-  color: var(--text-secondary); 
-  font-size: var(--text-base);
-  line-height: var(--line-height-relaxed); 
+.franchise-form-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
 }
 
-.franchise-form-panel { 
-  background: var(--bg-surface); 
-  border: 1px solid var(--border); 
-  border-radius: var(--radius-2xl); 
-  padding: var(--space-8); 
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7); 
+.franchise-form-text .divider {
+  width: 64px;
+  height: 2px;
+  background: var(--brand-red);
+  margin: var(--space-5) 0 var(--space-6);
+  border-radius: var(--radius-full);
+  opacity: var(--opacity-medium);
 }
 
-.franchise-form { 
-  display: flex; 
-  flex-direction: column; 
-  gap: var(--space-5); 
+.franchise-form-text p {
+  color: var(--text-secondary);
+  opacity: var(--opacity-medium);
+  font-size: var(--text-body);
+  line-height: var(--line-height-relaxed);
 }
 
-.franchise-form__row { 
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  gap: var(--space-5); 
+.franchise-form-text .franchise-form-hint {
+  margin-top: var(--space-4);
+  color: var(--text-muted);
+  opacity: var(--opacity-low);
+  font-size: var(--text-caption);
 }
 
-.franchise-form__field { 
-  display: flex; 
-  flex-direction: column; 
-  gap: var(--space-2); 
+.franchise-form-text .franchise-whatsapp-cta {
+  margin-top: var(--space-6);
+  display: inline-flex;
 }
 
-.franchise-form__field label { 
-  font-family: var(--font-display);
-  font-size: var(--text-xs); 
-  font-weight: 700; 
-  letter-spacing: 0.05em;
+.franchise-form-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  padding: clamp(var(--space-6), 3vw, var(--space-10));
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.franchise-form-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--border-strong);
+}
+
+.franchise-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.franchise-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.franchise-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.franchise-form__field label {
+  font-family: var(--font-sans);
+  font-size: var(--text-tiny);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
-  color: var(--text-primary); 
+  color: var(--text-muted);
+  opacity: var(--opacity-low);
 }
 
-.franchise-form__field input, 
-.franchise-form__field select, 
-.franchise-form__field textarea { 
-  padding: 0.8rem 1rem; 
-  border: 1px solid var(--border); 
-  border-radius: var(--radius-sm); 
-  font-family: var(--font-body); 
-  font-size: var(--text-sm); 
-  color: var(--text-primary); 
-  background: var(--bg-primary); 
-  transition: border-color var(--transition-fast); 
-  width: 100%; 
-}
-
-.franchise-form__field input:focus, 
-.franchise-form__field select:focus, 
-.franchise-form__field textarea:focus { 
-  outline: none; 
-  border-color: var(--accent); 
-  box-shadow: 0 0 16px var(--accent-glow);
-}
-
-.franchise-form__field textarea { 
-  resize: vertical; 
-  min-height: 90px; 
-}
-
-.franchise-form__field-error { 
-  font-family: var(--font-mono);
-  font-size: var(--text-xs); 
-  color: var(--color-performance-red); 
-}
-
-.franchise-form__error-banner { 
-  background: rgba(255, 74, 90, 0.12); 
-  border: 1px solid var(--color-performance-red); 
-  border-radius: var(--radius-md); 
-  padding: var(--space-3) var(--space-4); 
-  font-size: var(--text-sm); 
-  color: #ff9da6; 
-}
-
-.franchise-form__submit { 
-  width: 100%; 
-  justify-content: center; 
-}
-
-.franchise-success { 
-  text-align: center; 
-  padding: var(--space-10) 0; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  gap: var(--space-4); 
-}
-
-.franchise-success h3 { 
-  font-size: var(--text-2xl); 
+.franchise-form__field input,
+.franchise-form__field select,
+.franchise-form__field textarea {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
   color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: all var(--transition-fast);
+  width: 100%;
 }
 
-.franchise-success p { 
-  color: var(--text-secondary); 
+.franchise-form__field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-secondary) 50%),
+                    linear-gradient(135deg, var(--text-secondary) 50%, transparent 50%);
+  background-position: calc(100% - 18px) center, calc(100% - 13px) center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2.5rem;
+  cursor: pointer;
 }
 
-@media (max-width: 1100px) { 
-  .franchise-why__grid { grid-template-columns: repeat(2, 1fr); } 
+.franchise-form__field input:focus,
+.franchise-form__field select:focus,
+.franchise-form__field textarea:focus {
+  outline: none;
+  border-color: var(--border-strong);
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
 }
 
-@media (max-width: 768px) { 
-  .franchise-form-wrap { grid-template-columns: 1fr; } 
-  .franchise-form__row { grid-template-columns: 1fr; } 
-  .franchise-why__grid { grid-template-columns: 1fr; } 
+.franchise-form__field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.franchise-form__field-error {
+  font-family: var(--font-mono);
+  font-size: var(--text-tiny);
+  color: var(--color-error);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.franchise-form__field-error::before {
+  content: '⚠';
+  font-size: var(--text-micro);
+}
+
+.franchise-form__error-banner {
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-caption);
+  color: var(--color-error);
+}
+
+.franchise-form__submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+.franchise-success {
+  text-align: center;
+  padding: var(--space-12) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.franchise-success h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-heading);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.franchise-success p {
+  color: var(--text-secondary);
+  opacity: var(--opacity-medium);
+  max-width: 420px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .franchise-why__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .franchise-hero {
+    min-height: 44vh;
+  }
+
+  .franchise-hero__content {
+    padding: var(--space-12) 0;
+  }
+
+  .franchise-why__header {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .franchise-why__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .franchise-form-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .franchise-form__row {
+    grid-template-columns: 1fr;
+  }
 }

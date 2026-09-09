@@ -1,97 +1,87 @@
 /* ============================================================
-   COUNT-UP STATS SECTION
-   Best Car Accessories
+   COUNT-UP STATS — quiet reference-style stats bar
+   Best Car Accessories · Chennai
+
+   Reference: AutoWorks 2.png bottom — 4 huge numbers with
+   small captions, separated by thin red lines.
    ============================================================ */
 
-.count-up-section {
-  background: var(--color-bg-dark-2);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--space-8) 0;
+.stats-section {
+  background: var(--bg-canvas);
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
 }
 
-.count-up__grid {
+.stats__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-4);
+  gap: 0;
 }
 
-.count-up__item {
-  padding: var(--space-4) var(--space-5);
-  border-left: 2px solid rgba(255, 255, 255, 0.08);
+.stat {
   display: flex;
   flex-direction: column;
-  transition: border-color var(--transition-base);
-}
-
-.count-up__item:first-child {
-  border-left-color: var(--color-accent);
-}
-
-.count-up__item:hover {
-  border-left-color: var(--color-accent);
-}
-
-.count-up__header {
-  display: flex;
   align-items: center;
-  gap: var(--space-2);
-  margin-bottom: var(--space-2);
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-4) var(--space-4);
+  position: relative;
+  gap: var(--space-3);
 }
 
-.count-up__icon {
-  color: var(--color-accent);
+.stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 56px;
+  background: var(--brand-red);
 }
 
-.count-up__sub {
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: var(--letter-spacing-wider);
-  color: var(--color-metallic-light);
-  text-transform: uppercase;
-}
-
-.count-up__number {
-  display: flex;
+.stat__value {
+  display: inline-flex;
   align-items: baseline;
-  gap: 2px;
+  gap: 0;
   font-family: var(--font-display);
-  font-weight: 900;
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  line-height: 1;
-  color: #ffffff;
+  font-size: var(--text-display);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-none);
+  color: var(--text-primary);
+  letter-spacing: var(--letter-spacing-tighter);
+  font-variant-numeric: tabular-nums;
 }
 
-.count-up__number-val {
-  color: #ffffff;
+.stat__value--accent {
+  color: var(--brand-red);
 }
 
-.count-up__suffix {
-  color: var(--color-accent);
-}
-
-.count-up__number--text .count-up__suffix {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-}
-
-.count-up__label {
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  margin-top: var(--space-1);
+.stat__label {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-muted);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  opacity: var(--opacity-low);
+  max-width: 220px;
 }
 
 @media (max-width: 900px) {
-  .count-up__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6) var(--space-4);
-  }
+  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2)::after { display: none; }
+  .stat__value { font-size: var(--text-heading); }
 }
 
 @media (max-width: 480px) {
-  .count-up__grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
+  .stats__grid { grid-template-columns: 1fr; }
+  .stat::after { display: none !important; }
+  .stat:not(:last-child) {
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: var(--space-8);
   }
 }

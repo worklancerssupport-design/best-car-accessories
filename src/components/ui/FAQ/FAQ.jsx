@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Plus } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import './FAQ.css';
 
 export default function FAQ({ faqs = [] }) {
@@ -30,24 +30,25 @@ export default function FAQ({ faqs = [] }) {
           {JSON.stringify(schema)}
         </script>
       </Helmet>
-      
+
       <div className="faq-list">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
           return (
-            <div className={`faq-item ${isOpen ? 'open' : ''}`} key={index}>
+            <div className={`faq-item ${isOpen ? 'is-open' : ''}`} key={index}>
               <button
                 className="faq-question"
                 onClick={() => toggleFaq(index)}
                 aria-expanded={isOpen}
+                type="button"
               >
-                <span>{faq.q}</span>
-                <span className="faq-icon">
-                  <Plus size={20} />
+                <span className="faq-question__text">{faq.q}</span>
+                <span className="faq-icon" aria-hidden="true">
+                  {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                 </span>
               </button>
-              <div className="faq-answer">
-                <div className="faq-answer-inner">
+              <div className={`faq-answer ${isOpen ? 'is-open' : ''}`}>
+                <div className="faq-answer__inner">
                   {faq.a}
                 </div>
               </div>

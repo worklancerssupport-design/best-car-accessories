@@ -1,48 +1,64 @@
 import { Link } from 'react-router-dom';
-import { MessageCircle, ArrowRight } from 'lucide-react';
+import { MessageCircle, ArrowRight, Instagram } from 'lucide-react';
 import business from '../../../data/business.json';
 import './CTASection.css';
 
 export default function CTASection({
+  label,
   title,
   subtitle,
   primaryCta,
   secondaryCta,
   whatsappMessage,
-  dark = true
+  variant = 'dark',
 }) {
   const whatsappUrl = business.whatsapp
     ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(whatsappMessage || 'Hello Best Car Accessories, I would like to enquire about your services.')}`
     : '#';
+  const instagramUrl = business.instagram || business.social?.instagram;
 
-  // Support both {label, href} and {text, link} prop shapes
   const primary = primaryCta ? {
     label: primaryCta.label || primaryCta.text || 'Get a Quote',
     href: primaryCta.href || primaryCta.link || '/contact',
   } : { label: 'Get a Quote', href: '/contact' };
 
   return (
-    <section className={`cta-section ${dark ? 'cta-section--dark' : 'cta-section--accent'}`}>
+    <section className={`cta-section cta-section--${variant}`}>
+      <div className="cta-section__pattern" aria-hidden="true" />
       <div className="container">
         <div className="cta-section__content">
+          {label && <span className="cta-section__label">{label}</span>}
           <h2 className="cta-section__title">{title}</h2>
           {subtitle && <p className="cta-section__subtitle">{subtitle}</p>}
           <div className="cta-section__actions">
-            <Link to={primary.href} className="btn btn-primary btn-lg">
-              {primary.label} <ArrowRight size={18} />
+            <Link to={primary.href} className="cta-section__btn">
+              <span>{primary.label}</span>
+              <ArrowRight size={16} />
             </Link>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp btn-lg"
+              className="cta-section__icon-btn"
+              aria-label="Chat with us on WhatsApp"
             >
-              <MessageCircle size={18} /> WhatsApp Us
+              <MessageCircle size={18} />
             </a>
+            {instagramUrl && instagramUrl !== '#' && (
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-section__icon-btn"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+            )}
             {secondaryCta && (
               <Link
                 to={secondaryCta.href || secondaryCta.link || '/'}
-                className="btn btn-secondary btn-lg"
+                className="cta-section__btn"
               >
                 {secondaryCta.label || secondaryCta.text}
               </Link>

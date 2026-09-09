@@ -9,13 +9,12 @@ import CTASection from '../components/ui/CTASection/CTASection';
 import FAQ from '../components/ui/FAQ/FAQ';
 import ServiceCard from '../components/ui/ServiceCard/ServiceCard';
 import './CategoryPage.css';
-import { Search } from 'lucide-react';
+import { Search, ChevronRight, MessageCircle } from 'lucide-react';
 
 const CATEGORY_FAQS = faqsData.exterior;
 
 const FILTER_TAGS = ['All', 'Lighting', 'Protection', 'Styling', 'Utility'];
 
-// 4 Architectural Groups
 const EXTERIOR_GROUPS = [
   {
     id: 'lighting',
@@ -74,6 +73,9 @@ export default function ExteriorCategoryPage() {
   const pageDescription = 'Explore all 20 exterior car accessories at Best Car Accessories, NMS Road, Chennai. High-performance fog lights, LED headlight upgrades, DRLs, aerodynamic spoilers, side foot steps, and OEM fitment.';
 
   const isGroupedView = activeTag === 'All' && !search.trim();
+  const whatsappHref = business.whatsapp
+    ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent('Hi, I am interested in exterior car accessories for my car.')}`
+    : '#';
 
   return (
     <>
@@ -94,34 +96,41 @@ export default function ExteriorCategoryPage() {
       </div>
 
       {/* Hero */}
-      <section className="cat-hero section--dark">
-        <div className="cat-hero__overlay" />
+      <section className="cat-hero" aria-labelledby="cat-hero-title">
+        <div className="cat-hero__overlay" aria-hidden="true" />
         <div className="container cat-hero__content">
           <span className="section-label">3D Exterior Customization Studio</span>
-          <h1 className="cat-hero__title">Exterior Car Accessories<br />in Chennai</h1>
+          <h1 id="cat-hero-title" className="cat-hero__title">
+            Exterior Car Accessories
+            <br /><span className="section-title__accent">in Chennai</span>
+          </h1>
           <p className="cat-hero__subtitle">
             Transform your vehicle's road presence with high-performance optical lighting, aerodynamic styling, rugged protection, and zero-wire-cut installation.
           </p>
           <div className="cat-hero__actions">
-            <Link to="/contact" className="btn btn-primary btn-lg">Book Fitment</Link>
+            <Link to="/contact" className="cat-hero__btn cat-hero__btn--primary">
+              <span>Book Fitment</span>
+              <ChevronRight size={16} className="cat-hero__btn-icon" />
+            </Link>
             <a
-              href={business.whatsapp ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent('Hi, I am interested in exterior car accessories for my car.')}` : '#'}
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp btn-lg"
+              className="cat-hero__btn cat-hero__btn--secondary"
             >
-              WhatsApp Us
+              <MessageCircle size={16} className="cat-hero__btn-icon" />
+              <span>WhatsApp Us</span>
             </a>
           </div>
         </div>
       </section>
 
       {/* Search & Filter Bar */}
-      <section className="cat-filter-section">
+      <section className="cat-filter-section" aria-label="Filter exterior accessories">
         <div className="container">
           <div className="cat-search-row">
             <div className="cat-search-wrap">
-              <Search size={18} className="cat-search-icon" />
+              <Search size={18} className="cat-search-icon" aria-hidden="true" />
               <input
                 type="search"
                 placeholder="Search 20 exterior upgrades (e.g., fog light, spoiler, bumper)..."
@@ -132,13 +141,14 @@ export default function ExteriorCategoryPage() {
               />
             </div>
           </div>
-          <div className="cat-tags">
+          <div className="cat-tags" role="tablist" aria-label="Accessory groups">
             {FILTER_TAGS.map(tag => (
               <button
                 key={tag}
                 onClick={() => setActiveTag(tag)}
                 className={`cat-tag ${activeTag === tag ? 'cat-tag--active' : ''}`}
                 aria-pressed={activeTag === tag}
+                role="tab"
               >
                 {tag}
               </button>
@@ -148,17 +158,15 @@ export default function ExteriorCategoryPage() {
       </section>
 
       {/* Catalog Display */}
-      <section className="cat-grid-section">
+      <section className="cat-grid-section" aria-label="Exterior accessory catalog">
         <div className="container">
-          
           {isGroupedView ? (
-            // Grouped Visual View (Lighting, Protection, Styling, Utility)
             EXTERIOR_GROUPS.map((group, groupIdx) => {
               const groupItems = exteriorData.items.filter(s => group.slugs.includes(s.slug));
               if (groupItems.length === 0) return null;
 
               return (
-                <div key={group.id} className="cat-group-block" style={{ marginBottom: 'var(--space-10)' }}>
+                <div key={group.id} className="cat-group-block">
                   <div className="cat-group-header">
                     <div>
                       <span className="cat-group-tag">{group.tag}</span>
@@ -175,30 +183,37 @@ export default function ExteriorCategoryPage() {
                 </div>
               );
             })
+          ) : filteredServices.length === 0 ? (
+            <div className="cat-empty" role="status">
+              <p>
+                No accessories found matching your criteria.
+                <button
+                  onClick={() => { setSearch(''); setActiveTag('All'); }}
+                  className="cat-empty-reset"
+                  aria-label="Reset search and filters"
+                >
+                  Reset Filters
+                </button>
+              </p>
+            </div>
           ) : (
-            // Filtered or Search View
-            filteredServices.length === 0 ? (
-              <div className="cat-empty">
-                <p>No accessories found matching your criteria. <button onClick={() => { setSearch(''); setActiveTag('All'); }} className="cat-empty-reset">Reset Filters</button></p>
-              </div>
-            ) : (
-              <div className="cat-grid">
-                {filteredServices.map((service, idx) => (
-                  <ServiceCard key={service.id} service={service} index={idx + 1} dark={true} />
-                ))}
-              </div>
-            )
+            <div className="cat-grid">
+              {filteredServices.map((service, idx) => (
+                <ServiceCard key={service.id} service={service} index={idx + 1} dark={true} />
+              ))}
+            </div>
           )}
-
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="cat-faq">
+      <section className="cat-faq" aria-labelledby="cat-faq-title">
         <div className="container cat-faq__inner">
           <span className="section-label">Technical Inquiries</span>
-          <h2 className="section-title">Exterior Fitment FAQ</h2>
-          <div className="divider" />
+          <h2 id="cat-faq-title" className="section-title">
+            Exterior <span className="section-title__accent">Fitment FAQ</span>
+          </h2>
+          <div className="divider" aria-hidden="true" />
           <FAQ faqs={CATEGORY_FAQS} />
         </div>
       </section>

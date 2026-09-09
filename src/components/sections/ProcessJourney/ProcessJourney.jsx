@@ -1,6 +1,21 @@
+import {
+  ShoppingBag,
+  MessageSquare,
+  Settings,
+  Wrench,
+  CheckCircle,
+} from 'lucide-react';
 import SectionDivider from '../../ui/SectionDivider/SectionDivider';
 import processSteps from '../../../data/process.json';
 import './ProcessJourney.css';
+
+const STEP_ICONS = {
+  '01': ShoppingBag,
+  '02': MessageSquare,
+  '03': Settings,
+  '04': Wrench,
+  '05': CheckCircle,
+};
 
 const ProcessJourney = () => {
   return (
@@ -8,29 +23,36 @@ const ProcessJourney = () => {
       <SectionDivider num="07" label="CUSTOMIZATION EXPERIENCE" />
 
       <div className="container">
-        <div className="section-header text-center">
-          <span className="section-label">PRECISION FITMENT PROTOCOL</span>
-          <h2 className="section-title text-white">How We Upgrade Your Car</h2>
-          <div className="divider" style={{ margin: '0.5rem auto 1rem' }} />
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            From initial consultation to final diagnostic calibration, experience structured automotive craftsmanship in Chennai.
+        <header className="process-header">
+          <span className="section-label">How We Work</span>
+          <h2 className="section-title text-white">Our Process</h2>
+          <p className="section-subtitle section-subtitle--light">
+            From initial consultation to final diagnostic calibration, experience structured
+            automotive craftsmanship in Chennai.
           </p>
-        </div>
+        </header>
 
-        <div className="process-timeline">
-          <div className="process-steps-grid">
-            {processSteps.map((step) => (
-              <div key={step.id} className="process-card card-3d">
-                <div className="process-card-top">
-                  <span className="process-number">{step.id}</span>
-                  <span className="process-indicator" />
+        <ol className="process-steps" aria-label="Our customization process">
+          {processSteps.map((step, idx) => {
+            const Icon = STEP_ICONS[step.id] || CheckCircle;
+            return (
+              <li key={step.id} className="process-step">
+                <div className="process-step-marker" aria-hidden="true">
+                  <span className="process-step-number">{step.id}</span>
+                  <span className="process-step-icon">
+                    <Icon size={20} />
+                  </span>
                 </div>
-                <h3 className="process-title">{step.title}</h3>
-                <p className="process-desc">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+
+                <article className="process-step-card">
+                  <span className="process-step-label">Step {idx + 1}</span>
+                  <h3 className="process-step-title">{step.title}</h3>
+                  <p className="process-step-desc">{step.desc}</p>
+                </article>
+              </li>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );

@@ -59,6 +59,7 @@ Thumbs.db
 
 # Project docs
 project/
+DESIGN_INFERENCE.md
 
 # Misc
 *.tgz

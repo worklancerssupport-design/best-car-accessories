@@ -1,185 +1,134 @@
 /* ============================================================
-   SERVICE CARD STYLES — HIGH-CONTRAST 3D AUTOMOTIVE CARD
-   Best Car Accessories · NMS Road, Chennai
+   SERVICE CARD — matches the gallery "View Build" card exactly
+   Best Car Accessories · Chennai
    ============================================================ */
 
-.service-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
+.svc-card {
   position: relative;
-  transition: transform 0.12s ease-out, border-color var(--transition-base), box-shadow var(--transition-base);
-  height: 100%;
-  transform-style: preserve-3d;
-  will-change: transform;
+  display: block;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
   cursor: pointer;
+  isolation: isolate;
+  transition: border-color var(--transition-base), transform var(--transition-base);
 }
 
-.service-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(103, 232, 249, 0.22);
+.svc-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
 }
 
-.service-card--dark {
-  background: var(--bg-surface);
+.svc-card:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
 }
 
-.service-card--light {
-  background: var(--bg-surface);
-}
-
-/* ── 3D Surface Light Reflection ── */
-.service-card__glare {
+.svc-card__img {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  z-index: 10;
-  border-radius: inherit;
-  mix-blend-mode: screen;
-}
-
-/* ── Image & Badges ── */
-.service-card__image-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background-color: var(--bg-secondary);
-}
-
-.service-card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-slow);
-  filter: brightness(0.95);
+  transition: transform var(--transition-slow), filter var(--transition-base);
+  z-index: 1;
+  filter: brightness(0.92) saturate(0.95);
 }
 
-.service-card:hover .service-card__image {
-  transform: scale(1.05);
-  filter: brightness(1.02);
+.svc-card:hover .svc-card__img {
+  transform: scale(1.04);
+  filter: brightness(1) saturate(1);
 }
 
-.service-card__top-bar {
+.svc-card__overlay {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  inset: 0;
   z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
   pointer-events: none;
 }
 
-.service-card__index {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  background: rgba(7, 9, 12, 0.88);
-  backdrop-filter: blur(8px);
-  padding: 3px 8px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-strong);
+.svc-card__top {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-4);
+  z-index: 3;
+  pointer-events: none;
 }
 
-.service-card__badge {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 800;
-  text-transform: uppercase;
+.svc-card__index {
+  font-family: var(--font-sans);
+  font-size: var(--text-tiny);
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--letter-spacing-wider);
-  color: var(--bg-primary);
-  background: var(--accent);
-  padding: 3px 8px;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 0 10px rgba(103, 232, 249, 0.4);
+  color: var(--text-primary);
+  opacity: var(--opacity-high);
+  text-transform: uppercase;
 }
 
-/* ── Content ── */
-.service-card__content {
+.svc-card__bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
   padding: var(--space-4) var(--space-5);
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  align-items: flex-start;
+  gap: var(--space-1);
 }
 
-.service-card__title {
-  font-family: var(--font-display);
-  font-size: 1.08rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: var(--space-2);
-}
-
-.service-card__title a {
+.svc-card__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
   color: var(--text-primary);
-  transition: color var(--transition-fast);
+  margin: 0;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
-.service-card:hover .service-card__title a,
-.service-card__title a:hover {
-  color: var(--accent);
+.svc-card__title a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.service-card__desc {
-  font-family: var(--font-body);
-  font-size: 0.84rem;
-  line-height: 1.58;
-  color: var(--text-secondary);
-  margin-bottom: var(--space-4);
-  flex-grow: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* ── Footer Bar ── */
-.service-card__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--border-subtle);
-}
-
-.service-card__link {
+.svc-card__cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: var(--letter-spacing-wider);
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
-  color: var(--accent);
-  transition: gap var(--transition-fast);
+  letter-spacing: var(--letter-spacing-wider);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: background var(--transition-fast),
+              color var(--transition-fast),
+              gap var(--transition-fast),
+              border-color var(--transition-fast);
 }
 
-.service-card:hover .service-card__link {
-  gap: 10px;
-  text-shadow: 0 0 10px rgba(103, 232, 249, 0.5);
+.svc-card__cta:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  gap: var(--space-3);
 }
 
-.service-card__arrow {
-  transition: transform var(--transition-fast);
-}
+.svc-card__arrow { transition: transform var(--transition-fast); }
+.svc-card__cta:hover .svc-card__arrow { transform: translateX(2px); }
 
-.service-card:hover .service-card__arrow {
-  transform: translateX(3px);
-}
-
-.service-card__oem-tag {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
+@media (max-width: 480px) {
+  .svc-card__bottom { padding: var(--space-3) var(--space-4); }
+  .svc-card__title { font-size: var(--text-caption); }
 }

@@ -15,7 +15,6 @@ const CATEGORY_FAQS = faqsData.interior;
 
 const FILTER_TAGS = ['All', 'Lighting', 'Infotainment', 'Vision', 'Comfort', 'Upholstery'];
 
-// 5 Architectural Groups
 const INTERIOR_GROUPS = [
   {
     id: 'lighting',
@@ -80,6 +79,9 @@ export default function InteriorCategoryPage() {
   const pageDescription = 'Explore all 20 interior car customization options at Best Car Accessories, NMS Road, Chennai. 18-zone ambient lighting, custom seat covers, touchscreen infotainment, component audio, 360 cameras, and 7D mats.';
 
   const isGroupedView = activeTag === 'All' && !search.trim();
+  const whatsappHref = business.whatsapp
+    ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent('Hi, I am interested in interior car customization for my car.')}`
+    : '#';
 
   return (
     <>
@@ -100,18 +102,21 @@ export default function InteriorCategoryPage() {
       </div>
 
       {/* Hero */}
-      <section className="cat-hero cat-hero--interior section--dark">
-        <div className="cat-hero__overlay" />
+      <section className="cat-hero cat-hero--interior" aria-labelledby="cat-hero-title">
+        <div className="cat-hero__overlay" aria-hidden="true" />
         <div className="container cat-hero__content">
           <span className="section-label">3D Cockpit Customization Studio</span>
-          <h1 className="cat-hero__title">Interior Car Accessories<br />in Chennai</h1>
+          <h1 id="cat-hero-title" className="cat-hero__title">
+            Interior Car Accessories
+            <br /><span className="section-title__accent">in Chennai</span>
+          </h1>
           <p className="cat-hero__subtitle">
             Redefine your interior driving sanctuary with 18-zone ambient light choreography, cinematic touchscreen infotainment, audiophile sound stages, and bespoke tailored leather upholstery.
           </p>
           <div className="cat-hero__actions">
             <Link to="/contact" className="btn btn-primary btn-lg">Book Interior Fitting</Link>
             <a
-              href={business.whatsapp ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent('Hi, I am interested in interior car customization for my car.')}` : '#'}
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-whatsapp btn-lg"
@@ -123,11 +128,11 @@ export default function InteriorCategoryPage() {
       </section>
 
       {/* Search & Filter Bar */}
-      <section className="cat-filter-section">
+      <section className="cat-filter-section" aria-label="Filter interior accessories">
         <div className="container">
           <div className="cat-search-row">
             <div className="cat-search-wrap">
-              <Search size={18} className="cat-search-icon" />
+              <Search size={18} className="cat-search-icon" aria-hidden="true" />
               <input
                 type="search"
                 placeholder="Search 20 interior upgrades (e.g., ambient light, seat cover, infotainment)..."
@@ -138,13 +143,14 @@ export default function InteriorCategoryPage() {
               />
             </div>
           </div>
-          <div className="cat-tags">
+          <div className="cat-tags" role="tablist" aria-label="Accessory groups">
             {FILTER_TAGS.map(tag => (
               <button
                 key={tag}
                 onClick={() => setActiveTag(tag)}
                 className={`cat-tag ${activeTag === tag ? 'cat-tag--active' : ''}`}
                 aria-pressed={activeTag === tag}
+                role="tab"
               >
                 {tag}
               </button>
@@ -154,17 +160,15 @@ export default function InteriorCategoryPage() {
       </section>
 
       {/* Catalog Display */}
-      <section className="cat-grid-section">
+      <section className="cat-grid-section" aria-label="Interior accessory catalog">
         <div className="container">
-          
           {isGroupedView ? (
-            // Grouped Visual View (5 Groups)
             INTERIOR_GROUPS.map((group) => {
               const groupItems = interiorData.items.filter(s => group.slugs.includes(s.slug));
               if (groupItems.length === 0) return null;
 
               return (
-                <div key={group.id} className="cat-group-block" style={{ marginBottom: 'var(--space-10)' }}>
+                <div key={group.id} className="cat-group-block">
                   <div className="cat-group-header">
                     <div>
                       <span className="cat-group-tag">{group.tag}</span>
@@ -181,30 +185,37 @@ export default function InteriorCategoryPage() {
                 </div>
               );
             })
+          ) : filteredServices.length === 0 ? (
+            <div className="cat-empty" role="status">
+              <p>
+                No interior accessories found matching your criteria.
+                <button
+                  onClick={() => { setSearch(''); setActiveTag('All'); }}
+                  className="cat-empty-reset"
+                  aria-label="Reset search and filters"
+                >
+                  Reset Filters
+                </button>
+              </p>
+            </div>
           ) : (
-            // Filtered or Search View
-            filteredServices.length === 0 ? (
-              <div className="cat-empty">
-                <p>No interior accessories found matching your criteria. <button onClick={() => { setSearch(''); setActiveTag('All'); }} className="cat-empty-reset">Reset Filters</button></p>
-              </div>
-            ) : (
-              <div className="cat-grid">
-                {filteredServices.map((service, idx) => (
-                  <ServiceCard key={service.id} service={service} index={idx + 1} dark={true} />
-                ))}
-              </div>
-            )
+            <div className="cat-grid">
+              {filteredServices.map((service, idx) => (
+                <ServiceCard key={service.id} service={service} index={idx + 1} dark={true} />
+              ))}
+            </div>
           )}
-
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="cat-faq">
+      <section className="cat-faq" aria-labelledby="cat-faq-title">
         <div className="container cat-faq__inner">
           <span className="section-label">Cabin Engineering</span>
-          <h2 className="section-title">Interior Customization FAQ</h2>
-          <div className="divider" />
+          <h2 id="cat-faq-title" className="section-title">
+            Interior <span className="section-title__accent">Customization FAQ</span>
+          </h2>
+          <div className="divider" aria-hidden="true" />
           <FAQ faqs={CATEGORY_FAQS} />
         </div>
       </section>

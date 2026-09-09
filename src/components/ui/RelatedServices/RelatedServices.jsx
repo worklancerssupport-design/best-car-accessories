@@ -1,13 +1,18 @@
 import { Link } from 'react-router-dom';
+import { ArrowRight, Wrench } from 'lucide-react';
 import exteriorData from '../../../data/products/exterior.json';
 import interiorData from '../../../data/products/interior.json';
 import './RelatedServices.css';
 
-// Accepts slugs array OR full service objects array
-export default function RelatedServices({ slugs = [], services: servicesProp, currentSlug, title = 'Related Accessories' }) {
+export default function RelatedServices({
+  slugs = [],
+  services: servicesProp,
+  currentSlug,
+  title = 'Related Accessories',
+  label = 'You May Also Like',
+}) {
   const allServices = [...exteriorData.items, ...interiorData.items];
 
-  // If slugs provided, look up service objects
   let services = servicesProp;
   if (!services && slugs.length > 0) {
     services = slugs
@@ -21,33 +26,30 @@ export default function RelatedServices({ slugs = [], services: servicesProp, cu
 
   return (
     <section className="related-services">
-      <span className="section-label">You May Also Like</span>
-      <h2 className="section-title related-services__title">{title}</h2>
-      <div className="divider" />
-      <div className="related-services__grid">
+      {label && <span className="related-services__label">{label}</span>}
+      <h2 className="related-services__title">{title}</h2>
+
+      <ul className="related-services__list">
         {services.map((service) => (
-          <article className="related-card" key={service.id}>
-            <div className="related-card__img-wrap">
-              <img
-                src={service.image || '/images/exterior/placeholder.webp'}
-                alt={service.imageAlt || service.name}
-                loading="lazy"
-                className="related-card__img"
-              />
-            </div>
-            <div className="related-card__body">
-              <h3 className="related-card__name">{service.name}</h3>
-              <p className="related-card__desc">{service.shortDescription}</p>
-              <Link
-                to={`/${service.category === 'exterior' ? 'exterior' : 'interior'}-car-accessories-chennai/${service.slug}`}
-                className="related-card__link"
-              >
-                Learn More →
-              </Link>
-            </div>
-          </article>
+          <li key={service.id} className="related-services__item">
+            <Link
+              to={`/${service.category === 'exterior' ? 'exterior' : 'interior'}-car-accessories-chennai/${service.slug}`}
+              className="related-services__link"
+            >
+              <span className="related-services__icon" aria-hidden="true">
+                <Wrench size={14} />
+              </span>
+              <span className="related-services__name">{service.name}</span>
+              <ArrowRight size={14} className="related-services__arrow" aria-hidden="true" />
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
+
+      <Link to="/services" className="related-services__cta btn btn-primary">
+        View All Services
+        <ArrowRight size={16} className="btn-icon" />
+      </Link>
     </section>
   );
 }

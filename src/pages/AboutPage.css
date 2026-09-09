@@ -1,21 +1,43 @@
 /* ============================================================
-   ABOUT PAGE STYLES — HIGH CONTRAST AUTOMOTIVE STUDIO
-   Best Car Accessories · NMS Road, Chennai
+   ABOUT PAGE — AUTOMOTIVE LUXURY STUDIO
+   Best Car Accessories · Royapettah, Chennai
+   Dark canvas · vibrant red accent · premium typography
    ============================================================ */
 
+/* ── Shared Page Utilities ─────────────────────────────── */
 .about-breadcrumb-wrap {
-  background: var(--bg-primary);
+  background: var(--bg-canvas);
   padding: var(--space-4) 0;
   border-bottom: 1px solid var(--border);
 }
 
+.divider {
+  width: 64px;
+  height: 2px;
+  background: var(--brand-red);
+  margin: var(--space-4) 0;
+  border-radius: var(--radius-sm);
+  opacity: var(--opacity-medium);
+}
+
+.section-header--center {
+  text-align: center;
+  align-items: center;
+}
+
+.section-header--left {
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* ── Hero ───────────────────────────────────────────────── */
 .about-hero {
   position: relative;
-  min-height: 45vh;
+  min-height: 52vh;
   display: flex;
   align-items: center;
-  background-color: var(--bg-primary);
-  background-image: url('/images/hero/hero-car-bg.webp');
+  background-color: var(--bg-canvas);
+  background-image: url('/hero_car.jpg');
   background-size: cover;
   background-position: center 40%;
   overflow: hidden;
@@ -26,207 +48,621 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    180deg, 
-    rgba(7, 9, 12, 0.85) 0%, 
-    rgba(16, 20, 25, 0.95) 75%, 
-    rgba(7, 9, 12, 0.98) 100%
+    180deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(10, 10, 10, 0.92) 60%,
+    var(--bg-canvas) 100%
   );
 }
 
 .about-hero__content {
   position: relative;
   z-index: 2;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  max-width: 860px;
+  padding: var(--space-20) 0;
+  max-width: 880px;
 }
 
 .about-hero__title {
-  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-  font-weight: 900;
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: var(--font-weight-bold);
   color: var(--text-primary);
-  margin: var(--space-3) 0 var(--space-4);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  margin: var(--space-3) 0 var(--space-5);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-tight);
+  text-transform: uppercase;
+}
+
+.about-hero__title-accent {
+  color: var(--text-primary);
 }
 
 .about-hero__subtitle {
-  font-size: var(--text-lg);
+  font-size: var(--text-caption);
   color: var(--text-secondary);
-  max-width: 660px;
+  opacity: var(--opacity-whisper);
+  max-width: 680px;
   line-height: var(--line-height-relaxed);
 }
 
-.about-main__grid {
+/* ── Intro — Our Story & Heritage ──────────────────────── */
+.about-intro {
+  padding: var(--section-padding) 0;
+  background-color: var(--bg-canvas);
+  position: relative;
+}
+
+.about-intro__grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(2rem, 5vw, 4rem);
+  gap: clamp(2rem, 5vw, 4.5rem);
   align-items: flex-start;
 }
 
-.about-main__text p {
+.about-intro__text > p {
   color: var(--text-secondary);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
+  opacity: var(--opacity-medium);
   line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-4);
 }
 
 .about-features {
   margin-top: var(--space-8);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3) var(--space-5);
 }
 
 .about-feature {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  font-size: var(--text-base);
+  font-size: var(--text-caption);
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .about-feature__icon {
-  color: var(--accent);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
   flex-shrink: 0;
 }
 
-.about-stats {
+/* ── Stats & Visual ────────────────────────────────────── */
+.about-intro__visual {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
+  gap: var(--space-5);
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
 }
 
 .about-stat {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
   padding: var(--space-5);
   display: flex;
   flex-direction: column;
+  gap: var(--space-1);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--brand-red);
+  opacity: var(--opacity-medium);
+}
+
+.about-stat:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
 }
 
 .about-stat__num {
   font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: var(--accent);
-  letter-spacing: -0.02em;
-  line-height: 1;
-  text-shadow: 0 0 10px rgba(103, 232, 249, 0.3);
+  font-size: var(--text-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-none);
 }
 
 .about-stat__label {
-  font-family: var(--font-display);
-  font-size: var(--text-base);
-  font-weight: 700;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
   color: var(--text-primary);
-  margin: var(--space-1) 0;
+  margin-top: var(--space-2);
 }
 
 .about-stat__desc {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--text-secondary);
+  font-size: var(--text-tiny);
+  color: var(--text-muted);
+  opacity: var(--opacity-low);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
 }
 
 .about-img-wrap {
   overflow: hidden;
-  padding: 0;
-  border-radius: var(--radius-md, 8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.about-img-wrap:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-lg);
 }
 
 .about-img-wrap img {
   width: 100%;
-  height: 290px;
+  height: 320px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform var(--transition-slow);
 }
 
 .about-img-wrap:hover img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-.about-services__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-5);
-  margin-top: var(--space-8);
-}
-
-.about-services__col {
-  padding: var(--space-5);
-  display: flex;
-  flex-direction: column;
-}
-
-.about-services__col-title {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: var(--space-4);
-  padding-bottom: var(--space-2);
-  border-bottom: 1px solid var(--border-strong);
-}
-
-.about-services__col ul {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.about-services__item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-}
-
-@media (max-width: 992px) {
-  .about-main__grid {
-    grid-template-columns: 1fr;
-  }
-  .about-services__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ── Why Choose Best Car Accessories (About Page) ── */
-.about-why-choose-page {
+/* ── Mission — Why Choose ──────────────────────────────── */
+.about-mission {
+  padding: var(--section-padding) 0;
+  background-color: var(--bg-primary);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
-.about-page-features-grid {
+.about-mission__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-8);
 }
 
-@media (max-width: 992px) {
-  .about-page-features-grid {
+.about-mission-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.about-mission-card:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-elevated);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.about-mission-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.about-mission-card__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-tiny);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-muted);
+  opacity: var(--opacity-low);
+  letter-spacing: var(--letter-spacing-widest);
+}
+
+.about-mission-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-base);
+}
+
+.about-mission-card:hover .about-mission-card__icon {
+  transform: rotate(-4deg) scale(1.05);
+  border-color: var(--brand-red);
+  color: var(--brand-red);
+}
+
+.about-mission-card__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-lead);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-snug);
+}
+
+.about-mission-card__desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  opacity: var(--opacity-medium);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* ── Range — Our Accessory Categories ──────────────────── */
+.about-range {
+  padding: var(--section-padding) 0;
+  background-color: var(--bg-canvas);
+}
+
+.about-range__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.about-range__col {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.about-range__col:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-elevated);
+}
+
+.about-range__col-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+  letter-spacing: var(--letter-spacing-tight);
+  text-transform: uppercase;
+}
+
+.about-range__col-title::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 2px;
+  background: var(--brand-red);
+  margin-right: var(--space-2);
+  vertical-align: middle;
+  opacity: var(--opacity-medium);
+}
+
+.about-range__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.about-range__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  opacity: var(--opacity-medium);
+}
+
+.about-range__item-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ── Visit — Location & Maps ───────────────────────────── */
+.about-visit {
+  padding: var(--section-padding) 0;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border);
+}
+
+.about-visit__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-6);
+}
+
+.about-location-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.about-location-card:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-elevated);
+}
+
+.about-location-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-location-card__pin {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-location-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-primary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.about-location-card__area {
+  font-family: var(--font-mono);
+  font-size: var(--text-tiny);
+  color: var(--text-muted);
+  opacity: var(--opacity-low);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+}
+
+.about-location-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.about-loc-item {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.about-loc-item__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-loc-item strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-tiny);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--text-muted);
+  opacity: var(--opacity-low);
+  margin-bottom: var(--space-1);
+}
+
+.about-loc-item p {
+  font-size: var(--text-caption);
+  color: var(--text-primary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+.about-loc-item__landmark {
+  display: inline-block;
+  margin-top: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-tiny);
+  color: var(--text-muted);
+  opacity: var(--opacity-low);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.about-location-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+/* ── Map ───────────────────────────────────────────────── */
+.about-map-wrapper {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.about-map-wrapper:hover {
+  border-color: var(--border-strong);
+}
+
+.about-map-wrapper__iframe {
+  width: 100%;
+  flex: 1;
+  min-height: 380px;
+  border: 0;
+  display: block;
+  background: var(--bg-primary);
+}
+
+.about-map-wrapper__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+}
+
+.about-map-wrapper__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-tiny);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  opacity: var(--opacity-low);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+}
+
+.about-map-wrapper__live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-success);
+  animation: about-pulse 2s ease-in-out infinite;
+}
+
+@keyframes about-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: var(--opacity-medium); transform: scale(1.3); }
+}
+
+.about-map-wrapper__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-tiny);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--text-primary);
+  transition: gap var(--transition-fast);
+}
+
+.about-map-wrapper__link:hover {
+  gap: var(--space-3);
+  color: var(--brand-red);
+}
+
+/* ── FAQ ───────────────────────────────────────────────── */
+.about-faq {
+  padding: var(--section-padding) 0;
+  background-color: var(--bg-canvas);
+}
+
+.about-faq__inner {
+  max-width: 860px;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .about-intro__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-mission__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media (max-width: 640px) {
-  .about-page-features-grid {
+  .about-range__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-visit__grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* ── Visit Best Car Accessories & Maps (About Page) ── */
-.about-visit-page {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 44vh;
+  }
+
+  .about-hero__content {
+    padding: var(--space-12) 0;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stat {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .about-stat__num {
+    font-size: var(--text-title);
+    min-width: 80px;
+  }
+
+  .about-location-card {
+    padding: var(--space-6);
+  }
 }
 
-
 @media (max-width: 580px) {
-  .about-services__grid {
+  .about-mission__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-range__grid {
     grid-template-columns: 1fr;
   }
 }

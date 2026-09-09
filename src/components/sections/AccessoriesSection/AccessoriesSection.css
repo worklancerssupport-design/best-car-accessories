@@ -1,117 +1,113 @@
 /* ============================================================
-   ACCESSORIES SECTION — 3D AUTOMOTIVE CATALOGUE
-   Best Car Accessories · NMS Road, Chennai
+   ACCESSORIES SECTION — clean visual hierarchy
+   Best Car Accessories · Chennai
+
+   Hierarchy rules:
+   ─ Section label (eyebrow) — micro caps, muted, low opacity
+   ─ Title — display font, primary, large
+   ─ Subtitle — body, secondary, medium opacity (less noise)
+   ─ Tabs — quiet pills, red used ONLY for active state
+   ─ Cards — ServiceCard component handles itself
    ============================================================ */
 
 .accessories-section {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
-  background: var(--bg-primary);
+  padding: var(--section-padding) 0;
+  background: var(--bg-canvas);
   position: relative;
 }
 
-.accessories-header {
-  margin-bottom: var(--space-8);
-}
-
-.accessories-header-text {
-  max-width: 720px;
-}
-
-/* ── Centerpiece Flowing Menu Wrap ── */
-.accessories-flowing-wrap {
+.accessories-section__header {
+  text-align: center;
   margin-bottom: var(--space-12);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-
-/* ── Preview Block ── */
-.accessories-preview-block {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: var(--space-8);
-}
-
-.accessories-preview-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: var(--space-6);
-  flex-wrap: wrap;
-  gap: var(--space-4);
 }
 
-.accessories-preview-title {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 800;
-  letter-spacing: 0.16em;
+.accessories-section__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
   color: var(--text-primary);
+  margin: var(--space-3) 0 var(--space-5);
   text-transform: uppercase;
 }
 
+.accessories-section__title-accent {
+  color: var(--text-primary);
+}
+
+.accessories-section__subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+  opacity: var(--opacity-medium);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Tab strip — quiet, red used only as a signal of selection */
 .accessories-tabs {
-  display: flex;
-  gap: var(--space-2);
-  background: var(--bg-surface);
+  display: inline-flex;
+  gap: 0;
+  margin: var(--space-8) auto 0;
   padding: 4px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
 }
 
 .accessories-tab-btn {
-  padding: 6px 14px;
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--text-secondary);
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
+  padding: var(--space-2) var(--space-6);
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: color var(--transition-base),
+              background var(--transition-base);
 }
 
 .accessories-tab-btn:hover {
   color: var(--text-primary);
 }
 
-.accessories-tab-btn.active {
+.accessories-tab-btn.is-active {
+  color: var(--text-primary);
   background: var(--bg-elevated);
-  color: var(--accent);
-  box-shadow: 0 0 10px rgba(109, 231, 255, 0.2);
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-sm);
 }
 
+/* Grid of service cards */
 .accessories-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-5);
-  margin-bottom: var(--space-8);
+  margin-top: var(--space-8);
 }
 
 .accessories-action-bar {
   display: flex;
   justify-content: center;
+  margin-top: var(--space-10);
 }
 
 @media (max-width: 1100px) {
-  .accessories-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .accessories-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
-  .accessories-preview-block {
-    padding: var(--space-5) var(--space-4);
-  }
-  .accessories-grid {
-    grid-template-columns: 1fr;
-  }
-  .accessories-preview-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .accessories-grid { grid-template-columns: 1fr; }
+  .accessories-section__title { font-size: var(--text-heading); }
+  .accessories-tabs { margin-top: var(--space-6); }
+  .accessories-tab-btn { padding: var(--space-2) var(--space-4); font-size: var(--text-micro); }
 }

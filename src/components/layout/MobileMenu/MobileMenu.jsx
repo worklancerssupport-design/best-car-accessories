@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { X, MessageCircle, ArrowRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { X, MessageCircle, Instagram } from 'lucide-react';
 import './MobileMenu.css';
 
-export default function MobileMenu({ isOpen, onClose, whatsappUrl }) {
+export default function MobileMenu({ isOpen, onClose, whatsappUrl, instagramUrl }) {
   const menuRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     if (isOpen) {
@@ -26,114 +27,93 @@ export default function MobileMenu({ isOpen, onClose, whatsappUrl }) {
     };
   }, [isOpen, onClose]);
 
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/';
+    return location.pathname.startsWith(path);
+  };
+
+  const navItems = [
+    { name: 'Home', path: '/', index: '01' },
+    { name: 'Exterior', path: '/exterior-car-accessories-chennai', index: '02' },
+    { name: 'Interior', path: '/interior-car-accessories-chennai', index: '03' },
+    { name: 'Gallery', path: '/gallery', index: '04' },
+    { name: 'About', path: '/about', index: '05' },
+    { name: 'Franchise', path: '/franchise', index: '06' },
+    { name: 'Contact', path: '/contact', index: '07' },
+  ];
+
   return (
-    <div 
+    <div
       className={`mobile-menu-overlay ${isOpen ? 'open' : ''}`}
       role="dialog"
       aria-modal="true"
       aria-label="Mobile Navigation"
+      aria-hidden={!isOpen}
       ref={menuRef}
     >
       <div className="mobile-menu-header">
         <Link to="/" className="mobile-menu-logo" onClick={onClose}>
-          <div className="mobile-menu-logo-img-wrap">
-            <img 
-              src="/images/logo.png" 
-              alt="Best Car Accessories" 
-              className="mobile-menu-logo-img"
-              width="40"
-              height="40"
-            />
-          </div>
-          <div className="mobile-menu-logo-text">
-            <span className="mobile-menu-logo-badge">3D SHOWROOM</span>
-            <span className="mobile-menu-logo-title">BEST CAR ACCESSORIES</span>
-            <span className="mobile-menu-logo-sub">NMS ROAD · CHENNAI</span>
-          </div>
+          <img
+            src="/logo.png"
+            alt="Best Car Accessories"
+            className="mobile-menu-logo-img"
+          />
         </Link>
-        <button 
-          className="mobile-menu-close" 
-          onClick={onClose} 
+        <button
+          className="mobile-menu-close"
+          onClick={onClose}
           aria-label="Close mobile navigation menu"
         >
-          <X size={26} />
+          <X size={20} />
         </button>
       </div>
 
-      <nav className="mobile-menu-nav">
+      <nav className="mobile-menu-nav" aria-label="Mobile Navigation">
+        <span className="mobile-menu-eyebrow">Navigate</span>
         <ul>
-          <li>
-            <Link to="/" onClick={onClose}>
-              <span>Home</span>
-              <span className="mobile-menu-index">01</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/exterior-car-accessories-chennai" onClick={onClose}>
-              <span>Exterior Accessories</span>
-              <span className="mobile-menu-index">02</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/interior-car-accessories-chennai" onClick={onClose}>
-              <span>Interior Customization</span>
-              <span className="mobile-menu-index">03</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/gallery" onClick={onClose}>
-              <span>3D Gallery</span>
-              <span className="mobile-menu-index">04</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" onClick={onClose}>
-              <span>Heritage & Team</span>
-              <span className="mobile-menu-index">05</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/franchise" onClick={onClose}>
-              <span>Franchise</span>
-              <span className="mobile-menu-index">06</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" onClick={onClose}>
-              <span>Contact & Fitment</span>
-              <span className="mobile-menu-index">07</span>
-            </Link>
-          </li>
+          {navItems.map(item => (
+            <li key={item.path}>
+              <Link
+                to={item.path}
+                className={isActive(item.path) ? 'active' : ''}
+                onClick={onClose}
+              >
+                <span>{item.name}</span>
+                <span className="mobile-menu-index">{item.index}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
 
       <div className="mobile-menu-footer">
+        <span className="mobile-menu-eyebrow">Reach out</span>
         <div className="mobile-menu-actions">
-          <a 
-            href={whatsappUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-whatsapp" 
-            style={{ width: '100%', justifyContent: 'center' }}
-            onClick={onClose}
-          >
-            <MessageCircle size={18} />
-            <span>WhatsApp Us</span>
-          </a>
-          <Link 
-            to="/contact" 
-            className="btn btn-primary" 
-            style={{ width: '100%', justifyContent: 'center' }} 
-            onClick={onClose}
-          >
-            <span>Book Fitment Slot</span>
-            <ArrowRight size={16} />
+          {whatsappUrl && (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mobile-menu-icon-btn"
+              aria-label="Contact Best Car Accessories on WhatsApp"
+            >
+              <MessageCircle size={18} />
+            </a>
+          )}
+          {instagramUrl && instagramUrl !== '#' && (
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mobile-menu-icon-btn"
+              aria-label="Best Car Accessories on Instagram"
+            >
+              <Instagram size={18} />
+            </a>
+          )}
+          <Link to="/contact" className="mobile-menu-cta" onClick={onClose}>
+            <span>Get Quote</span>
           </Link>
-        </div>
-
-        <div className="mobile-menu-contact-info">
-          <p className="mobile-menu-location">NMS Road, Chennai, Tamil Nadu</p>
-          <p className="mobile-menu-meta">15+ Years Experience · 1000+ Cars Upgraded</p>
         </div>
       </div>
     </div>

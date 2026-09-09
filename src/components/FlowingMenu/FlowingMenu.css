@@ -1,23 +1,18 @@
-/* ============================================================
-   AUTOMOTIVE ACCESSORIES MENU
-   Best Car Accessories · Royapettah, Chennai
-   ============================================================ */
-
 .flowing-menu {
   width: 100%;
-  background: #080A0D;
-  border-top: 1px solid rgba(109, 231, 255, 0.16);
-  border-bottom: 1px solid rgba(109, 231, 255, 0.16);
+  background: var(--bg-canvas);
+  border-top: 1px solid var(--border-accent);
+  border-bottom: 1px solid var(--border-accent);
   overflow: hidden;
   border-radius: var(--radius-xl);
 }
 
 .flowing-menu__item {
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-subtle);
   overflow: hidden;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: background-color var(--transition-base);
 }
 
 .flowing-menu__item:last-child {
@@ -28,17 +23,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem var(--space-6);
+  padding: var(--space-5) var(--space-6);
   text-decoration: none;
   position: relative;
   z-index: 2;
   min-height: 80px;
   width: 100%;
-  transition: background-color 0.25s ease;
+  transition: background-color var(--transition-base);
 }
 
 .flowing-menu__item:hover {
-  background-color: rgba(109, 231, 255, 0.05);
+  background-color: var(--bg-elevated);
 }
 
 .flowing-menu__meta {
@@ -49,62 +44,61 @@
 
 .flowing-menu__num {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 800;
-  color: #6DE7FF;
-  letter-spacing: 0.12em;
-  text-shadow: 0 0 10px rgba(109, 231, 255, 0.35);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-muted);
+  opacity: var(--opacity-low);
+  letter-spacing: var(--letter-spacing-widest);
 }
 
 .flowing-menu__label {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.6vw, 2.1rem);
-  font-weight: 800;
-  color: #ffffff;
+  font-size: var(--text-heading);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
   text-transform: uppercase;
-  letter-spacing: -0.015em;
-  line-height: 1.1;
-  transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+  transition: transform var(--transition-base), color var(--transition-base);
 }
 
 .flowing-menu__item:hover .flowing-menu__label {
   transform: translateX(8px);
-  color: #6DE7FF;
-  text-shadow: 0 0 20px rgba(109, 231, 255, 0.4);
+  color: var(--brand-red);
 }
 
 .flowing-menu__arrow-box {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
-  background: rgba(30, 38, 51, 0.7);
-  border: 1px solid rgba(109, 231, 255, 0.25);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.25s ease;
+  transition: all var(--transition-base);
 }
 
 .flowing-menu__arrow {
-  color: #6DE7FF;
-  transition: transform 0.25s ease, color 0.25s ease;
+  color: var(--text-secondary);
+  transition: transform var(--transition-base), color var(--transition-base);
 }
 
 .flowing-menu__item:hover .flowing-menu__arrow-box {
-  background: #6DE7FF;
-  border-color: #6DE7FF;
-  box-shadow: 0 0 16px rgba(109, 231, 255, 0.6);
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  box-shadow: var(--shadow-accent);
 }
 
 .flowing-menu__item:hover .flowing-menu__arrow {
-  color: #080A0D;
+  color: var(--text-on-red);
   transform: translate(2px, -2px);
 }
 
 @media (max-width: 768px) {
   .flowing-menu__link {
     min-height: 66px;
-    padding: 0.9rem var(--space-4);
+    padding: var(--space-3) var(--space-4);
   }
 
   .flowing-menu__meta {
@@ -112,7 +106,7 @@
   }
 
   .flowing-menu__label {
-    font-size: 1.1rem;
+    font-size: var(--text-lead);
   }
 
   .flowing-menu__arrow-box {

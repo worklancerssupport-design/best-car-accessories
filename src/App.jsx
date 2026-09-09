@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
 import ScrollToTop from './components/layout/ScrollToTop/ScrollToTop';
-import WhatsAppButton from './components/ui/WhatsAppButton/WhatsAppButton';
 import ErrorBoundary from './components/ui/ErrorBoundary/ErrorBoundary';
 import './App.css';
 
@@ -23,7 +22,7 @@ function LoadingSpinner() {
   return (
     <div className="app-loading" role="status" aria-label="Loading page">
       <div className="app-loading__spinner" />
-      <span className="app-loading__text">Loading Studio Data...</span>
+      <span className="app-loading__text">Loading...</span>
     </div>
   );
 }
@@ -52,7 +51,6 @@ function App() {
         </Suspense>
       </main>
       <Footer />
-      <WhatsAppButton />
     </ErrorBoundary>
   );
 }

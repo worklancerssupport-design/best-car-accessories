@@ -1,0 +1,89 @@
+{
+  "$comment": "THEME REFERENCE — documentation of all colors used in colorConfig.css. This file is for reference only; the actual CSS variables live in /src/styles/colorConfig.css. Edit colors there, not here.",
+  "name": "Best Car Accessories — Dark Automotive",
+  "version": "2.0",
+  "description": "Pure black luxury automotive aesthetic with vibrant red accent. Inspired by premium auto-works showroom design.",
+  "brand": {
+    "name": "Best Car Accessories",
+    "tagline": "Premium Car Accessories · Chennai",
+    "accentColor": "#e63946",
+    "accentMeaning": "Power, action, urgency — used sparingly for maximum impact on CTAs and key highlights"
+  },
+  "colors": {
+    "brand": {
+      "primary":   { "value": "#e63946", "name": "brand-red",        "use": "Primary buttons, CTAs, section labels, accent borders" },
+      "hover":     { "value": "#ff4d5a", "name": "brand-red-hover",  "use": "Hover states for primary buttons and links" },
+      "deep":      { "value": "#c1272d", "name": "brand-red-deep",   "use": "Active/pressed states, gradients" },
+      "soft":      { "value": "#ff8a93", "name": "brand-red-soft",   "use": "Subtle red highlights, soft accent text" },
+      "light":     { "value": "rgba(230,57,70,0.12)", "name": "brand-red-light", "use": "12% transparent red — backgrounds, badges" },
+      "glow":      { "value": "rgba(230,57,70,0.35)", "name": "brand-red-glow",  "use": "35% transparent red — glows, focus rings" }
+    },
+    "backgrounds": {
+      "canvas":    { "value": "#000000", "name": "bg-canvas",    "use": "Page canvas — pure black backdrop" },
+      "primary":   { "value": "#0a0a0a", "name": "bg-primary",   "use": "Main section backgrounds" },
+      "secondary": { "value": "#111111", "name": "bg-secondary", "use": "Alternating section backgrounds" },
+      "surface":   { "value": "#161616", "name": "bg-surface",   "use": "Card and container surfaces" },
+      "elevated":  { "value": "#1f1f1f", "name": "bg-elevated",  "use": "Elevated cards, hover states" },
+      "overlay":   { "value": "rgba(0,0,0,0.85)", "name": "bg-overlay", "use": "Dark overlay on hero images" }
+    },
+    "text": {
+      "primary":   { "value": "#ffffff", "name": "text-primary",   "use": "Headlines, primary content" },
+      "secondary": { "value": "#b0b0b0", "name": "text-secondary", "use": "Body text, descriptions" },
+      "muted":     { "value": "#707070", "name": "text-muted",     "use": "Captions, metadata, helper text" },
+      "disabled":  { "value": "#4a4a4a", "name": "text-disabled",  "use": "Disabled states" }
+    },
+    "borders": {
+      "subtle":  { "value": "rgba(255,255,255,0.06)", "name": "border-subtle", "use": "Hairline dividers" },
+      "default": { "value": "rgba(255,255,255,0.10)", "name": "border",        "use": "Default card and container borders" },
+      "strong":  { "value": "rgba(255,255,255,0.18)", "name": "border-strong", "use": "Emphasized borders, hover" },
+      "accent":  { "value": "rgba(230,57,70,0.40)",   "name": "border-accent", "use": "Red accent borders" }
+    },
+    "functional": {
+      "success": { "value": "#2ee672", "name": "color-success", "use": "Confirms, positive states" },
+      "warning": { "value": "#ffb020", "name": "color-warning", "use": "Caution, attention" },
+      "error":   { "value": "#ff4a5a", "name": "color-error",   "use": "Errors, invalid input" },
+      "info":    { "value": "#6de7ff", "name": "color-info",    "use": "Informational messages" },
+      "whatsapp":{ "value": "#25d366", "name": "color-whatsapp","use": "WhatsApp brand button" }
+    }
+  },
+  "typography": {
+    "family": "Orbitron",
+    "rationale": "Geometric, squared, sharp corners — signals precision, clean finishes, engineering quality. Same Eurostile/Microgramma genre as Michroma but with 6 weights (400–900) for full hierarchy flexibility. Free on Google Fonts.",
+    "weights": {
+      "light":     200,
+      "regular":   300,
+      "normal":    400,
+      "medium":    500,
+      "semibold":  600,
+      "bold":      700,
+      "extrabold": 800
+    },
+    "scale": {
+      "$comment": "INTENTIONAL 7-step scale. Every size has one job. Don't pick outside this list.",
+      "micro":   { "value": "0.75rem",  "px": 12, "use": "Micro labels, badges, breadcrumbs" },
+      "caption": { "value": "0.875rem", "px": 14, "use": "Section labels (UPPER), captions, small UI text" },
+      "body":    { "value": "1rem",     "px": 16, "use": "Body text — default" },
+      "lead":    { "value": "1.125rem", "px": 18, "use": "Lead paragraph, large body, hero descriptions" },
+      "title":   { "value": "1.5rem",   "px": 24, "use": "H4 — card titles, sidebar titles, small section titles" },
+      "heading": { "value": "2rem",     "px": 32, "use": "H3 — section headings" },
+      "display": { "value": "3rem",     "px": 48, "use": "H2 — page titles, big section headings" },
+      "hero":    { "value": "clamp(3rem, 8vw, 6rem)", "px": "48–96", "use": "H1 — hero headline only" }
+    },
+    "letterSpacing": {
+      "tighter": "-0.04em (big headlines, hero)",
+      "tight":   "-0.025em (headlines)",
+      "normal":  "0",
+      "wide":    "0.05em (buttons)",
+      "wider":   "0.12em",
+      "widest":  "0.22em",
+      "label":   "0.18em (UPPERCASE red section labels)"
+    }
+  },
+  "uiPrinciples": {
+    "sparinglyAccent": "Use red sparingly. Too much red dilutes its impact. Limit to: CTAs, section labels, one word per headline.",
+    "generousWhitespace": "Give content room to breathe. Sections should have substantial vertical padding.",
+    "strongHierarchy": "Primary white headlines → secondary gray body → muted captions. Use weight + size + color together.",
+    "consistentSpacing": "All spacing follows the 4px scale (4, 8, 12, 16, 24, 32, 48, 64, 96, 128).",
+    "accessibleContrast": "All text meets WCAG AA: white on black = 21:1 ratio."
+  }
+}

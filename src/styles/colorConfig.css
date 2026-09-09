@@ -1,0 +1,147 @@
+/* ============================================================
+   COLOR CONFIG — THE SINGLE SOURCE OF TRUTH FOR ALL COLORS
+   Best Car Accessories · NMS Road, Chennai
+
+   🎨 TO CHANGE THE THEME: edit ONLY this file.
+   All CSS variables below are referenced by every component.
+   Tweak a value here → instantly updates site-wide.
+
+   ── DESIGN PHILOSOPHY ──────────────────────────────────────
+   Pure black canvas (luxury automotive aesthetic).
+   Vibrant red as the signature brand accent (power, action, urgency).
+   White for primary content (clarity, premium feel).
+   Muted grays for secondary information (hierarchy by desaturation).
+   ============================================================ */
+
+:root {
+  /* ============================================================
+     BRAND ACCENT — Vibrant Red
+     The single signature color. Use for: CTAs, highlights,
+     section labels, accent borders, icon backgrounds.
+     ============================================================ */
+  --brand-red:        #e63946;  /* Primary brand red */
+  --brand-red-hover:  #ff4d5a;  /* Lighter red for hover */
+  --brand-red-deep:   #c1272d;  /* Darker red for pressed/active */
+  --brand-red-soft:   #ff8a93;  /* Soft tint for highlights */
+  --brand-red-light:  rgba(230, 57, 70, 0.12);  /* 12% tint (bg) */
+  --brand-red-glow:   rgba(230, 57, 70, 0.35);  /* 35% tint (glow) */
+  --brand-red-fade:   rgba(230, 57, 70, 0.0);   /* Transparent (gradient end) */
+
+  /* ============================================================
+     BACKGROUNDS — Pure Black Luxury
+     Layered from darkest (canvas) to lightest (elevated cards).
+     ============================================================ */
+  --bg-canvas:        #000000;  /* Page canvas — pure black */
+  --bg-primary:       #0a0a0a;  /* Primary section background */
+  --bg-secondary:     #111111;  /* Alternating section background */
+  --bg-surface:       #161616;  /* Card surface */
+  --bg-elevated:      #1f1f1f;  /* Elevated card / hover state */
+  --bg-input:         #1c1c1c;  /* Form input fields — lighter than surface */
+  --bg-overlay:       rgba(0, 0, 0, 0.85);  /* Image overlay (dark) */
+  --bg-overlay-light: rgba(0, 0, 0, 0.5);   /* Image overlay (medium) */
+  --bg-glass:         rgba(22, 22, 22, 0.7); /* Frosted glass (with backdrop-blur) */
+
+  /* ============================================================
+     TEXT — High-Contrast Hierarchy
+     Primary white for headlines. Gray ramp for body/secondary.
+     ============================================================ */
+  --text-primary:     #ffffff;  /* Headlines, primary content */
+  --text-secondary:   #b0b0b0;  /* Body text, subtitles */
+  --text-muted:       #707070;  /* Captions, metadata */
+  --text-disabled:    #4a4a4a;  /* Disabled / placeholder */
+  --text-on-red:      #ffffff;  /* Text on red background (always white) */
+  --text-on-light:    #0a0a0a;  /* Text on light surface (if used) */
+
+  /* ============================================================
+     BORDERS — Subtle Definition
+     Very low-opacity white for subtle separation.
+     ============================================================ */
+  --border-subtle:    rgba(255, 255, 255, 0.06);  /* Hairline divider */
+  --border:           rgba(255, 255, 255, 0.10);  /* Default border */
+  --border-strong:    rgba(255, 255, 255, 0.18);  /* Emphasized border */
+  --border-accent:    rgba(230, 57, 70, 0.40);    /* Red accent border */
+  --border-accent-strong: rgba(230, 57, 70, 0.70); /* Strong red border */
+
+  /* ============================================================
+     SHADOWS — Depth & Elevation
+     Dark shadows for depth. Red glow for accent emphasis.
+     ============================================================ */
+  --shadow-sm:        0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md:        0 8px 24px rgba(0, 0, 0, 0.65);
+  --shadow-lg:        0 16px 40px rgba(0, 0, 0, 0.75);
+  --shadow-xl:        0 24px 60px rgba(0, 0, 0, 0.85);
+  --shadow-accent:    0 0 24px rgba(230, 57, 70, 0.30);
+  --shadow-accent-sm: 0 0 12px rgba(230, 57, 70, 0.20);
+  --shadow-inner:     inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  /* ============================================================
+     FUNCTIONAL COLORS — Status & Communication
+     Used for form states, notifications, badges.
+     ============================================================ */
+  --color-success:    #2ee672;  /* Confirmed, positive */
+  --color-success-bg: rgba(46, 230, 114, 0.12);
+  --color-warning:    #ffb020;  /* Caution, attention */
+  --color-warning-bg: rgba(255, 176, 32, 0.12);
+  --color-error:      #ff4a5a;  /* Error, invalid */
+  --color-error-bg:   rgba(255, 74, 90, 0.12);
+  --color-info:       #6de7ff;  /* Informational */
+  --color-info-bg:    rgba(109, 231, 255, 0.12);
+  --color-whatsapp:   #25d366;  /* WhatsApp brand */
+  --color-whatsapp-hover: #2ee672;
+
+  /* ============================================================
+     GRADIENTS — Pre-built Combinations
+     ============================================================ */
+  --gradient-red:        linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-deep) 100%);
+  --gradient-red-fade:   linear-gradient(90deg, var(--brand-red) 0%, var(--brand-red-fade) 100%);
+  --gradient-dark:       linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%);
+  --gradient-overlay:    linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.95) 100%);
+  --gradient-hero:       linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 100%);
+  --gradient-shimmer:    linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+
+  /* ============================================================
+     LEGACY ALIASES — Backwards Compatibility
+     These map old token names to the new system.
+     Existing components using these names will still work.
+     ============================================================ */
+  --accent:           var(--brand-red);
+  --accent-hover:     var(--brand-red-hover);
+  --accent-deep:      var(--brand-red-deep);
+  --accent-light:     var(--brand-red-light);
+  --accent-glow:      var(--brand-red-glow);
+  --accent-warm:      var(--color-warning);
+  --color-performance-amber: var(--color-warning);
+  --color-performance-green: var(--color-success);
+  --color-performance-red:   var(--brand-red);
+}
+
+/* ============================================================
+   FUTURE THEME: LIGHT MODE (Ready, not active by default)
+   Toggle by adding class="theme-light" to <html>.
+   ============================================================ */
+.theme-light {
+  --bg-canvas:        #ffffff;
+  --bg-primary:       #fafafa;
+  --bg-secondary:     #f0f0f0;
+  --bg-surface:       #ffffff;
+  --bg-elevated:      #f5f5f5;
+  --bg-overlay:       rgba(255, 255, 255, 0.85);
+
+  --text-primary:     #0a0a0a;
+  --text-secondary:   #4a4a4a;
+  --text-muted:       #707070;
+  --text-disabled:    #b0b0b0;
+  --text-on-red:      #ffffff;
+  --text-on-light:    #0a0a0a;
+
+  --border-subtle:    rgba(0, 0, 0, 0.06);
+  --border:           rgba(0, 0, 0, 0.10);
+  --border-strong:    rgba(0, 0, 0, 0.18);
+  --border-accent:    rgba(230, 57, 70, 0.40);
+  --border-accent-strong: rgba(230, 57, 70, 0.70);
+
+  --shadow-sm:        0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md:        0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-lg:        0 16px 40px rgba(0, 0, 0, 0.16);
+  --shadow-xl:        0 24px 60px rgba(0, 0, 0, 0.20);
+}

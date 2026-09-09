@@ -72,12 +72,13 @@ export default function FranchisePage() {
         <div className="container"><Breadcrumbs items={breadcrumbs} /></div>
       </div>
 
-      {/* Hero */}
       <section className="franchise-hero section--dark">
         <div className="franchise-hero__overlay" />
         <div className="container franchise-hero__content">
           <span className="section-label">Business Opportunity</span>
-          <h1 className="franchise-hero__title">Partner With<br />Best Car Accessories</h1>
+          <h1 className="franchise-hero__title">
+            Partner With <span className="franchise-hero__title-accent">Best Car Accessories</span>
+          </h1>
           <p className="franchise-hero__subtitle">
             We are open to exploring partnership opportunities with entrepreneurs who share our passion
             for quality car accessories and professional service.
@@ -85,12 +86,13 @@ export default function FranchisePage() {
         </div>
       </section>
 
-      {/* Why Partner */}
-      <section className="section section--white franchise-why">
+      <section className="section franchise-why">
         <div className="container">
-          <span className="section-label">Why Partner With Us</span>
-          <h2 className="section-title">What We Bring</h2>
-          <div className="divider" />
+          <div className="franchise-why__header">
+            <span className="section-label">Why Partner With Us</span>
+            <h2 className="section-title">What We Bring</h2>
+            <div className="divider" />
+          </div>
           <div className="franchise-why__grid">
             {[
               { icon: <Award size={28} />, title: '15+ Years of Experience', desc: 'Over 15 years of car accessories business experience in Chennai.' },
@@ -112,8 +114,7 @@ export default function FranchisePage() {
         </div>
       </section>
 
-      {/* Form */}
-      <section className="section section--light franchise-form-section">
+      <section className="section franchise-form-section">
         <div className="container franchise-form-wrap">
           <div className="franchise-form-text">
             <span className="section-label">Get in Touch</span>
@@ -123,17 +124,17 @@ export default function FranchisePage() {
               Fill in the form with your details and we will review your enquiry.
               All discussions are completely confidential.
             </p>
-            <p style={{ marginTop: '1rem', color: 'var(--text-muted)', fontSize: 'var(--text-sm)' }}>
+            <p className="franchise-form-hint">
               You can also WhatsApp us directly to start a conversation.
             </p>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp franchise-whatsapp-cta">
               WhatsApp Us Directly
             </a>
           </div>
           <div className="franchise-form-panel">
             {success ? (
               <div className="franchise-success">
-                <CheckCircle2 size={48} style={{ color: '#25d366' }} />
+                <CheckCircle2 size={48} style={{ color: 'var(--color-success)' }} />
                 <h3>Enquiry Received!</h3>
                 <p>Thank you for your interest. We will review your details and contact you.</p>
               </div>

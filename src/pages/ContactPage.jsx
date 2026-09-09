@@ -78,7 +78,9 @@ export default function ContactPage() {
         <div className="contact-hero__overlay" />
         <div className="container contact-hero__content">
           <span className="section-label">Get in Touch</span>
-          <h1 className="contact-hero__title">Let's Upgrade Your Car</h1>
+          <h1 className="contact-hero__title">
+            Let's Upgrade Your <span className="contact-hero__title-accent">Ride</span>
+          </h1>
           <p className="contact-hero__subtitle">
             Send us an enquiry, WhatsApp your car model, or visit our shop on NMS Road, Chennai.
             We will help you find the right accessories for your car.
@@ -86,15 +88,14 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact methods */}
-      <section className="section section--light contact-methods">
+      <section className="section contact-methods">
         <div className="container">
           <div className="contact-methods__grid">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-method contact-method--whatsapp"
+              className="contact-method"
             >
               <div className="contact-method__icon"><MessageCircle size={28} /></div>
               <h3>WhatsApp Us</h3>
@@ -103,14 +104,14 @@ export default function ContactPage() {
             </a>
             <a
               href={business.phone ? `tel:${business.phone}` : '#'}
-              className="contact-method contact-method--phone"
+              className="contact-method"
             >
               <div className="contact-method__icon"><Phone size={28} /></div>
               <h3>Call Us</h3>
               <p>{business.phone || 'Phone number — to be configured'}</p>
               <span className="contact-method__cta">Call Now →</span>
             </a>
-            <div className="contact-method contact-method--address">
+            <div className="contact-method">
               <div className="contact-method__icon"><MapPin size={28} /></div>
               <h3>Visit Us</h3>
               <p>{business.address}</p>
@@ -121,7 +122,7 @@ export default function ContactPage() {
               )}
             </div>
             {business.email && (
-              <a href={`mailto:${business.email}`} className="contact-method contact-method--email">
+              <a href={`mailto:${business.email}`} className="contact-method">
                 <div className="contact-method__icon"><Mail size={28} /></div>
                 <h3>Email Us</h3>
                 <p>{business.email}</p>
@@ -132,8 +133,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Form */}
-      <section className="section section--white contact-form-section">
+      <section className="section contact-form-section">
         <div className="container contact-form-wrap">
           <div className="contact-form-text">
             <span className="section-label">Send an Enquiry</span>
@@ -143,14 +143,14 @@ export default function ContactPage() {
               Fill in the form with your car model and the accessories you are interested in.
               We will get back to you with options and information.
             </p>
-            <p style={{ marginTop: '1rem', color: 'var(--text-muted)', fontSize: 'var(--text-sm)' }}>
+            <p className="contact-form-hint">
               For faster response, WhatsApp your car model and requirements directly to us.
             </p>
           </div>
           <div className="contact-form-panel">
             {success ? (
               <div className="contact-form-success">
-                <CheckCircle2 size={48} style={{ color: '#25d366' }} />
+                <CheckCircle2 size={48} style={{ color: 'var(--color-success)' }} />
                 <h3>Enquiry Sent!</h3>
                 <p>Thank you for reaching out. We will get back to you shortly.</p>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
@@ -204,13 +204,12 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map */}
       {business.mapUrl && (
         <section className="contact-map">
           <iframe
             src={business.mapUrl}
             width="100%"
-            height="400"
+            height="420"
             style={{ border: 0, display: 'block' }}
             allowFullScreen
             loading="lazy"

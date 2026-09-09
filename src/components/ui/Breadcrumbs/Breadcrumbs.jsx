@@ -22,7 +22,7 @@ export default function Breadcrumbs({ items = [] }) {
           {JSON.stringify(schemaList)}
         </script>
       </Helmet>
-      
+
       <nav className="breadcrumbs" aria-label="Breadcrumb">
         <ol className="breadcrumbs__list">
           {items.map((item, index) => {
@@ -34,7 +34,7 @@ export default function Breadcrumbs({ items = [] }) {
                 ) : (
                   <>
                     <Link to={item.href} className="breadcrumbs__link">{item.label}</Link>
-                    <ChevronRight size={14} className="breadcrumbs__separator" />
+                    <ChevronRight size={12} className="breadcrumbs__sep" aria-hidden="true" />
                   </>
                 )}
               </li>

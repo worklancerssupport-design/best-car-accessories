@@ -1,396 +1,442 @@
 /* ============================================================
-   HEADER & MEGA-MENU — HIGH-CONTRAST FLOATING TITANIUM BAR
-   Best Car Accessories · 3D Digital Showroom
+   HEADER — clean, uniform, single-line
+   Design rules:
+   ─ All interactive elements share the same height (40px).
+   ─ All icon buttons share the same dimensions (40×40).
+   ─ All borders/radius/hover states follow the same pattern.
+   ─ Typography uses type-scale tokens (no hardcoded rem).
    ============================================================ */
 
+:root {
+  --header-control-height: 40px;
+}
+
+/* ── Bar ─────────────────────────────────────────────────────── */
 .header-wrapper {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: var(--z-sticky);
-  background-color: rgba(6, 8, 11, 0.85);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 0;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base);
 }
 
 .header-wrapper--scrolled {
-  background-color: rgba(6, 8, 11, 0.96);
-  border-bottom-color: rgba(109, 231, 255, 0.16);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background-color: rgba(10, 10, 10, 0.96);
+  border-bottom-color: var(--border);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
 
 .header-glass-bar {
-  max-width: 1540px;
-  margin: 0 auto;
-  height: 72px;
+  height: var(--header-height);
   display: flex;
   align-items: center;
-  padding: 0 48px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
 }
 
 .header-wrapper--scrolled .header-glass-bar {
-  height: 64px;
+  height: var(--header-height);
 }
 
 .header__container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  gap: var(--space-4);
+  gap: var(--space-6);
 }
 
-/* ── Brand Logo ── */
+/* ── Logo ────────────────────────────────────────────────────── */
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
-  line-height: 1.15;
   user-select: none;
   flex-shrink: 0;
 }
 
-.header__logo-img-wrap {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid rgba(109, 231, 255, 0.3);
-  box-shadow: 0 0 12px rgba(109, 231, 255, 0.2);
-  background: var(--bg-surface);
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .header__logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.25s ease;
+  height: 36px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  transition: opacity var(--transition-fast);
 }
 
 .header__logo:hover .header__logo-img {
-  transform: scale(1.08);
+  opacity: var(--opacity-high);
 }
 
-.header__logo-text {
+/* Brand name next to logo */
+.header__brand-name {
   display: flex;
   flex-direction: column;
+  line-height: var(--line-height-none);
+  gap: 3px;
+  margin-left: var(--space-3);
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--border);
+  min-width: 0;
 }
 
-.header__logo-title {
+.header__brand-name-top {
   font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 900;
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--letter-spacing-widest);
   color: var(--text-primary);
-  letter-spacing: 0.04em;
-  white-space: nowrap;
+  text-transform: uppercase;
+  line-height: var(--line-height-none);
 }
 
-.header__logo-tagline {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: #94A3B8;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 2px;
-  white-space: nowrap;
+.header__brand-name-bottom {
+  font-family: var(--font-display);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--letter-spacing-widest);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  line-height: var(--line-height-none);
 }
 
-.header__logo-dot {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 6px var(--accent);
-}
-
-/* ── Desktop Navigation ── */
+/* ── Center nav ────────────────────────────────────────────────
+   STRICTLY UNIFORM. Every nav item (Link or Button) carries
+   the .header__nav-link class and gets the SAME typography,
+   size, weight, padding, height and color. No per-item overrides.
+   ──────────────────────────────────────────────────────────── */
 .header__nav {
   display: flex;
   align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .header__nav-list {
   display: flex;
   align-items: center;
   gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.header__nav-list a,
+.header__nav-list > li {
+  display: flex;
+  align-items: center;
+}
+
+/* THE ONE RULE — applied to all 6 nav items + the dropdown button. */
 .header__nav-link {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 8px 14px;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  justify-content: center;
+  gap: var(--space-1);
+  height: var(--header-control-height);
+  padding: 0 var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
   color: var(--text-secondary);
-  border-radius: var(--radius-sm);
-  transition: all 0.2s ease;
-  position: relative;
+  border-radius: var(--radius-md);
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  text-transform: uppercase;
+  transition: color var(--transition-fast),
+              background-color var(--transition-fast);
+  white-space: nowrap;
 }
 
-.header__nav-list a:hover,
+/* Dropdown chevron gets the same shared rule. */
+.header__nav-link--has-dropdown { gap: 6px; }
+
+.header__chevron {
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+/* Active + hover — both flip to primary text color. No red underline. */
 .header__nav-link:hover,
-.header__nav-list a.active,
 .header__nav-link.active {
   color: var(--text-primary);
-  background: rgba(109, 231, 255, 0.06);
+  background-color: var(--bg-surface);
 }
 
-.header__nav-list a.active,
-.header__nav-link.active {
-  color: var(--accent);
-}
-
-.header__dropdown-trigger {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.header__chevron-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 4px;
-  color: var(--text-secondary);
-  transition: transform 0.2s ease;
-}
-
-.header__chevron.rotate {
+.header__nav-item--dropdown.is-open .header__chevron {
   transform: rotate(180deg);
-  color: var(--accent);
 }
 
-/* ── Mega Menu ── */
-.header__nav-item--dropdown {
-  position: relative;
-}
+/* ── Mega menu ───────────────────────────────────────────────── */
+.header__nav-item--dropdown { position: relative; }
 
 .mega-menu {
   position: absolute;
-  top: calc(100% + 14px);
+  top: calc(100% + var(--space-2));
   left: 50%;
   transform: translateX(-50%);
-  width: 780px;
-  background: rgba(14, 18, 24, 0.98);
-  backdrop-filter: blur(28px);
-  border: 1px solid rgba(109, 231, 255, 0.25);
+  width: min(900px, calc(100vw - var(--space-8)));
+  background: rgba(15, 15, 15, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-xl);
-  padding: 24px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(109, 231, 255, 0.12);
-  animation: megaFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
   z-index: var(--z-dropdown);
+  animation: megaFadeIn var(--transition-base) cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes megaFadeIn {
   from { opacity: 0; transform: translate(-50%, 8px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
 }
 
 .mega-menu__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr 240px;
-  gap: 24px;
+  grid-template-columns: 1fr 1fr 260px;
+  gap: var(--space-6);
 }
 
-.mega-menu__col {
-  display: flex;
-  flex-direction: column;
-}
+.mega-menu__col { display: flex; flex-direction: column; }
 
 .mega-menu__header {
-  margin-bottom: 14px;
-  padding-bottom: 8px;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .mega-menu__tag {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  margin-bottom: 4px;
+  font-family: var(--font-sans);
+  font-size: var(--text-micro);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-widest);
+  color: var(--text-muted);
+  opacity: var(--opacity-low);
+  margin-bottom: var(--space-1);
 }
 
 .mega-menu__cat-title {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-bold);
   color: var(--text-primary);
   text-decoration: none;
-  transition: color 0.15s ease;
+  letter-spacing: var(--letter-spacing-tight);
+  transition: color var(--transition-fast);
 }
 
-.mega-menu__cat-title:hover {
-  color: var(--accent);
-}
+.mega-menu__cat-title:hover { color: var(--text-secondary); }
 
 .mega-menu__list {
+  list-style: none;
+  margin: 0 0 var(--space-4) 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  margin-bottom: 16px;
+  gap: 2px;
 }
 
 .mega-menu__item-link {
-  font-size: 0.8rem;
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
   color: var(--text-secondary);
   text-decoration: none;
-  padding: 5px 8px;
-  border-radius: 4px;
-  transition: all 0.15s ease;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast),
+              background-color var(--transition-fast),
+              padding-left var(--transition-fast);
 }
 
 .mega-menu__item-link:hover {
   color: var(--text-primary);
-  background: rgba(109, 231, 255, 0.08);
-  padding-left: 12px;
+  background: var(--bg-surface);
+  padding-left: var(--space-3);
 }
 
 .mega-menu__all-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--accent);
+  gap: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: var(--text-micro);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-widest);
+  color: var(--text-secondary);
   margin-top: auto;
   text-decoration: none;
-  transition: transform 0.2s ease;
+  text-transform: uppercase;
+  transition: gap var(--transition-fast), color var(--transition-fast);
 }
 
 .mega-menu__all-link:hover {
-  transform: translateX(4px);
+  gap: var(--space-3);
+  color: var(--text-primary);
 }
 
-/* ── Mega Menu Promo Showcase ── */
 .mega-menu__promo-card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 14px;
+  padding: var(--space-3);
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.mega-menu__promo-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
 }
 
 .mega-menu__promo-img-wrap {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  margin-bottom: 12px;
-  aspect-ratio: 16/9;
+  margin-bottom: var(--space-3);
+  aspect-ratio: 16/10;
+  background: var(--bg-elevated);
 }
 
-.mega-menu__promo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.mega-menu__promo-img { width: 100%; height: 100%; object-fit: cover; }
 
 .mega-menu__promo-badge {
   position: absolute;
-  bottom: 6px;
-  left: 6px;
+  bottom: var(--space-2);
+  left: var(--space-2);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 2px 6px;
-  background: rgba(8, 10, 13, 0.85);
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
-  border: 1px solid var(--border-cyan);
-  border-radius: 4px;
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  font-weight: 700;
-  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-micro);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 .mega-menu__promo-card h4 {
-  font-size: 0.85rem;
-  font-weight: 800;
-  margin-bottom: 6px;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-1) 0;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .mega-menu__promo-card p {
-  font-size: 0.72rem;
-  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  line-height: var(--line-height-normal);
   color: var(--text-secondary);
-  margin-bottom: 14px;
+  opacity: var(--opacity-medium);
+  margin: 0 0 var(--space-3) 0;
   flex: 1;
 }
 
-/* ── Header Actions ── */
+.mega-menu__promo-card .btn { align-self: flex-start; }
+
+/* ── Right-side actions ──────────────────────────────────────── */
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-2);
   flex-shrink: 0;
 }
 
-.header__wa-btn {
-  font-size: 0.78rem;
-  padding: 0.55rem 1.1rem;
+/* Unified icon button — 40×40, identical to logo & mobile toggle */
+.header__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--header-control-height);
+  height: var(--header-control-height);
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--transition-fast),
+              border-color var(--transition-fast),
+              background-color var(--transition-fast);
 }
 
-.header__quote-btn {
-  font-size: 0.78rem;
-  padding: 0.55rem 1.25rem;
-}
-
-.header__mobile-toggle {
-  display: none;
+.header__icon-btn:hover {
   color: var(--text-primary);
-  padding: 6px;
+  border-color: var(--border-strong);
+  background-color: var(--bg-surface);
 }
 
-/* ── Responsive ── */
-@media (max-width: 1120px) {
-  .header__nav {
-    display: none;
-  }
-  .header__mobile-toggle {
-    display: flex;
-  }
-  .header__wa-btn {
-    display: none;
-  }
+/* Unified CTA button — outline style matching icon buttons */
+.header__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: var(--header-control-height);
+  padding: 0 var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast);
 }
 
-@media (max-width: 580px) {
-  .header-glass-bar {
-    padding: 0 16px;
-    height: 60px;
-  }
-  .header__logo-title {
-    font-size: 0.82rem;
-  }
-  .header__quote-btn {
-    display: none;
-  }
+.header__cta-btn:hover {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+.header__mobile-toggle { display: none; }
+
+@media (max-width: 1180px) {
+  .header__nav { display: none; }
+  .header__mobile-toggle { display: inline-flex; }
+  .header__icon-btn--wa { display: none; }
+  .header__icon-btn--ig { display: none; }
+}
+
+@media (max-width: 640px) {
+  .header__logo-tagline { display: none; }
+  .header__logo-title { font-size: var(--text-caption); }
+  .header__cta-btn { display: none; }
+  .header__logo-img { height: 30px; }
+  .header__brand-name { gap: 2px; margin-left: var(--space-2); padding-left: var(--space-2); }
+  .header__brand-name-top,
+  .header__brand-name-bottom { font-size: var(--text-tiny); letter-spacing: var(--letter-spacing-wide); }
+}
+
+@media (max-width: 380px) {
+  .header__brand-name { display: none; }
 }
