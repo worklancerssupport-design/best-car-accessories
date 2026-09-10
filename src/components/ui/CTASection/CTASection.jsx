@@ -11,6 +11,7 @@ export default function CTASection({
   secondaryCta,
   whatsappMessage,
   variant = 'dark',
+  primaryIcon: PrimaryIcon,
 }) {
   const whatsappUrl = business.whatsapp
     ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(whatsappMessage || 'Hello Best Car Accessories, I would like to enquire about your services.')}`
@@ -33,7 +34,11 @@ export default function CTASection({
           <div className="cta-section__actions">
             <Link to={primary.href} className="cta-section__btn">
               <span>{primary.label}</span>
-              <ChevronRight size={16} className="cta-section__btn-icon" />
+              {PrimaryIcon ? (
+                <PrimaryIcon size={16} className="cta-section__btn-icon" />
+              ) : (
+                <ChevronRight size={16} className="cta-section__btn-icon" />
+              )}
             </Link>
             <a
               href={whatsappUrl}

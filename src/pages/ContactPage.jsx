@@ -5,7 +5,16 @@ import formsData from '../data/forms.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import CTASection from '../components/ui/CTASection/CTASection';
 import './ContactPage.css';
-import { MapPin, Phone, MessageCircle, Mail, Send, CheckCircle2 } from 'lucide-react';
+import {
+  MapPin,
+  Phone,
+  MessageCircle,
+  Mail,
+  Clock,
+  Send,
+  CheckCircle2,
+  ChevronRight,
+} from 'lucide-react';
 
 function validate(form) {
   const errors = {};
@@ -74,83 +83,54 @@ export default function ContactPage() {
         <div className="container"><Breadcrumbs items={breadcrumbs} /></div>
       </div>
 
-      <section className="contact-hero section--dark">
-        <div className="container contact-hero__content">
+      {/* HERO — matches cat-hero pattern exactly */}
+      <section className="contact-hero">
+        <div className="contact-hero__content">
           <span className="section-label">Get in Touch</span>
           <h1 className="contact-hero__title">
-            Let's Upgrade Your <span className="contact-hero__title-accent">Ride</span>
+            Let's <span className="contact-hero__title-accent">Upgrade</span><br/>Your Ride
           </h1>
           <p className="contact-hero__subtitle">
-            Send us an enquiry, WhatsApp your car model, or visit our shop on NMS Road, Chennai.
-            We will help you find the right accessories for your car.
+            Send us an enquiry, WhatsApp your car model, or visit our workshop on NMS Road, Chennai.
           </p>
-        </div>
-      </section>
-
-      <section className="section contact-methods">
-        <div className="container">
-          <div className="contact-methods__grid">
+          <div className="contact-hero__actions">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-method"
+              className="contact-hero__btn contact-hero__btn--primary"
             >
-              <div className="contact-method__icon"><MessageCircle size={28} /></div>
-              <h3>WhatsApp Us</h3>
-              <p>{business.whatsapp || 'WhatsApp number — to be configured'}</p>
-              <span className="contact-method__cta">Message Now →</span>
+              <span>WhatsApp Us</span>
+              <MessageCircle size={16} className="contact-hero__btn-icon" aria-hidden="true" />
             </a>
             <a
               href={business.phone ? `tel:${business.phone}` : '#'}
-              className="contact-method"
+              className="contact-hero__btn contact-hero__btn--primary"
             >
-              <div className="contact-method__icon"><Phone size={28} /></div>
-              <h3>Call Us</h3>
-              <p>{business.phone || 'Phone number — to be configured'}</p>
-              <span className="contact-method__cta">Call Now →</span>
+              <span>Call Now</span>
+              <Phone size={16} className="contact-hero__btn-icon" aria-hidden="true" />
             </a>
-            <div className="contact-method">
-              <div className="contact-method__icon"><MapPin size={28} /></div>
-              <h3>Visit Us</h3>
-              <p>{business.address}</p>
-              {business.mapUrl && (
-                <a href={business.mapUrl} target="_blank" rel="noopener noreferrer" className="contact-method__cta">
-                  Get Directions →
-                </a>
-              )}
-            </div>
-            {business.email && (
-              <a href={`mailto:${business.email}`} className="contact-method">
-                <div className="contact-method__icon"><Mail size={28} /></div>
-                <h3>Email Us</h3>
-                <p>{business.email}</p>
-                <span className="contact-method__cta">Send Email →</span>
-              </a>
-            )}
           </div>
         </div>
       </section>
 
-      <section className="section contact-form-section">
-        <div className="container contact-form-wrap">
-          <div className="contact-form-text">
-            <span className="section-label">Send an Enquiry</span>
-            <h2 className="section-title">Tell Us What You Need</h2>
-            <div className="divider" />
-            <p>
-              Fill in the form with your car model and the accessories you are interested in.
-              We will get back to you with options and information.
-            </p>
-            <p className="contact-form-hint">
-              For faster response, WhatsApp your car model and requirements directly to us.
-            </p>
-          </div>
+      {/* COMBINED: Form (primary action) + Contact/Visit card (all info) */}
+      <section className="section contact-main">
+        <div className="container contact-main__grid">
+          {/* LEFT: Form panel */}
           <div className="contact-form-panel">
+            <header className="contact-form-panel__header">
+              <h2 className="contact-form-panel__title">Send Us a Message</h2>
+              <p className="contact-form-panel__intro">
+                Share your car model and the accessories you are interested in.
+                We will get back to you with options and pricing.
+              </p>
+            </header>
+
             {success ? (
               <div className="contact-form-success">
                 <CheckCircle2 size={48} style={{ color: 'var(--color-success)' }} />
-                <h3>Enquiry Sent!</h3>
+                <h3>Enquiry Sent</h3>
                 <p>Thank you for reaching out. We will get back to you shortly.</p>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
                   Also WhatsApp Us
@@ -194,29 +174,100 @@ export default function ContactPage() {
                   <label htmlFor="message">Message</label>
                   <textarea id="message" name="message" rows={4} value={form.message} onChange={handleChange} placeholder="Any specific requirements, questions or details about your car..." />
                 </div>
-                <button type="submit" className="btn btn-primary btn-lg contact-form__submit" disabled={loading}>
+                <button type="submit" className="btn btn-lg contact-form__submit" disabled={loading}>
                   {loading ? 'Sending...' : <><Send size={16} /> Send Enquiry</>}
                 </button>
               </form>
             )}
           </div>
+
+          {/* RIGHT: Contact + Visit card (all info grouped) */}
+          <aside className="contact-info">
+            {/* Reach Us */}
+            <article className="contact-info__block">
+              <h3 className="contact-info__title">Reach Us Directly</h3>
+              <ul className="contact-info__list">
+                <li className="contact-info__item">
+                  <span className="contact-info__icon" aria-hidden="true">
+                    <Phone size={16} />
+                  </span>
+                  <div>
+                    <span className="contact-info__label">Phone & WhatsApp</span>
+                    <a href={business.phone ? `tel:${business.phone}` : '#'} className="contact-info__value">
+                      {business.phone || 'Configure in business.json'}
+                    </a>
+                  </div>
+                </li>
+                {business.email && (
+                  <li className="contact-info__item">
+                    <span className="contact-info__icon" aria-hidden="true">
+                      <Mail size={16} />
+                    </span>
+                    <div>
+                      <span className="contact-info__label">Email</span>
+                      <a href={`mailto:${business.email}`} className="contact-info__value">
+                        {business.email}
+                      </a>
+                    </div>
+                  </li>
+                )}
+              </ul>
+            </article>
+
+            {/* Visit Us */}
+            <article className="contact-info__block">
+              <h3 className="contact-info__title">Visit the Workshop</h3>
+              <ul className="contact-info__list">
+                <li className="contact-info__item">
+                  <span className="contact-info__icon" aria-hidden="true">
+                    <MapPin size={16} />
+                  </span>
+                  <div>
+                    <span className="contact-info__label">Address</span>
+                    <span className="contact-info__value contact-info__value--text">{business.address}</span>
+                  </div>
+                </li>
+                <li className="contact-info__item">
+                  <span className="contact-info__icon" aria-hidden="true">
+                    <Clock size={16} />
+                  </span>
+                  <div>
+                    <span className="contact-info__label">Working Hours</span>
+                    <span className="contact-info__value contact-info__value--text">
+                      {business.hours.weekdays.days}: {business.hours.weekdays.open} – {business.hours.weekdays.close}
+                    </span>
+                    <span className="contact-info__value contact-info__value--text">
+                      {business.hours.sunday.days}: {business.hours.sunday.open} – {business.hours.sunday.close}
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </article>
+
+            {/* Embedded map */}
+            {business.mapUrl && (
+              <div className="contact-info__map">
+                <iframe
+                  src={business.mapUrl}
+                  title="Best Car Accessories location map — Royapettah, Chennai"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+            )}
+          </aside>
         </div>
       </section>
 
-      {business.mapUrl && (
-        <section className="contact-map">
-          <iframe
-            src={business.mapUrl}
-            width="100%"
-            height="420"
-            style={{ border: 0, display: 'block' }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Best Car Accessories location on Google Maps"
-          />
-        </section>
-      )}
+      <CTASection
+        title="Prefer to Talk?"
+        subtitle="Call us during working hours or WhatsApp your car model and requirements — we will help you choose the right accessories."
+        primaryCta={{ label: 'Call Now', href: business.phone ? `tel:${business.phone}` : '#' }}
+        whatsappMessage="Hi Best Car Accessories, I would like to enquire about your services."
+        primaryIcon={Phone}
+        dark={true}
+      />
     </>
   );
 }
