@@ -123,7 +123,7 @@
   --text-title:    1.5625rem;  /* 25px */
   --text-heading:  1.9375rem;  /* 31px */
   --text-display:  2.4375rem;  /* 39px */
-  --text-hero:     clamp(2.5rem, 5vw, 4rem);  /* 40–64px fluid — larger hero */
+  --text-hero:     clamp(2.25rem, 4.5vw + 0.5rem, 3.375rem);  /* 36–54px fluid — hits 54px by 1024px viewport, caps at 54px on larger desktops */
 
   /* ── Legacy aliases (kept for migration) ── */
   --text-xs:   var(--text-micro);

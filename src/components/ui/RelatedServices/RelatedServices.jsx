@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Wrench } from 'lucide-react';
+import { ChevronRight, Wrench } from 'lucide-react';
 import exteriorData from '../../../data/products/exterior.json';
 import interiorData from '../../../data/products/interior.json';
 import './RelatedServices.css';
@@ -10,6 +10,7 @@ export default function RelatedServices({
   currentSlug,
   title = 'Related Accessories',
   label = 'You May Also Like',
+  hideHeader = false,
 }) {
   const allServices = [...exteriorData.items, ...interiorData.items];
 
@@ -26,8 +27,8 @@ export default function RelatedServices({
 
   return (
     <section className="related-services">
-      {label && <span className="related-services__label">{label}</span>}
-      <h2 className="related-services__title">{title}</h2>
+      {!hideHeader && label && <span className="related-services__label">{label}</span>}
+      {!hideHeader && <h2 className="related-services__title">{title}</h2>}
 
       <ul className="related-services__list">
         {services.map((service) => (
@@ -40,15 +41,15 @@ export default function RelatedServices({
                 <Wrench size={14} />
               </span>
               <span className="related-services__name">{service.name}</span>
-              <ArrowRight size={14} className="related-services__arrow" aria-hidden="true" />
+              <ChevronRight size={14} className="related-services__arrow" aria-hidden="true" />
             </Link>
           </li>
         ))}
       </ul>
 
-      <Link to="/services" className="related-services__cta btn btn-primary">
+      <Link to="/services" className="related-services__cta">
         View All Services
-        <ArrowRight size={16} className="btn-icon" />
+        <ChevronRight size={16} className="related-services__cta-icon" />
       </Link>
     </section>
   );

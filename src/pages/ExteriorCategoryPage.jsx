@@ -96,13 +96,18 @@ export default function ExteriorCategoryPage() {
       </div>
 
       {/* Hero */}
-      <section className="cat-hero" aria-labelledby="cat-hero-title">
+      <section className="cat-hero cat-hero--exterior" aria-labelledby="cat-hero-title">
+        <img
+          className="cat-hero__bg"
+          src="https://i.pinimg.com/736x/8d/84/03/8d840388e1e9aa2edff89183b40689a6.jpg"
+          alt=""
+          aria-hidden="true"
+        />
         <div className="cat-hero__overlay" aria-hidden="true" />
-        <div className="container cat-hero__content">
+        <div className="cat-hero__content">
           <span className="section-label">3D Exterior Customization Studio</span>
           <h1 id="cat-hero-title" className="cat-hero__title">
-            Exterior Car Accessories
-            <br /><span className="section-title__accent">in Chennai</span>
+            Exterior Car <br />Accessories<br />in Chennai
           </h1>
           <p className="cat-hero__subtitle">
             Transform your vehicle's road presence with high-performance optical lighting, aerodynamic styling, rugged protection, and zero-wire-cut installation.
@@ -118,8 +123,8 @@ export default function ExteriorCategoryPage() {
               rel="noopener noreferrer"
               className="cat-hero__btn cat-hero__btn--secondary"
             >
-              <MessageCircle size={16} className="cat-hero__btn-icon" />
               <span>WhatsApp Us</span>
+              <MessageCircle size={16} className="cat-hero__btn-icon" />
             </a>
           </div>
         </div>
@@ -128,31 +133,37 @@ export default function ExteriorCategoryPage() {
       {/* Search & Filter Bar */}
       <section className="cat-filter-section" aria-label="Filter exterior accessories">
         <div className="container">
-          <div className="cat-search-row">
-            <div className="cat-search-wrap">
-              <Search size={18} className="cat-search-icon" aria-hidden="true" />
-              <input
-                type="search"
-                placeholder="Search 20 exterior upgrades (e.g., fog light, spoiler, bumper)..."
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                className="cat-search-input"
-                aria-label="Search exterior accessories"
-              />
+          <div className="cat-filter-grid">
+            <div className="cat-search-col">
+              <span className="cat-filter-eyebrow">Search</span>
+              <div className="cat-search-wrap">
+                <Search size={16} className="cat-search-icon" aria-hidden="true" />
+                <input
+                  type="search"
+                  placeholder="Fog light, spoiler, bumper…"
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
+                  className="cat-search-input"
+                  aria-label="Search exterior accessories"
+                />
+              </div>
             </div>
-          </div>
-          <div className="cat-tags" role="tablist" aria-label="Accessory groups">
-            {FILTER_TAGS.map(tag => (
-              <button
-                key={tag}
-                onClick={() => setActiveTag(tag)}
-                className={`cat-tag ${activeTag === tag ? 'cat-tag--active' : ''}`}
-                aria-pressed={activeTag === tag}
-                role="tab"
-              >
-                {tag}
-              </button>
-            ))}
+            <div className="cat-tags-col">
+              <span className="cat-filter-eyebrow">Filter by group</span>
+              <div className="cat-tags" role="tablist" aria-label="Accessory groups">
+                {FILTER_TAGS.map(tag => (
+                  <button
+                    key={tag}
+                    onClick={() => setActiveTag(tag)}
+                    className={`cat-tag ${activeTag === tag ? 'cat-tag--active' : ''}`}
+                    aria-pressed={activeTag === tag}
+                    role="tab"
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -208,13 +219,19 @@ export default function ExteriorCategoryPage() {
 
       {/* FAQ */}
       <section className="cat-faq" aria-labelledby="cat-faq-title">
-        <div className="container cat-faq__inner">
-          <span className="section-label">Technical Inquiries</span>
-          <h2 id="cat-faq-title" className="section-title">
-            Exterior <span className="section-title__accent">Fitment FAQ</span>
-          </h2>
-          <div className="divider" aria-hidden="true" />
-          <FAQ faqs={CATEGORY_FAQS} />
+        <div className="container">
+          <header className="cat-faq__header">
+            <span className="section-label">Technical Inquiries</span>
+            <h2 id="cat-faq-title" className="cat-faq__title">
+              Exterior Fitment FAQ
+            </h2>
+            <p className="cat-faq__subtitle">
+              Common questions about our exterior fitment process, materials, and warranty — answered by our Chennai technicians.
+            </p>
+          </header>
+          <div className="cat-faq__inner">
+            <FAQ faqs={CATEGORY_FAQS} />
+          </div>
         </div>
       </section>
 

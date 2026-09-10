@@ -147,6 +147,15 @@
   border-color: var(--border-strong);
 }
 
+.cta-section__btn-icon {
+  color: var(--brand-red);
+  transition: transform var(--transition-fast);
+}
+
+.cta-section__btn:hover .cta-section__btn-icon {
+  transform: translateX(3px);
+}
+
 /* Outline icon button — matches navbar WhatsApp/Instagram style */
 .cta-section__icon-btn {
   display: inline-flex;
@@ -198,5 +207,13 @@
   .cta-section__actions {
     flex-direction: row;
     width: auto;
+  }
+
+  .cta-section__title {
+    font-size: var(--text-heading);
+  }
+
+  .cta-section__subtitle {
+    font-size: var(--text-body);
   }
 }

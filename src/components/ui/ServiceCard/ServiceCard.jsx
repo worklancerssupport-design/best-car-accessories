@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import './ServiceCard.css';
 
 export default function ServiceCard({ service, index = 1 }) {
@@ -35,7 +35,7 @@ export default function ServiceCard({ service, index = 1 }) {
           aria-label={`View details for ${service.name}`}
         >
           <span>View Details</span>
-          <ArrowRight size={14} className="svc-card__arrow" />
+          <ChevronRight size={14} className="svc-card__arrow" />
         </Link>
       </div>
     </article>

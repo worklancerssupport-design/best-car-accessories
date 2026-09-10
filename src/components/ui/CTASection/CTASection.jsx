@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MessageCircle, ArrowRight, Instagram } from 'lucide-react';
+import { MessageCircle, ChevronRight, Instagram } from 'lucide-react';
 import business from '../../../data/business.json';
 import './CTASection.css';
 
@@ -33,7 +33,7 @@ export default function CTASection({
           <div className="cta-section__actions">
             <Link to={primary.href} className="cta-section__btn">
               <span>{primary.label}</span>
-              <ArrowRight size={16} />
+              <ChevronRight size={16} className="cta-section__btn-icon" />
             </Link>
             <a
               href={whatsappUrl}

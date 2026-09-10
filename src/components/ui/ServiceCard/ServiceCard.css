@@ -125,7 +125,7 @@
   gap: var(--space-3);
 }
 
-.svc-card__arrow { transition: transform var(--transition-fast); }
+.svc-card__arrow { color: var(--brand-red); transition: transform var(--transition-fast); }
 .svc-card__cta:hover .svc-card__arrow { transform: translateX(2px); }
 
 @media (max-width: 480px) {

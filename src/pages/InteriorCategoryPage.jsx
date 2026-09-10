@@ -9,7 +9,7 @@ import CTASection from '../components/ui/CTASection/CTASection';
 import FAQ from '../components/ui/FAQ/FAQ';
 import ServiceCard from '../components/ui/ServiceCard/ServiceCard';
 import './CategoryPage.css';
-import { Search } from 'lucide-react';
+import { Search, ChevronRight, MessageCircle } from 'lucide-react';
 
 const CATEGORY_FAQS = faqsData.interior;
 
@@ -104,24 +104,27 @@ export default function InteriorCategoryPage() {
       {/* Hero */}
       <section className="cat-hero cat-hero--interior" aria-labelledby="cat-hero-title">
         <div className="cat-hero__overlay" aria-hidden="true" />
-        <div className="container cat-hero__content">
+        <div className="cat-hero__content">
           <span className="section-label">3D Cockpit Customization Studio</span>
           <h1 id="cat-hero-title" className="cat-hero__title">
-            Interior Car Accessories
-            <br /><span className="section-title__accent">in Chennai</span>
+            Interior Car <br />Accessories<br />in Chennai
           </h1>
           <p className="cat-hero__subtitle">
             Redefine your interior driving sanctuary with 18-zone ambient light choreography, cinematic touchscreen infotainment, audiophile sound stages, and bespoke tailored leather upholstery.
           </p>
           <div className="cat-hero__actions">
-            <Link to="/contact" className="btn btn-primary btn-lg">Book Interior Fitting</Link>
+            <Link to="/contact" className="cat-hero__btn cat-hero__btn--primary">
+              <span>Book Fitting</span>
+              <ChevronRight size={16} className="cat-hero__btn-icon" />
+            </Link>
             <a
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp btn-lg"
+              className="cat-hero__btn cat-hero__btn--secondary"
             >
-              WhatsApp Us
+              <span>WhatsApp Us</span>
+              <MessageCircle size={16} className="cat-hero__btn-icon" />
             </a>
           </div>
         </div>
@@ -130,31 +133,37 @@ export default function InteriorCategoryPage() {
       {/* Search & Filter Bar */}
       <section className="cat-filter-section" aria-label="Filter interior accessories">
         <div className="container">
-          <div className="cat-search-row">
-            <div className="cat-search-wrap">
-              <Search size={18} className="cat-search-icon" aria-hidden="true" />
-              <input
-                type="search"
-                placeholder="Search 20 interior upgrades (e.g., ambient light, seat cover, infotainment)..."
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                className="cat-search-input"
-                aria-label="Search interior accessories"
-              />
+          <div className="cat-filter-grid">
+            <div className="cat-search-col">
+              <span className="cat-filter-eyebrow">Search</span>
+              <div className="cat-search-wrap">
+                <Search size={16} className="cat-search-icon" aria-hidden="true" />
+                <input
+                  type="search"
+                  placeholder="Ambient light, seat cover, infotainment…"
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
+                  className="cat-search-input"
+                  aria-label="Search interior accessories"
+                />
+              </div>
             </div>
-          </div>
-          <div className="cat-tags" role="tablist" aria-label="Accessory groups">
-            {FILTER_TAGS.map(tag => (
-              <button
-                key={tag}
-                onClick={() => setActiveTag(tag)}
-                className={`cat-tag ${activeTag === tag ? 'cat-tag--active' : ''}`}
-                aria-pressed={activeTag === tag}
-                role="tab"
-              >
-                {tag}
-              </button>
-            ))}
+            <div className="cat-tags-col">
+              <span className="cat-filter-eyebrow">Filter by group</span>
+              <div className="cat-tags" role="tablist" aria-label="Accessory groups">
+                {FILTER_TAGS.map(tag => (
+                  <button
+                    key={tag}
+                    onClick={() => setActiveTag(tag)}
+                    className={`cat-tag ${activeTag === tag ? 'cat-tag--active' : ''}`}
+                    aria-pressed={activeTag === tag}
+                    role="tab"
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -163,7 +172,7 @@ export default function InteriorCategoryPage() {
       <section className="cat-grid-section" aria-label="Interior accessory catalog">
         <div className="container">
           {isGroupedView ? (
-            INTERIOR_GROUPS.map((group) => {
+            INTERIOR_GROUPS.map((group, groupIdx) => {
               const groupItems = interiorData.items.filter(s => group.slugs.includes(s.slug));
               if (groupItems.length === 0) return null;
 
@@ -210,13 +219,19 @@ export default function InteriorCategoryPage() {
 
       {/* FAQ */}
       <section className="cat-faq" aria-labelledby="cat-faq-title">
-        <div className="container cat-faq__inner">
-          <span className="section-label">Cabin Engineering</span>
-          <h2 id="cat-faq-title" className="section-title">
-            Interior <span className="section-title__accent">Customization FAQ</span>
-          </h2>
-          <div className="divider" aria-hidden="true" />
-          <FAQ faqs={CATEGORY_FAQS} />
+        <div className="container">
+          <header className="cat-faq__header">
+            <span className="section-label">Cabin Engineering</span>
+            <h2 id="cat-faq-title" className="cat-faq__title">
+              Interior Customization FAQ
+            </h2>
+            <p className="cat-faq__subtitle">
+              Common questions about our interior customization process, materials, and warranty — answered by our Chennai technicians.
+            </p>
+          </header>
+          <div className="cat-faq__inner">
+            <FAQ faqs={CATEGORY_FAQS} />
+          </div>
         </div>
       </section>
 
@@ -224,7 +239,7 @@ export default function InteriorCategoryPage() {
       <CTASection
         title="Ready to Upgrade Your Car's Cabin?"
         subtitle="Schedule your slot at Best Car Accessories, NMS Road, Chennai for professional consultation."
-        primaryCta={{ label: 'Schedule Consultation', href: '/contact' }}
+        primaryCta={{ label: 'Book Fitment Slot', href: '/contact' }}
         whatsappMessage="Hi Best Car Accessories, I am interested in interior car customization for my car."
         dark={true}
       />
