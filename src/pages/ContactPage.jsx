@@ -75,7 +75,6 @@ export default function ContactPage() {
       </div>
 
       <section className="contact-hero section--dark">
-        <div className="contact-hero__overlay" />
         <div className="container contact-hero__content">
           <span className="section-label">Get in Touch</span>
           <h1 className="contact-hero__title">

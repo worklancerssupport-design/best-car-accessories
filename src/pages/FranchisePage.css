@@ -22,10 +22,12 @@
   border-bottom: 1px solid var(--border);
 }
 
-.franchise-hero__overlay {
+.franchise-hero::after {
+  content: '';
   position: absolute;
   inset: 0;
   background: var(--gradient-overlay);
+  pointer-events: none;
 }
 
 .franchise-hero__content {

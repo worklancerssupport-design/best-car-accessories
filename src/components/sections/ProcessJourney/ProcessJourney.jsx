@@ -5,7 +5,6 @@ import {
   Wrench,
   CheckCircle,
 } from 'lucide-react';
-import SectionDivider from '../../ui/SectionDivider/SectionDivider';
 import processSteps from '../../../data/process.json';
 import './ProcessJourney.css';
 
@@ -20,13 +19,11 @@ const STEP_ICONS = {
 const ProcessJourney = () => {
   return (
     <section className="process-section" id="process">
-      <SectionDivider num="07" label="CUSTOMIZATION EXPERIENCE" />
-
       <div className="container">
         <header className="process-header">
           <span className="section-label">How We Work</span>
-          <h2 className="section-title text-white">Our Process</h2>
-          <p className="section-subtitle section-subtitle--light">
+          <h2 className="process-section__title">Our Process</h2>
+          <p className="process-section__subtitle">
             From initial consultation to final diagnostic calibration, experience structured
             automotive craftsmanship in Chennai.
           </p>
@@ -38,14 +35,10 @@ const ProcessJourney = () => {
             return (
               <li key={step.id} className="process-step">
                 <div className="process-step-marker" aria-hidden="true">
-                  <span className="process-step-number">{step.id}</span>
-                  <span className="process-step-icon">
-                    <Icon size={20} />
-                  </span>
+                  <Icon size={22} className="process-step-icon" />
                 </div>
 
                 <article className="process-step-card">
-                  <span className="process-step-label">Step {idx + 1}</span>
                   <h3 className="process-step-title">{step.title}</h3>
                   <p className="process-step-desc">{step.desc}</p>
                 </article>

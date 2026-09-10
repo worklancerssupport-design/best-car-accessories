@@ -103,11 +103,10 @@ export default function InteriorCategoryPage() {
 
       {/* Hero */}
       <section className="cat-hero cat-hero--interior" aria-labelledby="cat-hero-title">
-        <div className="cat-hero__overlay" aria-hidden="true" />
         <div className="cat-hero__content">
           <span className="section-label">3D Cockpit Customization Studio</span>
           <h1 id="cat-hero-title" className="cat-hero__title">
-            Interior Car <br />Accessories<br />in Chennai
+            Interior Car <br /><span className="about-hero__title-accent">Accessories</span><br />in Chennai
           </h1>
           <p className="cat-hero__subtitle">
             Redefine your interior driving sanctuary with 18-zone ambient light choreography, cinematic touchscreen infotainment, audiophile sound stages, and bespoke tailored leather upholstery.

@@ -97,17 +97,18 @@ export default function ExteriorCategoryPage() {
 
       {/* Hero */}
       <section className="cat-hero cat-hero--exterior" aria-labelledby="cat-hero-title">
-        <img
-          className="cat-hero__bg"
-          src="https://i.pinimg.com/736x/8d/84/03/8d840388e1e9aa2edff89183b40689a6.jpg"
-          alt=""
-          aria-hidden="true"
-        />
-        <div className="cat-hero__overlay" aria-hidden="true" />
+        <div className="cat-hero__media">
+          <img
+            className="cat-hero__bg"
+            src="https://i.pinimg.com/736x/8d/84/03/8d840388e1e9aa2edff89183b40689a6.jpg"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
         <div className="cat-hero__content">
           <span className="section-label">3D Exterior Customization Studio</span>
           <h1 id="cat-hero-title" className="cat-hero__title">
-            Exterior Car <br />Accessories<br />in Chennai
+            Exterior Car <br /><span className="about-hero__title-accent">Accessories</span><br />in Chennai
           </h1>
           <p className="cat-hero__subtitle">
             Transform your vehicle's road presence with high-performance optical lighting, aerodynamic styling, rugged protection, and zero-wire-cut installation.

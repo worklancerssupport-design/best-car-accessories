@@ -73,7 +73,6 @@ export default function FranchisePage() {
       </div>
 
       <section className="franchise-hero section--dark">
-        <div className="franchise-hero__overlay" />
         <div className="container franchise-hero__content">
           <span className="section-label">Business Opportunity</span>
           <h1 className="franchise-hero__title">

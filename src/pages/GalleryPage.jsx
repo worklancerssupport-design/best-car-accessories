@@ -2,9 +2,10 @@ import { useState, useCallback, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import business from '../data/business.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
+import CTASection from '../components/ui/CTASection/CTASection';
 import galleryData from '../data/gallery.json';
 import './GalleryPage.css';
-import { X, ZoomIn, Camera, ImageIcon } from 'lucide-react';
+import { X, ChevronRight } from 'lucide-react';
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -44,36 +45,36 @@ export default function GalleryPage() {
         <div className="container"><Breadcrumbs items={breadcrumbs} /></div>
       </div>
 
-      <section className="gallery-hero section--dark">
-        <div className="gallery-hero__overlay" />
-        <div className="container gallery-hero__content">
+      <section className="gallery-hero">
+        <div className="gallery-hero__content">
           <span className="section-label">Our Work</span>
           <h1 className="gallery-hero__title">
-            Accessories <span className="gallery-hero__title-accent">Gallery</span>
+            Installation <span className="gallery-hero__title-accent"><br/>Gallery</span>
           </h1>
           <p className="gallery-hero__subtitle">
-            Browse our installation work — exterior accessories, interior customization,
-            lighting, infotainment, audio upgrades, cameras, and more.
+            A curated look at the work that has come through our workshop — exterior
+            accessories, interior customisation, lighting, infotainment, audio, and
+            cameras, fitted with care on every car.
           </p>
 
           <div className="gallery-stats">
             <div className="gallery-stat">
               <span className="gallery-stat__value">{galleryData.items.length}+</span>
-              <span className="gallery-stat__label">Installations</span>
+              <span className="gallery-stat__label">Installations Completed</span>
             </div>
             <div className="gallery-stat">
               <span className="gallery-stat__value">{galleryData.categories.length - 1}</span>
-              <span className="gallery-stat__label">Categories</span>
+              <span className="gallery-stat__label">Accessory Categories</span>
             </div>
             <div className="gallery-stat">
               <span className="gallery-stat__value">15+</span>
-              <span className="gallery-stat__label">Years Experience</span>
+              <span className="gallery-stat__label">Years on NMS Road</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="gallery-filter-section">
+      <section className="gallery-filters-section">
         <div className="container">
           <div className="gallery-filters" role="tablist" aria-label="Gallery categories">
             {galleryData.categories.map((cat) => (
@@ -83,10 +84,10 @@ export default function GalleryPage() {
                 role="tab"
                 aria-selected={activeCategory === cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`gallery-filter-btn ${activeCategory === cat ? 'gallery-filter-btn--active' : ''}`}
+                className={`gallery-filter ${activeCategory === cat ? 'gallery-filter--active' : ''}`}
               >
-                {cat}
-                <span className="gallery-filter-count">{counts[cat] ?? 0}</span>
+                <span className="gallery-filter__label">{cat}</span>
+                <span className="gallery-filter__count">{counts[cat] ?? 0}</span>
               </button>
             ))}
           </div>
@@ -95,53 +96,64 @@ export default function GalleryPage() {
 
       <section className="gallery-grid-section">
         <div className="container">
+          <p className="gallery-grid__meta" aria-live="polite">
+            <span className="gallery-grid__count">{filtered.length}</span>
+            <span className="gallery-grid__label">
+              {activeCategory === 'All' ? 'total projects' : `in ${activeCategory}`}
+            </span>
+          </p>
+
           {filtered.length > 0 ? (
             <div className="gallery-grid">
-              {filtered.map((item, idx) => (
-                <div
+              {filtered.map((item) => (
+                <button
+                  type="button"
                   key={item.id}
-                  className={`gallery-item ${item.featured ? 'gallery-item--featured' : ''} ${idx % 5 === 3 ? 'gallery-item--tall' : ''}`}
+                  className={`gallery-card ${item.featured ? 'gallery-card--featured' : ''}`}
                   onClick={() => openLightbox(item)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && openLightbox(item)}
-                  aria-label={`View ${item.alt}`}
+                  aria-label={`View ${item.title || item.alt}`}
                 >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    loading="lazy"
-                    className="gallery-item__img"
-                    onError={(e) => {
-                      e.currentTarget.style.background = 'var(--bg-elevated)';
-                      e.currentTarget.style.opacity = '0.3';
-                    }}
-                  />
-                  <div className="gallery-item__overlay">
-                    <span className="gallery-item__zoom" aria-hidden="true">
-                      <ZoomIn size={18} />
+                  <span className="gallery-card__media">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      loading="lazy"
+                      className="gallery-card__img"
+                    />
+                  </span>
+                  {(item.title || item.car) && (
+                    <span className="gallery-card__body">
+                      {item.title && (
+                        <span className="gallery-card__title">{item.title}</span>
+                      )}
+                      <span className="gallery-card__meta">
+                        {item.car && <span className="gallery-card__car">{item.car}</span>}
+                        {item.car && item.category && <span className="gallery-card__sep" aria-hidden="true">·</span>}
+                        {item.category && <span className="gallery-card__cat">{item.category}</span>}
+                      </span>
                     </span>
-                    {item.title && (
-                      <h3 className="gallery-item__title">{item.title}</h3>
-                    )}
-                    {item.car && (
-                      <span className="gallery-item__car">{item.car}</span>
-                    )}
-                    <span className="gallery-item__cat">{item.category}</span>
-                  </div>
-                </div>
+                  )}
+                  <span className="gallery-card__cta" aria-hidden="true">
+                    View <ChevronRight size={14} className="gallery-card__cta-icon" />
+                  </span>
+                </button>
               ))}
             </div>
           ) : (
             <div className="gallery-empty">
-              <span className="gallery-empty__icon" aria-hidden="true">
-                <ImageIcon size={28} />
-              </span>
-              <p>No items in this category yet.</p>
+              <p className="gallery-empty__text">No projects in this category yet.</p>
             </div>
           )}
         </div>
       </section>
+
+      <CTASection
+        title="Want This On Your Car?"
+        subtitle="Visit Best Car Accessories on NMS Road, Chennai, or send us a message with your car model and the accessory you are looking for."
+        primaryCta={{ label: 'Book Fitment Slot', href: '/contact' }}
+        whatsappMessage="Hi Best Car Accessories, I would like to enquire about an accessory I saw in your gallery."
+        dark={true}
+      />
 
       {lightbox && (
         <div
@@ -165,34 +177,16 @@ export default function GalleryPage() {
               alt={lightbox.alt}
               className="gallery-lightbox__img"
             />
-            <p className="gallery-lightbox__caption">
-              {lightbox.title || lightbox.alt}
-              {lightbox.car && <span> · {lightbox.car}</span>}
-            </p>
+            {(lightbox.title || lightbox.car) && (
+              <p className="gallery-lightbox__caption">
+                {lightbox.title && <span className="gallery-lightbox__title">{lightbox.title}</span>}
+                {lightbox.title && lightbox.car && <span className="gallery-lightbox__sep" aria-hidden="true"> · </span>}
+                {lightbox.car && <span className="gallery-lightbox__car">{lightbox.car}</span>}
+              </p>
+            )}
           </div>
         </div>
       )}
-
-      <section className="gallery-note">
-        <div className="container gallery-note__inner">
-          <p className="gallery-note__text">
-            <strong>Note:</strong> Gallery images are placeholder images representing our accessory
-            categories. Replace with actual installation photographs from the business for a live website.
-          </p>
-          <p className="gallery-note__meta">
-            <Camera size={14} aria-hidden="true" />
-            Follow us on Instagram{' '}
-            <a
-              href={business.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gallery-note__link"
-            >
-              {business.instagramHandle}
-            </a>{' '}for latest work.
-          </p>
-        </div>
-      </section>
     </>
   );
 }

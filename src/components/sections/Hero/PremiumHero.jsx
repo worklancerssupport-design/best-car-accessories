@@ -19,7 +19,7 @@ export default function PremiumHero() {
       <div className="premium-hero__content">
         <article className="premium-hero__copy">
           <h1 className="premium-hero__title">
-            Premium Car Detailing &amp; Accessories in Chennai
+            Chennai's <br/><span className="about-hero__title-accent">Premium</span> Car Detailing &amp; Accessories
           </h1>
 
           <p className="premium-hero__lead">
