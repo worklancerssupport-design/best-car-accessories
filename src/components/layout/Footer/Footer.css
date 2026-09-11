@@ -216,6 +216,15 @@ a.footer-contact-item:hover { color: var(--text-primary); }
   opacity: var(--opacity-medium);
 }
 
+.footer-bottom p {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  opacity: inherit;
+  margin: 0;
+  line-height: inherit;
+}
+
 .footer-bottom-meta {
   display: flex;
   align-items: center;

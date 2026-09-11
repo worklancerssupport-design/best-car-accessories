@@ -5,19 +5,38 @@ import formsData from '../data/forms.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import CTASection from '../components/ui/CTASection/CTASection';
 import './FranchisePage.css';
-import { Send, CheckCircle2, Users, TrendingUp, Award, MapPin } from 'lucide-react';
+import {
+  Award,
+  Users,
+  TrendingUp,
+  MapPin,
+  Phone,
+  MessageCircle,
+  Send,
+  CheckCircle2,
+  Clock,
+} from 'lucide-react';
 
 function validate(form) {
   const errors = {};
   if (!form.name.trim()) errors.name = 'Name is required';
-  if (!form.phone.trim()) errors.phone = 'Phone is required';
+  if (!form.phone.trim()) errors.phone = 'Phone number is required';
+  else if (!/^\d{10}$/.test(form.phone.replace(/\s/g, ''))) errors.phone = 'Enter a valid 10-digit number';
+  if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) errors.email = 'Enter a valid email';
   if (!form.city.trim()) errors.city = 'City is required';
-  if (!form.state.trim()) errors.state = 'State is required';
+  if (!form.investment) errors.investment = 'Select an investment range';
   return errors;
 }
 
+const highlights = [
+  { icon: Award, title: '15+ Years on NMS Road', desc: 'Established Chennai brand with a loyal, repeat customer base.' },
+  { icon: Users, title: '1,000+ Clients Served', desc: 'A demonstrated track record across hatchbacks, sedans and SUVs.' },
+  { icon: TrendingUp, title: 'Growing Customization Market', desc: 'Aftermarket accessories and customization is expanding across India.' },
+  { icon: MapPin, title: 'NMS Road Reference Studio', desc: 'A working Chennai studio you can visit, audit and learn from.' },
+];
+
 export default function FranchisePage() {
-  const [form, setForm] = useState({ name: '', phone: '', email: '', city: '', state: '', investment: '', existingBusiness: '', experience: '', message: '' });
+  const [form, setForm] = useState({ name: '', phone: '', email: '', city: '', investment: '', message: '' });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -40,15 +59,16 @@ export default function FranchisePage() {
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ access_key: business.forms.web3formsKey, ...form, subject: `Franchise Enquiry from ${form.name} — ${form.city}, ${form.state}` }),
+          body: JSON.stringify({ access_key: business.forms.web3formsKey, ...form, subject: `Franchise Enquiry from ${form.name} — ${form.city}` }),
         });
         if (!res.ok) throw new Error('Failed');
       } else {
         await new Promise(r => setTimeout(r, 800));
       }
       setSuccess(true);
+      setForm({ name: '', phone: '', email: '', city: '', investment: '', message: '' });
     } catch {
-      setErrors({ form: 'Submission failed. Please WhatsApp us directly.' });
+      setErrors({ form: 'Submission failed. Please try WhatsApp or call us directly.' });
     } finally {
       setLoading(false);
     }
@@ -72,70 +92,60 @@ export default function FranchisePage() {
         <div className="container"><Breadcrumbs items={breadcrumbs} /></div>
       </div>
 
-      <section className="franchise-hero section--dark">
-        <div className="container franchise-hero__content">
+      {/* HERO — matches cat-hero / contact-hero pattern */}
+      <section className="franchise-hero" aria-labelledby="franchise-hero-title">
+        <div className="franchise-hero__content">
           <span className="section-label">Business Opportunity</span>
-          <h1 className="franchise-hero__title">
-            Partner With <span className="franchise-hero__title-accent">Best Car Accessories</span>
+          <h1 id="franchise-hero-title" className="franchise-hero__title">
+            Become Our<br/><span className="franchise-hero__title-accent">Partner</span><br/>
           </h1>
           <p className="franchise-hero__subtitle">
             We are open to exploring partnership opportunities with entrepreneurs who share our passion
-            for quality car accessories and professional service.
+            for quality car accessories and professional installation.
           </p>
-        </div>
-      </section>
-
-      <section className="section franchise-why">
-        <div className="container">
-          <div className="franchise-why__header">
-            <span className="section-label">Why Partner With Us</span>
-            <h2 className="section-title">What We Bring</h2>
-            <div className="divider" />
-          </div>
-          <div className="franchise-why__grid">
-            {[
-              { icon: <Award size={28} />, title: '15+ Years of Experience', desc: 'Over 15 years of car accessories business experience in Chennai.' },
-              { icon: <Users size={28} />, title: '1000+ Client Track Record', desc: 'A demonstrated ability to serve car owners and build long-term customer relationships.' },
-              { icon: <TrendingUp size={28} />, title: 'Growing Market', desc: 'Car accessory and customization is a growing market across India.' },
-              { icon: <MapPin size={28} />, title: 'Chennai Base', desc: 'Established brand and operations on NMS Road, Chennai as a reference point.' },
-            ].map((item, i) => (
-              <div className="franchise-why__card" key={i}>
-                <div className="franchise-why__icon">{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <p className="franchise-why__note">
-            * Specific partnership terms, investment details, and support structure will be discussed
-            directly after reviewing your enquiry. We do not publish specific investment figures or promises.
-          </p>
-        </div>
-      </section>
-
-      <section className="section franchise-form-section">
-        <div className="container franchise-form-wrap">
-          <div className="franchise-form-text">
-            <span className="section-label">Get in Touch</span>
-            <h2 className="section-title">Submit Your Enquiry</h2>
-            <div className="divider" />
-            <p>
-              Fill in the form with your details and we will review your enquiry.
-              All discussions are completely confidential.
-            </p>
-            <p className="franchise-form-hint">
-              You can also WhatsApp us directly to start a conversation.
-            </p>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp franchise-whatsapp-cta">
-              WhatsApp Us Directly
+          <div className="franchise-hero__actions">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="franchise-hero__btn franchise-hero__btn--primary"
+            >
+              <span>WhatsApp Us</span>
+              <MessageCircle size={16} className="franchise-hero__btn-icon" aria-hidden="true" />
+            </a>
+            <a
+              href={business.phone ? `tel:${business.phone}` : '#'}
+              className="franchise-hero__btn franchise-hero__btn--primary"
+            >
+              <span>Call Now</span>
+              <Phone size={16} className="franchise-hero__btn-icon" aria-hidden="true" />
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* COMBINED: Form (primary action) + Side info (all franchise context) */}
+      <section className="section franchise-main">
+        <div className="container franchise-main__grid">
+          {/* LEFT: Form panel */}
           <div className="franchise-form-panel">
+            <header className="franchise-form-panel__header">
+              <h2 className="franchise-form-panel__title">Submit Your Enquiry</h2>
+              <p className="franchise-form-panel__intro">
+                Share a few details and we will review your enquiry. All discussions are
+                completely confidential — specific terms, investment and support structure
+                are shared only after review.
+              </p>
+            </header>
+
             {success ? (
-              <div className="franchise-success">
+              <div className="franchise-form-success">
                 <CheckCircle2 size={48} style={{ color: 'var(--color-success)' }} />
-                <h3>Enquiry Received!</h3>
-                <p>Thank you for your interest. We will review your details and contact you.</p>
+                <h3>Enquiry Received</h3>
+                <p>Thank you for your interest. We will review your details and get in touch shortly.</p>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
+                  Also WhatsApp Us
+                </a>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="franchise-form" noValidate>
@@ -148,53 +158,107 @@ export default function FranchisePage() {
                   </div>
                   <div className="franchise-form__field">
                     <label htmlFor="f-phone">Phone Number *</label>
-                    <input id="f-phone" name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="Mobile number" />
+                    <input id="f-phone" name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="10-digit mobile number" />
                     {errors.phone && <span className="franchise-form__field-error">{errors.phone}</span>}
                   </div>
                 </div>
-                <div className="franchise-form__field">
-                  <label htmlFor="f-email">Email Address</label>
-                  <input id="f-email" name="email" type="email" value={form.email} onChange={handleChange} placeholder="Optional" />
-                </div>
                 <div className="franchise-form__row">
+                  <div className="franchise-form__field">
+                    <label htmlFor="f-email">Email Address</label>
+                    <input id="f-email" name="email" type="email" value={form.email} onChange={handleChange} placeholder="Optional" />
+                    {errors.email && <span className="franchise-form__field-error">{errors.email}</span>}
+                  </div>
                   <div className="franchise-form__field">
                     <label htmlFor="f-city">City *</label>
                     <input id="f-city" name="city" type="text" value={form.city} onChange={handleChange} placeholder="Your city" />
                     {errors.city && <span className="franchise-form__field-error">{errors.city}</span>}
                   </div>
-                  <div className="franchise-form__field">
-                    <label htmlFor="f-state">State *</label>
-                    <input id="f-state" name="state" type="text" value={form.state} onChange={handleChange} placeholder="Your state" />
-                    {errors.state && <span className="franchise-form__field-error">{errors.state}</span>}
-                  </div>
                 </div>
                 <div className="franchise-form__field">
-                  <label htmlFor="f-investment">Investment Interest</label>
+                  <label htmlFor="f-investment">Investment Interest *</label>
                   <select id="f-investment" name="investment" value={form.investment} onChange={handleChange}>
-                    <option value="">Select an option</option>
+                    <option value="">Select a range</option>
                     {formsData.franchiseInvestments.map(i => <option key={i} value={i}>{i}</option>)}
                   </select>
+                  {errors.investment && <span className="franchise-form__field-error">{errors.investment}</span>}
                 </div>
                 <div className="franchise-form__field">
-                  <label htmlFor="f-existing">Do you have an existing business?</label>
-                  <input id="f-existing" name="existingBusiness" type="text" value={form.existingBusiness} onChange={handleChange} placeholder="e.g. Auto accessories retail, General retail, No" />
+                  <label htmlFor="f-message">Anything Else You'd Like to Share</label>
+                  <textarea id="f-message" name="message" rows={4} value={form.message} onChange={handleChange} placeholder="Relevant experience, current business, target city or any other details..." />
                 </div>
-                <div className="franchise-form__field">
-                  <label htmlFor="f-experience">Relevant Experience</label>
-                  <input id="f-experience" name="experience" type="text" value={form.experience} onChange={handleChange} placeholder="e.g. 5 years in auto parts, Sales background" />
-                </div>
-                <div className="franchise-form__field">
-                  <label htmlFor="f-message">Additional Message</label>
-                  <textarea id="f-message" name="message" rows={3} value={form.message} onChange={handleChange} placeholder="Any other details you would like to share..." />
-                </div>
-                <button type="submit" className="btn btn-primary btn-lg franchise-form__submit" disabled={loading}>
+                <button type="submit" className="btn btn-lg franchise-form__submit" disabled={loading}>
                   {loading ? 'Sending...' : <><Send size={16} /> Submit Franchise Enquiry</>}
                 </button>
               </form>
             )}
           </div>
+
+          {/* RIGHT: Why partner highlights + reach-us block */}
+          <aside className="franchise-info">
+            <article className="franchise-info__block franchise-info__block--featured">
+              <h3 className="franchise-info__title">What We Bring</h3>
+              <ul className="franchise-info__list">
+                {highlights.map((h, i) => {
+                  const Icon = h.icon;
+                  return (
+                    <li className="franchise-info__item" key={i}>
+                      <span className="franchise-info__icon" aria-hidden="true">
+                        <Icon size={18} />
+                      </span>
+                      <div>
+                        <span className="franchise-info__label">{h.title}</span>
+                        <span className="franchise-info__value franchise-info__value--text">{h.desc}</span>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </article>
+
+            <article className="franchise-info__block">
+              <h3 className="franchise-info__title">Reach Us Directly</h3>
+              <ul className="franchise-info__list">
+                <li className="franchise-info__item">
+                  <span className="franchise-info__icon" aria-hidden="true">
+                    <Phone size={16} />
+                  </span>
+                  <div>
+                    <span className="franchise-info__label">Phone & WhatsApp</span>
+                    <a href={business.phone ? `tel:${business.phone}` : '#'} className="franchise-info__value">
+                      {business.phone || 'Configure in business.json'}
+                    </a>
+                  </div>
+                </li>
+                {business.email && (
+                  <li className="franchise-info__item">
+                    <span className="franchise-info__icon" aria-hidden="true">
+                      <Clock size={16} />
+                    </span>
+                    <div>
+                      <span className="franchise-info__label">Working Hours</span>
+                      <span className="franchise-info__value franchise-info__value--text">
+                        {business.hours.weekdays.days}: {business.hours.weekdays.open} – {business.hours.weekdays.close}
+                      </span>
+                      <span className="franchise-info__value franchise-info__value--text">
+                        {business.hours.sunday.days}: {business.hours.sunday.open} – {business.hours.sunday.close}
+                      </span>
+                    </div>
+                  </li>
+                )}
+              </ul>
+            </article>
+          </aside>
         </div>
       </section>
+
+      <CTASection
+        title="Have a Question First?"
+        subtitle="Call us during working hours or WhatsApp us directly — we are happy to clarify any partnership questions before you submit your enquiry."
+        primaryCta={{ label: 'Call Now', href: business.phone ? `tel:${business.phone}` : '#' }}
+        whatsappMessage="Hello, I am interested in a franchise opportunity with Best Car Accessories."
+        primaryIcon={Phone}
+        dark={true}
+      />
     </>
   );
 }
