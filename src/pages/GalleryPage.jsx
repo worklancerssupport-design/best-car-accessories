@@ -67,7 +67,7 @@ export default function GalleryPage() {
               <span className="gallery-stat__label">Accessory Categories</span>
             </div>
             <div className="gallery-stat">
-              <span className="gallery-stat__value">15+</span>
+              <span className="gallery-stat__value">{business.stats.yearsExperience}+</span>
               <span className="gallery-stat__label">Years on NMS Road</span>
             </div>
           </div>

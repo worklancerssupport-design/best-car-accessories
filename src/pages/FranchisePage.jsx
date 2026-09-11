@@ -29,8 +29,8 @@ function validate(form) {
 }
 
 const highlights = [
-  { icon: Award, title: '15+ Years on NMS Road', desc: 'Established Chennai brand with a loyal, repeat customer base.' },
-  { icon: Users, title: '1,000+ Clients Served', desc: 'A demonstrated track record across hatchbacks, sedans and SUVs.' },
+  { icon: Award, title: `${business.stats.yearsExperience}+ Years on NMS Road`, desc: 'Established Chennai brand with a loyal, repeat customer base.' },
+  { icon: Users, title: `${business.stats.clientsServed.toLocaleString()}+ Clients Served`, desc: 'A demonstrated track record across hatchbacks, sedans and SUVs.' },
   { icon: TrendingUp, title: 'Growing Customization Market', desc: 'Aftermarket accessories and customization is expanding across India.' },
   { icon: MapPin, title: 'NMS Road Reference Studio', desc: 'A working Chennai studio you can visit, audit and learn from.' },
 ];
@@ -49,26 +49,24 @@ export default function FranchisePage() {
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault();
     const errs = validate(form);
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setLoading(true);
     try {
-      if (business.forms.web3formsKey) {
-        const res = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ access_key: business.forms.web3formsKey, ...form, subject: `Franchise Enquiry from ${form.name} — ${form.city}` }),
-        });
-        if (!res.ok) throw new Error('Failed');
-      } else {
-        await new Promise(r => setTimeout(r, 800));
-      }
+      const lines = ['Hello, I am interested in a franchise opportunity.', ''];
+      lines.push(`Name: ${form.name}`);
+      lines.push(`Phone: ${form.phone}`);
+      if (form.email) lines.push(`Email: ${form.email}`);
+      lines.push(`City: ${form.city}`);
+      lines.push(`Investment Range: ${form.investment}`);
+      if (form.message) { lines.push(''); lines.push('Message:'); lines.push(form.message); }
+      const url = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
+      const opened = window.open(url, '_blank');
+      if (!opened) window.location.href = url;
       setSuccess(true);
       setForm({ name: '', phone: '', email: '', city: '', investment: '', message: '' });
-    } catch {
-      setErrors({ form: 'Submission failed. Please try WhatsApp or call us directly.' });
     } finally {
       setLoading(false);
     }
@@ -141,11 +139,8 @@ export default function FranchisePage() {
             {success ? (
               <div className="franchise-form-success">
                 <CheckCircle2 size={48} style={{ color: 'var(--color-success)' }} />
-                <h3>Enquiry Received</h3>
-                <p>Thank you for your interest. We will review your details and get in touch shortly.</p>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
-                  Also WhatsApp Us
-                </a>
+                <h3>WhatsApp Opened</h3>
+                <p>Your enquiry has been prepared in WhatsApp. Please tap send to complete.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="franchise-form" noValidate>

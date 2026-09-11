@@ -228,6 +228,13 @@ small {
 
 /* No ::before — never draw the "---- X" red line. */
 
+/* Hero title accent — muted/secondary word in hero titles. Shared across pages. */
+.about-hero__title-accent {
+  color: var(--text-secondary);
+  opacity: var(--opacity-medium);
+  font-weight: var(--font-weight-normal);
+}
+
 /* Large section title — h3 size, sans family (display font is h1/h2 only). */
 .section-title {
   font-family: var(--font-sans);

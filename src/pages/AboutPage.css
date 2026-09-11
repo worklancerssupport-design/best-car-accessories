@@ -69,11 +69,7 @@
   text-transform: uppercase;
 }
 
-.about-hero__title-accent {
-  color: var(--text-secondary);
-  opacity: var(--opacity-medium);
-  font-weight: var(--font-weight-normal);
-}
+
 
 .about-hero__subtitle {
   font-family: var(--font-sans);

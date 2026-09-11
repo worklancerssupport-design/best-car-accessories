@@ -27,13 +27,25 @@ export default function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.name.trim() || !formData.phone.trim()) return;
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const lines = ['Hello, I would like to enquire about your services.', ''];
+      lines.push(`Name: ${formData.name}`);
+      if (formData.phone) lines.push(`Phone: ${formData.phone}`);
+      if (formData.email) lines.push(`Email: ${formData.email}`);
+      if (formData.carModel) lines.push(`Car: ${formData.carModel}`);
+      if (formData.service) lines.push(`Service: ${formData.service}`);
+      if (formData.message) { lines.push(''); lines.push('Message:'); lines.push(formData.message); }
+      const url = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
+      const opened = window.open(url, '_blank');
+      if (!opened) window.location.href = url;
       setSuccess(true);
       setFormData({ name: '', email: '', phone: '', carModel: '', service: '', message: '' });
       setTimeout(() => setSuccess(false), 6000);
-    }, 1000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const whatsappMessage = encodeURIComponent(
@@ -152,7 +164,7 @@ export default function ContactSection() {
 
               {success && (
                 <div className="form-success" role="status">
-                  Thank you! We received your request and will reach out shortly.
+                  WhatsApp opened with your enquiry. Please tap send to complete.
                 </div>
               )}
             </form>

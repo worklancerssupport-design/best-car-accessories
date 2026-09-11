@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ChevronRight } from 'lucide-react';
+import business from '../../../data/business.json';
 import './Breadcrumbs.css';
 
 export default function Breadcrumbs({ items = [] }) {
@@ -11,7 +12,7 @@ export default function Breadcrumbs({ items = [] }) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.label,
-      "item": item.href ? `https://bestcaraccessories.com${item.href}` : undefined
+      "item": item.href ? `${business.siteUrl}${item.href}` : undefined
     }))
   };
 

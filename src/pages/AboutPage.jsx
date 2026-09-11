@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import business from '../data/business.json';
 import faqsData from '../data/faqs.json';
+import aboutData from '../data/about.json';
 import Breadcrumbs from '../components/ui/Breadcrumbs/Breadcrumbs';
 import CTASection from '../components/ui/CTASection/CTASection';
 import FAQ from '../components/ui/FAQ/FAQ';
@@ -15,42 +16,8 @@ import {
   ExternalLink,
 } from 'lucide-react';
 
-const standards = [
-  {
-    num: '01',
-    title: 'Proven Track Record',
-    desc: '15+ years on NMS Road and over 1,000 Chennai car owners served — from daily hatchbacks to premium SUVs.',
-  },
-  {
-    num: '02',
-    title: 'Complete Customization',
-    desc: 'Exterior, interior, infotainment, audio, lighting, and cameras — end-to-end upgrades under one roof.',
-  },
-  {
-    num: '03',
-    title: 'Professional Installation',
-    desc: 'OEM-grade couplers, neat conduit routing, and zero wire-cutting as our standard on every fitment.',
-  },
-];
-
-const rangeGroups = [
-  {
-    title: 'Exterior',
-    items: ['Fog Lights & Projectors', 'LED Headlights & DRL', 'Spoilers & Bumpers', 'Side Claddings & Rails'],
-  },
-  {
-    title: 'Interior',
-    items: ['Premium Seat Covers', 'Ambient Lighting', 'Floor Mats & Steering', 'Dashboard Customization'],
-  },
-  {
-    title: 'Infotainment & Audio',
-    items: ['Touchscreen Systems', 'Speakers & Amplifiers', 'Dash Cameras', 'AI Dongles'],
-  },
-  {
-    title: 'Lighting & Safety',
-    items: ['Ambient & Foot Lights', 'Parking Sensors', '360° Cameras', 'Anti-Rat Protection'],
-  },
-];
+const standards = aboutData.standards;
+const rangeGroups = aboutData.rangeGroups;
 
 export default function AboutPage() {
   const breadcrumbs = [{ label: 'Home', href: '/' }, { label: 'About Us' }];

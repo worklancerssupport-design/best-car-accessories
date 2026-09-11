@@ -1,6 +1,6 @@
 import CustomCursor from './components/ui/CustomCursor/CustomCursor';
 import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
 import ScrollToTop from './components/layout/ScrollToTop/ScrollToTop';
@@ -17,6 +17,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const FranchisePage = lazy(() => import('./pages/FranchisePage'));
 const ReviewsPage = lazy(() => import('./pages/ReviewsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const EditPage = lazy(() => import('./edit/EditPage'));
 
 function LoadingSpinner() {
   return (
@@ -28,31 +29,35 @@ function LoadingSpinner() {
 }
 
 function App() {
-  return (
-    <ErrorBoundary>
-      <CustomCursor />
-      <ScrollToTop />
-      <Header />
-      <main id="main-content" tabIndex={-1}>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/exterior-car-accessories-chennai" element={<ExteriorCategoryPage />} />
-            <Route path="/exterior-car-accessories-chennai/:slug" element={<ServiceDetailPage />} />
-            <Route path="/interior-car-accessories-chennai" element={<InteriorCategoryPage />} />
-            <Route path="/interior-car-accessories-chennai/:slug" element={<ServiceDetailPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/reviews" element={<ReviewsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/franchise" element={<FranchisePage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-      </main>
-      <Footer />
-    </ErrorBoundary>
-  );
+    const location = useLocation();
+    const isEdit = location.pathname.startsWith('/edit');
+
+    return (
+        <ErrorBoundary>
+            <CustomCursor />
+            <ScrollToTop />
+            {!isEdit && <Header />}
+            <main id="main-content" tabIndex={-1}>
+                <Suspense fallback={<LoadingSpinner />}>
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/exterior-car-accessories-chennai" element={<ExteriorCategoryPage />} />
+                        <Route path="/exterior-car-accessories-chennai/:slug" element={<ServiceDetailPage />} />
+                        <Route path="/interior-car-accessories-chennai" element={<InteriorCategoryPage />} />
+                        <Route path="/interior-car-accessories-chennai/:slug" element={<ServiceDetailPage />} />
+                        <Route path="/gallery" element={<GalleryPage />} />
+                        <Route path="/reviews" element={<ReviewsPage />} />
+                        <Route path="/contact" element={<ContactPage />} />
+                        <Route path="/franchise" element={<FranchisePage />} />
+                        <Route path="/edit" element={<EditPage />} />
+                        <Route path="*" element={<NotFoundPage />} />
+                    </Routes>
+                </Suspense>
+            </main>
+            {!isEdit && <Footer />}
+        </ErrorBoundary>
+    );
 }
 
 export default App;

@@ -12,41 +12,8 @@ import './CategoryPage.css';
 import { Search, ChevronRight, MessageCircle } from 'lucide-react';
 
 const CATEGORY_FAQS = faqsData.interior;
-
-const FILTER_TAGS = ['All', 'Lighting', 'Infotainment', 'Vision', 'Comfort', 'Upholstery'];
-
-const INTERIOR_GROUPS = [
-  {
-    id: 'lighting',
-    tag: 'GROUP 01 // LIGHTING ARCHITECTURE',
-    title: '18-Zone Ambient Lighting & Illumination',
-    slugs: ['ambient-lights', 'roof-led-vip-light', 'mobile-holder-door-foot-lights', 'foot-step-patti']
-  },
-  {
-    id: 'infotainment',
-    tag: 'GROUP 02 // COCKPIT & ACOUSTICS',
-    title: 'Touchscreen Infotainment, DSP & Audio',
-    slugs: ['infotainment-systems', 'speakers', 'woofers-amplifiers', 'oem-infotainment', 'steering-covers-controls']
-  },
-  {
-    id: 'vision',
-    tag: 'GROUP 03 // VISION & DRIVER ASSISTANCE',
-    title: '360° Cameras & AI Dashcam Systems',
-    slugs: ['oem-camera-360-camera', 'dash-cameras-ai-dongles']
-  },
-  {
-    id: 'comfort',
-    tag: 'GROUP 04 // CABIN ERGONOMICS',
-    title: 'Comfort, 7D Mats & Sun Protection',
-    slugs: ['floor-mats', 'neck-pillows-seat-cushions', 'center-seat-arm-rest', 'curtains-air-fresheners', 'sun-control-films']
-  },
-  {
-    id: 'upholstery',
-    tag: 'GROUP 05 // BESPOKE CRAFTSMANSHIP',
-    title: 'Custom Leather Upholstery & Cabin Styling',
-    slugs: ['premium-car-seat-covers', 'dashboard-door-pad-customization', 'parcel-trays']
-  }
-];
+const FILTER_TAGS = interiorData.filterTags;
+const INTERIOR_GROUPS = interiorData.groups;
 
 export default function InteriorCategoryPage() {
   const [search, setSearch] = useState('');

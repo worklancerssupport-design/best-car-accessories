@@ -6,9 +6,9 @@
   "whatsapp": "919840012345",
   "email": "enquiry@bestcaraccessories.in",
   "address": "Palani Murugan Building, No: 21, Westcott Rd, next to Woodlands Theater, Royapettah, Chennai, Tamil Nadu 600014",
-  "mapUrl": "https://maps.google.com/maps?q=Palani+Murugan+Building,+No:+21,+Westcott+Rd,+next+to+Woodlands+Theater,+Royapettah,+Chennai,+Tamil+Nadu+600014&t=&z=16&ie=UTF8&iwloc=&output=embed",
-  "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Palani+Murugan+Building,+No:+21,+Westcott+Rd,+next+to+Woodlands+Theater,+Royapettah,+Chennai,+Tamil+Nadu+600014",
-  "googleBusinessUrl": "",
+  "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1273.2666481195483!2d80.264319065697!3d13.056689762847377!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526755f0430a09%3A0xc7012468284e06ca!2sBest%20Car%20Accessories%20NMS!5e0!3m2!1sen!2sus!4v1789149770763!5m2!1sen!2sus",
+  "googleMapsUrl": "https://maps.app.goo.gl/UipicbpWsbieENDv7",
+  "googleBusinessUrl": "https://share.google/aHZB1IOgDdMndM8JV",
   "googleReviewsUrl": "",
   "instagram": "https://www.instagram.com/best_car_accessories_nms/",
   "instagramHandle": "@best_car_accessories_nms",
@@ -26,26 +26,24 @@
   "siteName": "Best Car Accessories Chennai",
   "hours": {
     "weekdays": {
-      "days": "Monday - Saturday",
-      "open": "9:30 AM",
-      "close": "8:30 PM"
+      "days": "Mon - Sat",
+      "open": "10:00 AM",
+      "close": "10:00 PM"
     },
     "sunday": {
-      "days": "Sunday",
-      "open": "10:00 AM",
-      "close": "3:00 PM"
+      "days": "Sun",
+      "open": "On",
+      "close": "Appointment"
     }
   },
   "stats": {
     "yearsExperience": 15,
     "clientsServed": 1000,
-    "accessoryCategories": 20
-  },
-  "forms": {
-    "web3formsKey": "",
-    "emailjsServiceId": "",
-    "emailjsTemplateId": "",
-    "emailjsPublicKey": "",
-    "fallbackEmail": ""
+    "accessoryCategories": 20,
+    "labels": {
+      "yearsExperience": "Years of Experience",
+      "clientsServed": "Clients Served",
+      "accessoryCategories": "Accessory Categories"
+    }
   }
 }

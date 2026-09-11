@@ -1,4 +1,32 @@
-{ "items": [
+{
+  "filterTags": ["All", "Lighting", "Protection", "Styling", "Utility"],
+  "groups": [
+    {
+      "id": "lighting",
+      "tag": "GROUP 01 // LIGHTING ARCHITECTURE",
+      "title": "High-Performance Lighting & Optics",
+      "slugs": ["fog-light-fog-projector", "headlight-led-upgrade", "drl-headlight-fog", "horn-parking-leds", "door-logo-lights", "wiring-kits-cutouts"]
+    },
+    {
+      "id": "protection",
+      "tag": "GROUP 02 // ARMOR & DEFENSE",
+      "title": "Vehicle Armor & Body Protection",
+      "slugs": ["anti-rat-machine-rat-mesh", "windshield-anti-glare-film", "door-visors-side-claddings", "mud-flaps", "bonnet-letters-damping", "wiper-blades"]
+    },
+    {
+      "id": "styling",
+      "tag": "GROUP 03 // AERODYNAMICS",
+      "title": "Aerodynamics & Exterior Styling",
+      "slugs": ["roof-rails-sharkfin-antenna", "rear-spoiler-tail-light", "front-rear-bumpers", "side-foot-steps", "heavy-clamp-post-covers", "box-clamp-wheel-cups"]
+    },
+    {
+      "id": "utility",
+      "tag": "GROUP 04 // ELECTRONICS & UTILITY",
+      "title": "Utility, Safety & Custom Hardware",
+      "slugs": ["reverse-camera-sensor", "number-plates-frames"]
+    }
+  ],
+  "items": [
   {
     "id": "ext-01",
     "name": "Fog Light & Fog Projector",
@@ -32,6 +60,7 @@
       { "q": "Can I enquire about pricing via WhatsApp?", "a": "Yes, you can send your car model and requirements via WhatsApp and we will get back to you with options." }
     ],
     "showInNav": true,
+    "showInFooter": true,
     "navName": "Fog Lights & Projectors",
     "megaMenuGroup": "Lighting"
   },
@@ -66,6 +95,7 @@
       { "q": "Can I enquire about options before visiting?", "a": "Yes, share your car model via WhatsApp and we can advise on available options." }
     ],
     "showInNav": true,
+    "showInFooter": true,
     "navName": "LED Headlights Upgrade",
     "megaMenuGroup": "Lighting"
   },

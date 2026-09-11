@@ -12,35 +12,8 @@ import './CategoryPage.css';
 import { Search, ChevronRight, MessageCircle } from 'lucide-react';
 
 const CATEGORY_FAQS = faqsData.exterior;
-
-const FILTER_TAGS = ['All', 'Lighting', 'Protection', 'Styling', 'Utility'];
-
-const EXTERIOR_GROUPS = [
-  {
-    id: 'lighting',
-    tag: 'GROUP 01 // LIGHTING ARCHITECTURE',
-    title: 'High-Performance Lighting & Optics',
-    slugs: ['fog-light-fog-projector', 'headlight-led-upgrade', 'drl-headlight-fog', 'horn-parking-leds', 'door-logo-lights', 'wiring-kits-cutouts']
-  },
-  {
-    id: 'protection',
-    tag: 'GROUP 02 // ARMOR & DEFENSE',
-    title: 'Vehicle Armor & Body Protection',
-    slugs: ['anti-rat-machine-rat-mesh', 'windshield-anti-glare-film', 'door-visors-side-claddings', 'mud-flaps', 'bonnet-letters-damping', 'wiper-blades']
-  },
-  {
-    id: 'styling',
-    tag: 'GROUP 03 // AERODYNAMICS',
-    title: 'Aerodynamics & Exterior Styling',
-    slugs: ['roof-rails-sharkfin-antenna', 'rear-spoiler-tail-light', 'front-rear-bumpers', 'side-foot-steps', 'heavy-clamp-post-covers', 'box-clamp-wheel-cups']
-  },
-  {
-    id: 'utility',
-    tag: 'GROUP 04 // ELECTRONICS & UTILITY',
-    title: 'Utility, Safety & Custom Hardware',
-    slugs: ['reverse-camera-sensor', 'number-plates-frames']
-  }
-];
+const FILTER_TAGS = exteriorData.filterTags;
+const EXTERIOR_GROUPS = exteriorData.groups;
 
 export default function ExteriorCategoryPage() {
   const [search, setSearch] = useState('');

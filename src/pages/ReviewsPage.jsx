@@ -48,7 +48,7 @@ export default function ReviewsPage() {
             What Our <span className="reviews-hero__title-accent">Customers</span> Say
           </h1>
           <p className="reviews-hero__subtitle">
-            We have been serving car owners in Chennai for over 15 years.
+            We have been serving car owners in Chennai for over {business.stats.yearsExperience} years.
             Here is what some of our customers have shared about their experience.
           </p>
 

@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom';
 import { Instagram, MapPin, Phone, MessageCircle, Clock, Facebook, Youtube } from 'lucide-react';
 import business from '../../../data/business.json';
+import exteriorData from '../../../data/products/exterior.json';
+import interiorData from '../../../data/products/interior.json';
 import './Footer.css';
+
+const categoryRoutes = {
+  exterior: '/exterior-car-accessories-chennai',
+  interior: '/interior-car-accessories-chennai',
+};
+
+const popularUpgrades = [
+  ...exteriorData.items.filter(p => p.showInFooter),
+  ...interiorData.items.filter(p => p.showInFooter),
+];
 
 export default function Footer() {
   const whatsappUrl = business.whatsapp
@@ -9,9 +21,9 @@ export default function Footer() {
     : '#';
   const phoneDisplay = business.phone || '+91 98400 12345';
   const phoneHref = phoneDisplay.replace(/\s+/g, '');
-  const instaUrl = business.instagram || 'https://www.instagram.com/best_car_accessories_nms/';
-  const facebookUrl = business.facebook || 'https://www.facebook.com/';
-  const youtubeUrl = business.youtube || 'https://www.youtube.com/';
+  const instaUrl = business.instagram || business.social?.instagram || null;
+  const facebookUrl = business.social?.facebook || null;
+  const youtubeUrl = business.social?.youtube || null;
 
   return (
     <footer className="footer">
@@ -35,15 +47,21 @@ export default function Footer() {
                 Chennai's trusted automotive accessories and customization studio. Precision fitment, OEM-grade parts, and over 15 years of craftsmanship.
               </p>
               <div className="footer-socials" aria-label="Social media links">
-                <a href={instaUrl} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
-                  <Instagram size={16} />
-                </a>
-                <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Facebook">
-                  <Facebook size={16} />
-                </a>
-                <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="YouTube">
-                  <Youtube size={16} />
-                </a>
+                {instaUrl && (
+                  <a href={instaUrl} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
+                    <Instagram size={16} />
+                  </a>
+                )}
+                {facebookUrl && (
+                  <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Facebook">
+                    <Facebook size={16} />
+                  </a>
+                )}
+                {youtubeUrl && (
+                  <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="YouTube">
+                    <Youtube size={16} />
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -64,13 +82,13 @@ export default function Footer() {
           <div className="footer-col">
             <h3 className="footer-col-title">Popular Upgrades</h3>
             <ul className="footer-links">
-              <li><Link to="/exterior-car-accessories-chennai/fog-light-fog-projector">Laser Fog Projectors</Link></li>
-              <li><Link to="/exterior-car-accessories-chennai/headlight-led-upgrade">LED Headlight Conversions</Link></li>
-              <li><Link to="/interior-car-accessories-chennai/ambient-lights">Ambient Lighting</Link></li>
-              <li><Link to="/interior-car-accessories-chennai/infotainment-systems">Android Cockpit Screens</Link></li>
-              <li><Link to="/interior-car-accessories-chennai/speakers">Audio & Damping</Link></li>
-              <li><Link to="/interior-car-accessories-chennai/oem-camera-360-camera">360° Cameras</Link></li>
-              <li><Link to="/interior-car-accessories-chennai/premium-car-seat-covers">Tailored Seat Covers</Link></li>
+              {popularUpgrades.map(p => (
+                <li key={p.id}>
+                  <Link to={`${categoryRoutes[p.category]}/${p.slug}`}>
+                    {p.navName || p.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -82,7 +100,7 @@ export default function Footer() {
                   <span className="footer-contact-item-icon"><MapPin size={14} /></span>
                   <div className="footer-contact-item-body">
                     <span className="footer-contact-item-label">Studio</span>
-                    <span className="footer-contact-item-value">NMS Road, Chennai, Tamil Nadu</span>
+                    <span className="footer-contact-item-value">{business.address}</span>
                   </div>
                 </div>
               </li>
@@ -109,7 +127,8 @@ export default function Footer() {
                   <span className="footer-contact-item-icon"><Clock size={14} /></span>
                   <div className="footer-contact-item-body">
                     <span className="footer-contact-item-label">Hours</span>
-                    <span className="footer-contact-item-value">Mon – Sat: 9:30 AM – 9:00 PM</span>
+                    <span className="footer-contact-item-value">{business.hours.weekdays.days}: {business.hours.weekdays.open} – {business.hours.weekdays.close}</span>
+                    <span className="footer-contact-item-value">{business.hours.sunday.days}: {business.hours.sunday.open} – {business.hours.sunday.close}</span>
                   </div>
                 </div>
               </li>
@@ -121,7 +140,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Best Car Accessories. All rights reserved.</p>
           <div className="footer-bottom-meta">
-            <span>NMS Road, Chennai</span>
+            <span>{business.location}</span>
             <span className="footer-bottom-meta-sep">·</span>
             <span>Automotive Customization Studio</span>
           </div>

@@ -40,26 +40,24 @@ export default function ContactPage() {
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault();
     const errs = validate(form);
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setLoading(true);
     try {
-      if (business.forms.web3formsKey) {
-        const res = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ access_key: business.forms.web3formsKey, ...form, subject: `Enquiry from ${form.name} — ${form.service}` }),
-        });
-        if (!res.ok) throw new Error('Submission failed');
-      } else {
-        await new Promise(r => setTimeout(r, 800));
-      }
+      const lines = ['Hello, I have an enquiry from the website.', ''];
+      lines.push(`Name: ${form.name}`);
+      lines.push(`Phone: ${form.phone}`);
+      if (form.email) lines.push(`Email: ${form.email}`);
+      if (form.carModel) lines.push(`Car: ${form.carModel}`);
+      if (form.service) lines.push(`Service: ${form.service}`);
+      if (form.message) { lines.push(''); lines.push('Message:'); lines.push(form.message); }
+      const url = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`;
+      const opened = window.open(url, '_blank');
+      if (!opened) window.location.href = url;
       setSuccess(true);
       setForm({ name: '', phone: '', email: '', carModel: '', service: '', message: '' });
-    } catch {
-      setErrors({ form: 'Submission failed. Please try WhatsApp or call us directly.' });
     } finally {
       setLoading(false);
     }
@@ -130,11 +128,8 @@ export default function ContactPage() {
             {success ? (
               <div className="contact-form-success">
                 <CheckCircle2 size={48} style={{ color: 'var(--color-success)' }} />
-                <h3>Enquiry Sent</h3>
-                <p>Thank you for reaching out. We will get back to you shortly.</p>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
-                  Also WhatsApp Us
-                </a>
+                <h3>WhatsApp Opened</h3>
+                <p>Your enquiry has been prepared in WhatsApp. Please tap send to complete.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="contact-form" noValidate>

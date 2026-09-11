@@ -1,4 +1,37 @@
 {
+  "filterTags": ["All", "Lighting", "Infotainment", "Vision", "Comfort", "Upholstery"],
+  "groups": [
+    {
+      "id": "lighting",
+      "tag": "GROUP 01 // LIGHTING ARCHITECTURE",
+      "title": "18-Zone Ambient Lighting & Illumination",
+      "slugs": ["ambient-lights", "roof-led-vip-light", "mobile-holder-door-foot-lights", "foot-step-patti"]
+    },
+    {
+      "id": "infotainment",
+      "tag": "GROUP 02 // COCKPIT & ACOUSTICS",
+      "title": "Touchscreen Infotainment, DSP & Audio",
+      "slugs": ["infotainment-systems", "speakers", "woofers-amplifiers", "oem-infotainment", "steering-covers-controls"]
+    },
+    {
+      "id": "vision",
+      "tag": "GROUP 03 // VISION & DRIVER ASSISTANCE",
+      "title": "360\u00b0 Cameras & AI Dashcam Systems",
+      "slugs": ["oem-camera-360-camera", "dash-cameras-ai-dongles"]
+    },
+    {
+      "id": "comfort",
+      "tag": "GROUP 04 // CABIN ERGONOMICS",
+      "title": "Comfort, 7D Mats & Sun Protection",
+      "slugs": ["floor-mats", "neck-pillows-seat-cushions", "center-seat-arm-rest", "curtains-air-fresheners", "sun-control-films"]
+    },
+    {
+      "id": "upholstery",
+      "tag": "GROUP 05 // BESPOKE CRAFTSMANSHIP",
+      "title": "Custom Leather Upholstery & Cabin Styling",
+      "slugs": ["premium-car-seat-covers", "dashboard-door-pad-customization", "parcel-trays"]
+    }
+  ],
   "items": [
     {
       "id": "int-01",
@@ -112,6 +145,7 @@
         { "q": "Can I enquire about screen size options via WhatsApp?", "a": "Yes, share your car model and we can advise on the best options available." }
       ],
       "showInNav": true,
+      "showInFooter": true,
       "navName": "Infotainment & Android Systems",
       "megaMenuGroup": null
     },
@@ -224,6 +258,7 @@
         { "q": "Will ambient lighting installation be visible as aftermarket?", "a": "Professional installation routes all cables through factory channels for a clean, OEM-quality appearance." }
       ],
       "showInNav": true,
+      "showInFooter": true,
       "navName": "18-Zone Ambient Lighting",
       "megaMenuGroup": null
     },
@@ -337,6 +372,7 @@
         { "q": "Are these custom-fit for my car model?", "a": "Yes, we select mats matched to your specific vehicle model for proper coverage." }
       ],
       "showInNav": true,
+      "showInFooter": true,
       "navName": "Custom 7D Floor Mats",
       "megaMenuGroup": null
     },
@@ -665,6 +701,7 @@
         { "q": "What display does the 360° view appear on?", "a": "The 360° view integrates with your infotainment display — either the factory screen (where compatible) or an aftermarket unit." }
       ],
       "showInNav": true,
+      "showInFooter": true,
       "navName": "360\u00b0 Cameras & Dashcams",
       "megaMenuGroup": null
     },
@@ -738,6 +775,7 @@
         { "q": "How long does installation take?", "a": "Installation time varies depending on the vehicle model and cover type. We recommend discussing timing during your enquiry." }
       ],
       "showInNav": true,
+      "showInFooter": true,
       "navName": "Premium Seat Covers",
       "megaMenuGroup": null
     }
