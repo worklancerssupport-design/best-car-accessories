@@ -29,6 +29,15 @@
             "featured": true
         },
         {
+            "id": 5,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205844/best-car-accessories/qisl7fw6gadko8xlxfs3.jpg",
+            "alt": "Customized Soft Premium Luxury Napa Leather Seat Cover",
+            "category": "Seat Covers",
+            "title": "Customized Napa Leather Back Seat Cover",
+            "car": "Kia Seltos New",
+            "featured": false
+        },
+        {
             "id": 10,
             "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205303/best-car-accessories/ktgkdutx3mgp8zrcwxlj.jpg",
             "alt": "Colorful Neon Ambient Lighting",
@@ -44,33 +53,6 @@
             "category": "Lighting",
             "title": "AC Vent Ambient Light",
             "car": "Mahindra Thar",
-            "featured": false
-        },
-        {
-            "id": 3,
-            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789202898/best-car-accessories/gx5mvc5dqcxex7kyazem.jpg",
-            "alt": "New gallery item",
-            "category": "Seat Covers",
-            "title": "Nappa seat cover ",
-            "car": "Tata  Tiago",
-            "featured": false
-        },
-        {
-            "id": 5,
-            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205844/best-car-accessories/qisl7fw6gadko8xlxfs3.jpg",
-            "alt": "Customized Soft Premium Luxury Napa Leather Seat Cover",
-            "category": "Seat Covers",
-            "title": "Customized Napa Leather Back Seat Cover",
-            "car": "Kia Seltos New",
-            "featured": false
-        },
-        {
-            "id": 6,
-            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789204121/best-car-accessories/ccfduocem9pc4xck2sxx.jpg",
-            "alt": "Android Infotainment System",
-            "category": "Infotainment",
-            "title": "Infotainment System",
-            "car": "Maruti Suzuki Fronx",
             "featured": false
         },
         {
@@ -110,6 +92,24 @@
             "featured": false
         },
         {
+            "id": 6,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789204121/best-car-accessories/ccfduocem9pc4xck2sxx.jpg",
+            "alt": "Android Infotainment System",
+            "category": "Infotainment",
+            "title": "Infotainment System",
+            "car": "Maruti Suzuki Fronx",
+            "featured": false
+        },
+        {
+            "id": 15,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789206087/best-car-accessories/mur1hfhjkjlfdyfsoiwy.jpg",
+            "alt": "Luxury Door Pad ",
+            "category": "Interior",
+            "title": "Door Pad Wrap",
+            "car": "Innova Crysta",
+            "featured": false
+        },
+        {
             "id": 12,
             "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205550/best-car-accessories/ouqpbuim5haji91bq2qg.jpg",
             "alt": "Soft Premium Steering Leather Cover",
@@ -117,6 +117,15 @@
             "title": "Steering Leather Cover",
             "car": "Kia Carens",
             "featured": true
+        },
+        {
+            "id": 14,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205945/best-car-accessories/pwiuw9j6fi0ubsfqrwvy.jpg",
+            "alt": "Customized Premium Napa Leather Seat Cover",
+            "category": "Seat Covers",
+            "title": "Customized Napa Leather Seat Cover",
+            "car": "Hyundai i10",
+            "featured": false
         },
         {
             "id": 13,
@@ -128,12 +137,21 @@
             "featured": false
         },
         {
-            "id": 14,
-            "src": "",
+            "id": 3,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789202898/best-car-accessories/gx5mvc5dqcxex7kyazem.jpg",
             "alt": "New gallery item",
-            "category": "Exterior",
-            "title": "New Gallery Item",
-            "car": "Car Model",
+            "category": "Seat Covers",
+            "title": "Nappa seat cover ",
+            "car": "Tata  Tiago",
+            "featured": false
+        },
+        {
+            "id": 16,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789206234/best-car-accessories/bc0eiyy4klz3ifwxyfvg.jpg",
+            "alt": "Premium Luxury Soft Door Pad Leather Wrap",
+            "category": "Interior",
+            "title": "Door Pad Leather Wrap",
+            "car": "Maruti Suzuki S - Presso",
             "featured": false
         }
     ]
