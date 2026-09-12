@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, MapPin, Phone, MessageCircle, Clock, Facebook, Youtube } from 'lucide-react';
+import { Instagram, MapPin, Phone, Clock, Facebook, Youtube, Mail } from 'lucide-react';
 import business from '../../../data/business.json';
 import exteriorData from '../../../data/products/exterior.json';
 import interiorData from '../../../data/products/interior.json';
@@ -16,9 +16,6 @@ const popularUpgrades = [
 ];
 
 export default function Footer() {
-  const whatsappUrl = business.whatsapp
-    ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent('Hello Best Car Accessories, I would like to enquire about your car accessories and services.')}`
-    : '#';
   const phoneDisplay = business.phone || '+91 98400 12345';
   const phoneHref = phoneDisplay.replace(/\s+/g, '');
   const instaUrl = business.instagram || business.social?.instagram || null;
@@ -108,17 +105,17 @@ export default function Footer() {
                 <a href={`tel:${phoneHref}`} className="footer-contact-item">
                   <span className="footer-contact-item-icon"><Phone size={14} /></span>
                   <div className="footer-contact-item-body">
-                    <span className="footer-contact-item-label">Phone</span>
+                    <span className="footer-contact-item-label">Phone &amp; WhatsApp</span>
                     <span className="footer-contact-item-value">{phoneDisplay}</span>
                   </div>
                 </a>
               </li>
               <li>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="footer-contact-item">
-                  <span className="footer-contact-item-icon"><MessageCircle size={14} /></span>
+                <a href={`mailto:${business.email}`} className="footer-contact-item">
+                  <span className="footer-contact-item-icon"><Mail size={14} /></span>
                   <div className="footer-contact-item-body">
-                    <span className="footer-contact-item-label">WhatsApp</span>
-                    <span className="footer-contact-item-value">Chat with our fitment team</span>
+                    <span className="footer-contact-item-label">Email</span>
+                    <span className="footer-contact-item-value">{business.email}</span>
                   </div>
                 </a>
               </li>

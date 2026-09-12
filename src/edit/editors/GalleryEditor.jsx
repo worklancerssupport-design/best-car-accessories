@@ -101,69 +101,6 @@ function GalleryItemCard({ item, index, total, categoryOptions, expanded, onTogg
 }
 
 // ============================================================
-// Instagram Card
-// ============================================================
-function InstagramCard({ post, index, total, expanded, onToggle, onChange, onRemove, onMove }) {
-    return (
-        <div className={`product-card ${expanded ? 'product-card--expanded' : ''}`}>
-            <div className="product-card__header" onClick={() => onToggle(index)}>
-                <div className="product-card__drag" onClick={(e) => e.stopPropagation()}>
-                    <div className="product-card__move">
-                        <button type="button" disabled={index === 0} onClick={() => onMove(index, index - 1)} aria-label="Move up">
-                            <ArrowUp size={12} />
-                        </button>
-                        <button type="button" disabled={index === total - 1} onClick={() => onMove(index, index + 1)} aria-label="Move down">
-                            <ArrowDown size={12} />
-                        </button>
-                    </div>
-                </div>
-                <div className="product-card__thumb">
-                    {post.img ? (
-                        <img src={post.img} alt="" />
-                    ) : (
-                        <div className="product-card__thumb-placeholder">
-                            <ImageIcon size={16} />
-                        </div>
-                    )}
-                </div>
-                <div className="product-card__info">
-                    <div className="product-card__name">{post.title || <em>Untitled</em>}</div>
-                    <div className="product-card__meta">
-                        <span className="product-card__id">IG #{index + 1}</span>
-                    </div>
-                </div>
-                <div className="product-card__chevron">
-                    {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </div>
-            </div>
-
-            {expanded && (
-                <div className="product-card__body">
-                    <div className="product-card__panel">
-                        <div className="product-card__image-section">
-                            <div className="product-card__image-label">Image</div>
-                            <ImageField value={post.img} onChange={(v) => onChange(index, 'img', v)} compact />
-                        </div>
-                        <Field label="Caption" hint="Shown on the Instagram feed tile">
-                            <TextInput value={post.title} onChange={(v) => onChange(index, 'title', v)} />
-                        </Field>
-                        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                            <button
-                                type="button"
-                                className="product-card__delete"
-                                onClick={() => onRemove(index)}
-                            >
-                                Delete post
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
-        </div>
-    );
-}
-
-// ============================================================
 // List header (reused)
 // ============================================================
 function ListHeader({ title, hint, count, allExpanded, onToggleAll, onAdd, addLabel }) {
@@ -191,11 +128,9 @@ function ListHeader({ title, hint, count, allExpanded, onToggleAll, onAdd, addLa
 export default function GalleryEditor() {
     const hook = useDataFile(DATA_FILES.gallery, { commitPrefix: 'Update' });
     const [openItems, setOpenItems] = useState({});
-    const [openIg, setOpenIg] = useState({});
     const [showCategories, setShowCategories] = useState(false);
 
     const items = hook.editData?.items || [];
-    const ig = hook.editData?.instagram || [];
     const categoryOptions = hook.editData?.categories || [];
 
     function toggleOpen(setter, idx) {
@@ -249,31 +184,7 @@ export default function GalleryEditor() {
         });
     }
 
-    function updateIg(index, field, value) {
-        hook.updateEditData((draft) => {
-            draft.instagram[index][field] = value;
-        });
-    }
-    function addIg() {
-        hook.updateEditData((draft) => {
-            draft.instagram.push({ img: '', title: 'New Instagram Post' });
-        });
-    }
-    function removeIg(index) {
-        hook.updateEditData((draft) => {
-            draft.instagram.splice(index, 1);
-        });
-    }
-    function moveIg(from, to) {
-        if (to < 0 || to >= ig.length) return;
-        hook.updateEditData((draft) => {
-            const [moved] = draft.instagram.splice(from, 1);
-            draft.instagram.splice(to, 0, moved);
-        });
-    }
-
     const allItemsOpen = items.length > 0 && Object.values(openItems).filter(Boolean).length === items.length;
-    const allIgOpen = ig.length > 0 && Object.values(openIg).filter(Boolean).length === ig.length;
 
     return (
         <div>
@@ -327,31 +238,6 @@ export default function GalleryEditor() {
                         onChange={updateItem}
                         onRemove={removeItem}
                         onMove={moveItem}
-                    />
-                ))}
-            </div>
-
-            <ListHeader
-                title="Instagram Feed"
-                hint="Posts shown in the Instagram strip on the gallery page"
-                count={ig.length}
-                allExpanded={allIgOpen}
-                onToggleAll={() => toggleAll(openIg, ig.length, setOpenIg)}
-                onAdd={addIg}
-                addLabel="Add post"
-            />
-            <div className="product-editor__list">
-                {ig.map((post, index) => (
-                    <InstagramCard
-                        key={`ig-${index}`}
-                        post={post}
-                        index={index}
-                        total={ig.length}
-                        expanded={!!openIg[index]}
-                        onToggle={(i) => toggleOpen(setOpenIg, i)}
-                        onChange={updateIg}
-                        onRemove={removeIg}
-                        onMove={moveIg}
                     />
                 ))}
             </div>
