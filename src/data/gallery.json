@@ -44,7 +44,7 @@
             "category": "Lighting",
             "title": "AC Vent Ambient Light",
             "car": "Mahindra Thar",
-            "featured": false
+            "featured": true
         }
     ]
 }
