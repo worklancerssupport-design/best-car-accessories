@@ -82,13 +82,13 @@ export default function ServiceDetailPage() {
   ];
 
   const pageTitle = `${service.name} in Chennai | Best Car Accessories NMS Road`;
-  const pageDescription = `${service.shortDescription} Professional installation in Chennai with 15+ years experience. Contact Best Car Accessories on NMS Road today.`;
+  const pageDescription = `${service.shortDescription} Professional installation in Chennai with 15+ years experience. Contact Best Car Accessories NMS on NMS Road today.`;
   const canonicalUrl = `${business.siteUrl}${
     isExterior ? '/exterior-car-accessories-chennai' : '/interior-car-accessories-chennai'
   }/${service.slug}`;
 
   const whatsappMessage = encodeURIComponent(
-    `Hello Best Car Accessories, I would like to enquire about ${service.name} installation for my car.`
+    `Hello Best Car Accessories NMS, I would like to enquire about ${service.name} installation for my car.`
   );
   const whatsappUrl = `https://wa.me/${business.whatsapp}?text=${whatsappMessage}`;
 
@@ -380,7 +380,7 @@ export default function ServiceDetailPage() {
 
       <CTASection
         title={`Upgrade Your Vehicle with ${service.name}`}
-        subtitle="Visit Best Car Accessories on NMS Road, Chennai for professional consultation and flawless fitment."
+        subtitle="Visit Best Car Accessories NMS on NMS Road, Chennai for professional consultation and flawless fitment."
         primaryCta={{ label: 'Schedule Fitment', href: '/contact' }}
         whatsappMessage={`Hi, I would like to get a quote for ${service.name}.`}
         dark={true}

@@ -34,11 +34,11 @@ export default function GalleryPage() {
   return (
     <>
       <Helmet>
-        <title>Car Accessories Gallery | Best Car Accessories Chennai</title>
-        <meta name="description" content="View our gallery of car accessory installations — seat covers, ambient lights, infotainment systems, fog lights, cameras, speakers and more at Best Car Accessories, NMS Road, Chennai." />
+        <title>Car Accessories Gallery | Best Car Accessories NMS Chennai</title>
+        <meta name="description" content="View our gallery of car accessory installations — seat covers, ambient lights, infotainment systems, fog lights, cameras, speakers and more at Best Car Accessories NMS, NMS Road, Chennai." />
         <link rel="canonical" href={`${business.siteUrl}/gallery`} />
-        <meta property="og:title" content="Gallery | Best Car Accessories Chennai" />
-        <meta property="og:description" content="Car accessories and customization gallery — Best Car Accessories, NMS Road, Chennai." />
+        <meta property="og:title" content="Gallery | Best Car Accessories NMS Chennai" />
+        <meta property="og:description" content="Car accessories and customization gallery — Best Car Accessories NMS, NMS Road, Chennai." />
       </Helmet>
 
       <div className="gallery-breadcrumb-wrap">
@@ -149,9 +149,9 @@ export default function GalleryPage() {
 
       <CTASection
         title="Want This On Your Car?"
-        subtitle="Visit Best Car Accessories on NMS Road, Chennai, or send us a message with your car model and the accessory you are looking for."
+        subtitle="Visit Best Car Accessories NMS on NMS Road, Chennai, or send us a message with your car model and the accessory you are looking for."
         primaryCta={{ label: 'Book Fitment Slot', href: '/contact' }}
-        whatsappMessage="Hi Best Car Accessories, I would like to enquire about an accessory I saw in your gallery."
+        whatsappMessage="Hi Best Car Accessories NMS, I would like to enquire about an accessory I saw in your gallery."
         dark={true}
       />
 

@@ -73,17 +73,17 @@ export default function FranchisePage() {
   };
 
   const whatsappUrl = business.whatsapp
-    ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent('Hello, I am interested in a franchise opportunity with Best Car Accessories.')}`
+    ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent('Hello, I am interested in a franchise opportunity with Best Car Accessories NMS.')}`
     : '#';
 
   return (
     <>
       <Helmet>
-        <title>Franchise Opportunity | Partner With Best Car Accessories Chennai</title>
-        <meta name="description" content="Interested in partnering with Best Car Accessories, NMS Road, Chennai? Submit your franchise enquiry and we'll get in touch to discuss the opportunity." />
+        <title>Franchise Opportunity | Partner With Best Car Accessories NMS Chennai</title>
+        <meta name="description" content="Interested in partnering with Best Car Accessories NMS, NMS Road, Chennai? Submit your franchise enquiry and we'll get in touch to discuss the opportunity." />
         <link rel="canonical" href={`${business.siteUrl}/franchise`} />
-        <meta property="og:title" content="Franchise | Best Car Accessories Chennai" />
-        <meta property="og:description" content="Partner with Best Car Accessories, Chennai's trusted car accessories and customization shop with 15+ years of experience." />
+        <meta property="og:title" content="Franchise | Best Car Accessories NMS Chennai" />
+        <meta property="og:description" content="Partner with Best Car Accessories NMS, Chennai's trusted car accessories and customization shop with 15+ years of experience." />
       </Helmet>
 
       <div className="franchise-breadcrumb-wrap">
@@ -222,6 +222,11 @@ export default function FranchisePage() {
                     <a href={business.phone ? `tel:${business.phone}` : '#'} className="franchise-info__value">
                       {business.phone || 'Configure in business.json'}
                     </a>
+                    {business.phone2 && (
+                      <a href={`tel:${business.phone2.replace(/\s+/g, '')}`} className="franchise-info__value">
+                        {business.phone2}
+                      </a>
+                    )}
                   </div>
                 </li>
                 {business.email && (
@@ -250,7 +255,7 @@ export default function FranchisePage() {
         title="Have a Question First?"
         subtitle="Call us during working hours or WhatsApp us directly — we are happy to clarify any partnership questions before you submit your enquiry."
         primaryCta={{ label: 'Call Now', href: business.phone ? `tel:${business.phone}` : '#' }}
-        whatsappMessage="Hello, I am interested in a franchise opportunity with Best Car Accessories."
+        whatsappMessage="Hello, I am interested in a franchise opportunity with Best Car Accessories NMS."
         primaryIcon={Phone}
         dark={true}
       />

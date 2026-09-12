@@ -64,17 +64,17 @@ export default function ContactPage() {
   };
 
   const whatsappUrl = business.whatsapp
-    ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent("Hello Best Car Accessories, I would like to enquire about your services.")}`
+    ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent("Hello Best Car Accessories NMS, I would like to enquire about your services.")}`
     : '#';
 
   return (
     <>
       <Helmet>
-        <title>Contact Best Car Accessories | NMS Road, Chennai | Get a Quote</title>
-        <meta name="description" content="Contact Best Car Accessories on NMS Road, Chennai. Send an enquiry, WhatsApp us, or call for car accessory installation and customization queries. 15+ years experience." />
+        <title>Contact Best Car Accessories NMS | NMS Road, Chennai | Get a Quote</title>
+        <meta name="description" content="Contact Best Car Accessories NMS on NMS Road, Chennai. Send an enquiry, WhatsApp us, or call for car accessory installation and customization queries. 15+ years experience." />
         <link rel="canonical" href={`${business.siteUrl}/contact`} />
-        <meta property="og:title" content="Contact Best Car Accessories | NMS Road Chennai" />
-        <meta property="og:description" content="Get in touch with Best Car Accessories in Chennai for car accessory enquiries, quotes and customization consultations." />
+        <meta property="og:title" content="Contact Best Car Accessories NMS | NMS Road Chennai" />
+        <meta property="og:description" content="Get in touch with Best Car Accessories NMS in Chennai for car accessory enquiries, quotes and customization consultations." />
       </Helmet>
 
       <div className="contact-breadcrumb-wrap">
@@ -191,6 +191,11 @@ export default function ContactPage() {
                     <a href={business.phone ? `tel:${business.phone}` : '#'} className="contact-info__value">
                       {business.phone || 'Configure in business.json'}
                     </a>
+                    {business.phone2 && (
+                      <a href={`tel:${business.phone2.replace(/\s+/g, '')}`} className="contact-info__value">
+                        {business.phone2}
+                      </a>
+                    )}
                   </div>
                 </li>
                 {business.email && (
@@ -244,7 +249,7 @@ export default function ContactPage() {
               <div className="contact-info__map">
                 <iframe
                   src={business.mapUrl}
-                  title="Best Car Accessories location map — Royapettah, Chennai"
+                  title="Best Car Accessories NMS location map — Royapettah, Chennai"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
@@ -259,7 +264,7 @@ export default function ContactPage() {
         title="Prefer to Talk?"
         subtitle="Call us during working hours or WhatsApp your car model and requirements — we will help you choose the right accessories."
         primaryCta={{ label: 'Call Now', href: business.phone ? `tel:${business.phone}` : '#' }}
-        whatsappMessage="Hi Best Car Accessories, I would like to enquire about your services."
+        whatsappMessage="Hi Best Car Accessories NMS, I would like to enquire about your services."
         primaryIcon={Phone}
         dark={true}
       />

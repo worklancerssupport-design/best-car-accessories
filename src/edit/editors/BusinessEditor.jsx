@@ -56,6 +56,9 @@ export default function BusinessEditor() {
                 <Field label="Phone (display)">
                     <TextInput value={hook.editData?.phone} onChange={(v) => updateField('phone', v)} placeholder="+91 98400 12345" />
                 </Field>
+                <Field label="Phone 2 (display)" hint="Second phone number shown on site">
+                    <TextInput value={hook.editData?.phone2} onChange={(v) => updateField('phone2', v)} placeholder="+91 87545 85673" />
+                </Field>
                 <Field label="WhatsApp (digits only)" hint="Used in wa.me links">
                     <TextInput value={hook.editData?.whatsapp} onChange={(v) => updateField('whatsapp', v)} placeholder="919840012345" />
                 </Field>

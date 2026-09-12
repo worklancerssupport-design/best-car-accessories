@@ -22,7 +22,7 @@ export default function Header() {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  const whatsappMessage = encodeURIComponent("Hello Best Car Accessories, I would like to enquire about your car accessories and upgrades.");
+  const whatsappMessage = encodeURIComponent("Hello Best Car Accessories NMS, I would like to enquire about your car accessories and upgrades.");
   const whatsappUrl = business.whatsapp ? `https://wa.me/${business.whatsapp}?text=${whatsappMessage}` : '#';
   const instagramUrl = business.instagram || business.social?.instagram || '#';
 
@@ -32,17 +32,17 @@ export default function Header() {
         <div className="header-glass-bar">
           <div className="header__container">
 
-            <Link to="/" className="header__logo" aria-label="Best Car Accessories Home">
+            <Link to="/" className="header__logo" aria-label="Best Car Accessories NMS Home">
               <img
                 src="/logo.png"
-                alt="Best Car Accessories"
+                alt="Best Car Accessories NMS"
                 className="header__logo-img"
                 width="180"
                 height="40"
               />
               <span className="header__brand-name">
                 <span className="header__brand-name-top">Best Car</span>
-                <span className="header__brand-name-bottom">Accessories</span>
+                <span className="header__brand-name-bottom">Accessories NMS</span>
               </span>
             </Link>
 
@@ -93,14 +93,6 @@ export default function Header() {
                 </li>
                 <li>
                   <Link
-                    to="/franchise"
-                    className={`header__nav-link ${location.pathname.startsWith('/franchise') ? 'active' : ''}`}
-                  >
-                    Franchise
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to="/contact"
                     className={`header__nav-link ${location.pathname.startsWith('/contact') ? 'active' : ''}`}
                   >
@@ -116,7 +108,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="header__icon-btn header__icon-btn--wa"
-                aria-label="Contact Best Car Accessories on WhatsApp"
+                aria-label="Contact Best Car Accessories NMS on WhatsApp"
               >
                 <MessageCircle size={18} />
               </a>
@@ -126,7 +118,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="header__icon-btn header__icon-btn--ig"
-                  aria-label="Best Car Accessories on Instagram"
+                  aria-label="Best Car Accessories NMS on Instagram"
                 >
                   <Instagram size={18} />
                 </a>

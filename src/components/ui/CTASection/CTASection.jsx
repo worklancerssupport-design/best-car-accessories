@@ -14,7 +14,7 @@ export default function CTASection({
   primaryIcon: PrimaryIcon,
 }) {
   const whatsappUrl = business.whatsapp
-    ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(whatsappMessage || 'Hello Best Car Accessories, I would like to enquire about your services.')}`
+    ? `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(whatsappMessage || 'Hello Best Car Accessories NMS, I would like to enquire about your services.')}`
     : '#';
   const instagramUrl = business.instagram || business.social?.instagram;
 

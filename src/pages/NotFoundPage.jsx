@@ -7,7 +7,7 @@ export default function NotFoundPage() {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | Best Car Accessories Chennai</title>
+        <title>Page Not Found | Best Car Accessories NMS Chennai</title>
         <meta name="robots" content="noindex" />
       </Helmet>
       <section className="nfp-section">

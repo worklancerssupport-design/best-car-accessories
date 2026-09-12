@@ -29,11 +29,11 @@ export default function ReviewsPage() {
   return (
     <>
       <Helmet>
-        <title>Customer Reviews | Best Car Accessories Chennai | NMS Road</title>
-        <meta name="description" content="See what customers say about Best Car Accessories, NMS Road, Chennai. 15+ years of serving car owners with quality accessories and professional installation." />
+        <title>Customer Reviews | Best Car Accessories NMS Chennai | NMS Road</title>
+        <meta name="description" content="See what customers say about Best Car Accessories NMS, NMS Road, Chennai. 15+ years of serving car owners with quality accessories and professional installation." />
         <link rel="canonical" href={`${business.siteUrl}/reviews`} />
-        <meta property="og:title" content="Reviews | Best Car Accessories Chennai" />
-        <meta property="og:description" content="Customer reviews for Best Car Accessories, NMS Road, Chennai." />
+        <meta property="og:title" content="Reviews | Best Car Accessories NMS Chennai" />
+        <meta property="og:description" content="Customer reviews for Best Car Accessories NMS, NMS Road, Chennai." />
       </Helmet>
 
       <div className="reviews-breadcrumb-wrap">
@@ -146,7 +146,7 @@ export default function ReviewsPage() {
         title="Ready to Experience Our Service?"
         subtitle="Visit us at NMS Road, Chennai or WhatsApp your requirements."
         primaryCta={{ label: 'Contact Us', href: '/contact' }}
-        whatsappMessage="Hello Best Car Accessories, I would like to enquire about your car accessories."
+        whatsappMessage="Hello Best Car Accessories NMS, I would like to enquire about your car accessories."
         dark={true}
       />
     </>

@@ -1,10 +1,10 @@
 {
   "$comment": "THEME REFERENCE — documentation of all colors used in colorConfig.css. This file is for reference only; the actual CSS variables live in /src/styles/colorConfig.css. Edit colors there, not here.",
-  "name": "Best Car Accessories — Dark Automotive",
+  "name": "Best Car Accessories NMS — Dark Automotive",
   "version": "2.0",
   "description": "Pure black luxury automotive aesthetic with vibrant red accent. Inspired by premium auto-works showroom design.",
   "brand": {
-    "name": "Best Car Accessories",
+    "name": "Best Car Accessories NMS",
     "tagline": "Premium Car Accessories · Chennai",
     "accentColor": "#e63946",
     "accentMeaning": "Power, action, urgency — used sparingly for maximum impact on CTAs and key highlights"

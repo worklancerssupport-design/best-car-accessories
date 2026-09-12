@@ -22,18 +22,18 @@ const rangeGroups = aboutData.rangeGroups;
 export default function AboutPage() {
   const breadcrumbs = [{ label: 'Home', href: '/' }, { label: 'About Us' }];
   const whatsappMessage = encodeURIComponent(
-    "Hello Best Car Accessories, I would like to visit your studio at Royapettah for car upgrades."
+    "Hello Best Car Accessories NMS, I would like to visit your studio at Royapettah for car upgrades."
   );
   const whatsappLink = `https://wa.me/${business.whatsapp}?text=${whatsappMessage}`;
 
   return (
     <>
       <Helmet>
-        <title>About Best Car Accessories | Royapettah, Chennai | 15+ Years Experience</title>
-        <meta name="description" content="Learn about Best Car Accessories in Royapettah, Chennai — 15+ years of experience serving 1000+ clients with premium car accessories, interior and exterior customization, professional installation." />
+        <title>About Best Car Accessories NMS | Royapettah, Chennai | 15+ Years Experience</title>
+        <meta name="description" content="Learn about Best Car Accessories NMS in Royapettah, Chennai — 15+ years of experience serving 1000+ clients with premium car accessories, interior and exterior customization, professional installation." />
         <link rel="canonical" href={`${business.siteUrl}/about`} />
-        <meta property="og:title" content="About Best Car Accessories | Royapettah, Chennai" />
-        <meta property="og:description" content="Best Car Accessories — Chennai's trusted destination for premium car accessories and customization. 15+ years experience, 1000+ clients served." />
+        <meta property="og:title" content="About Best Car Accessories NMS | Royapettah, Chennai" />
+        <meta property="og:description" content="Best Car Accessories NMS — Chennai's trusted destination for premium car accessories and customization. 15+ years experience, 1000+ clients served." />
       </Helmet>
 
       <div className="about-breadcrumb-wrap">
@@ -48,7 +48,7 @@ export default function AboutPage() {
             Chennai's<br/><span className="about-hero__title-accent">Trusted </span>Car<br/>Accessories<br/>Destination
           </h1>
           <p className="about-hero__subtitle">
-            Best Car Accessories next to Woodlands Theater, Royapettah, Chennai — premium car
+            Best Car Accessories NMS next to Woodlands Theater, Royapettah, Chennai — premium car
             accessories, exterior upgrades, and certified professional installation.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
           <div className="about-story__grid">
             <div className="about-story__text">
               <p>
-                Best Car Accessories has been serving car owners in Chennai from our studio on
+                Best Car Accessories NMS has been serving car owners in Chennai from our studio on
                 Westcott Road, Royapettah for over 15 years. We started with a simple belief:
                 every car owner deserves access to quality accessories and certified professional
                 installation — not just premium car buyers.
@@ -177,7 +177,7 @@ export default function AboutPage() {
                   <MapPin size={22} />
                 </span>
                 <div>
-                  <h3 className="about-visit__name">Best Car Accessories</h3>
+                  <h3 className="about-visit__name">Best Car Accessories NMS</h3>
                   <span className="about-visit__area">Royapettah, Chennai</span>
                 </div>
               </header>
@@ -204,6 +204,7 @@ export default function AboutPage() {
                   <div>
                     <span className="about-visit__detail-label">Direct Hotline</span>
                     <p>{business.phone}</p>
+                    {business.phone2 && <p>{business.phone2}</p>}
                   </div>
                 </li>
               </ul>
@@ -233,7 +234,7 @@ export default function AboutPage() {
             <div className="about-visit__map">
               <iframe
                 src={business.mapUrl}
-                title="Best Car Accessories location map — Royapettah, Chennai"
+                title="Best Car Accessories NMS location map — Royapettah, Chennai"
                 className="about-visit__map-iframe"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -250,7 +251,7 @@ export default function AboutPage() {
           <header className="about-faq__header">
             <span className="section-label">Common Questions</span>
             <h2 id="about-faq-title" className="about-faq__title">
-              About Best Car Accessories
+              About Best Car Accessories NMS
             </h2>
           </header>
           <div className="about-faq__wrap">
@@ -263,7 +264,7 @@ export default function AboutPage() {
         title="Visit Us in Royapettah, Chennai"
         subtitle="Come in with your car or WhatsApp your requirements and we'll help you choose the right accessories."
         primaryCta={{ label: 'Contact Us', href: '/contact' }}
-        whatsappMessage="Hi Best Car Accessories, I would like to know more about your car accessories."
+        whatsappMessage="Hi Best Car Accessories NMS, I would like to know more about your car accessories."
         dark={true}
       />
     </>

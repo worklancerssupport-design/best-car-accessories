@@ -43,7 +43,7 @@ export default function InteriorCategoryPage() {
   ];
 
   const pageTitle = 'Interior Car Accessories in Chennai | Best Car Accessories NMS Road';
-  const pageDescription = 'Explore all 20 interior car customization options at Best Car Accessories, NMS Road, Chennai. 18-zone ambient lighting, custom seat covers, touchscreen infotainment, component audio, 360 cameras, and 7D mats.';
+  const pageDescription = 'Explore all 20 interior car customization options at Best Car Accessories NMS, NMS Road, Chennai. 18-zone ambient lighting, custom seat covers, touchscreen infotainment, component audio, 360 cameras, and 7D mats.';
 
   const isGroupedView = activeTag === 'All' && !search.trim();
   const whatsappHref = business.whatsapp
@@ -204,9 +204,9 @@ export default function InteriorCategoryPage() {
       {/* Closing CTA */}
       <CTASection
         title="Ready to Upgrade Your Car's Cabin?"
-        subtitle="Schedule your slot at Best Car Accessories, NMS Road, Chennai for professional consultation."
+        subtitle="Schedule your slot at Best Car Accessories NMS, NMS Road, Chennai for professional consultation."
         primaryCta={{ label: 'Book Fitment Slot', href: '/contact' }}
-        whatsappMessage="Hi Best Car Accessories, I am interested in interior car customization for my car."
+        whatsappMessage="Hi Best Car Accessories NMS, I am interested in interior car customization for my car."
         dark={true}
       />
     </>

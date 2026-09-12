@@ -38,8 +38,7 @@ export default function MobileMenu({ isOpen, onClose, whatsappUrl, instagramUrl 
     { name: 'Interior', path: '/interior-car-accessories-chennai', index: '03' },
     { name: 'Gallery', path: '/gallery', index: '04' },
     { name: 'About', path: '/about', index: '05' },
-    { name: 'Franchise', path: '/franchise', index: '06' },
-    { name: 'Contact', path: '/contact', index: '07' },
+    { name: 'Contact', path: '/contact', index: '06' },
   ];
 
   return (
@@ -55,7 +54,7 @@ export default function MobileMenu({ isOpen, onClose, whatsappUrl, instagramUrl 
         <Link to="/" className="mobile-menu-logo" onClick={onClose}>
           <img
             src="/logo.png"
-            alt="Best Car Accessories"
+            alt="Best Car Accessories NMS"
             className="mobile-menu-logo-img"
           />
         </Link>
@@ -95,7 +94,7 @@ export default function MobileMenu({ isOpen, onClose, whatsappUrl, instagramUrl 
               target="_blank"
               rel="noopener noreferrer"
               className="mobile-menu-icon-btn"
-              aria-label="Contact Best Car Accessories on WhatsApp"
+              aria-label="Contact Best Car Accessories NMS on WhatsApp"
             >
               <MessageCircle size={18} />
             </a>
@@ -106,7 +105,7 @@ export default function MobileMenu({ isOpen, onClose, whatsappUrl, instagramUrl 
               target="_blank"
               rel="noopener noreferrer"
               className="mobile-menu-icon-btn"
-              aria-label="Best Car Accessories on Instagram"
+              aria-label="Best Car Accessories NMS on Instagram"
             >
               <Instagram size={18} />
             </a>

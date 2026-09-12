@@ -115,7 +115,7 @@ export default function Gallery({ compact = false }) {
               <h3 className="gallery-lightbox__title">{activeItem.title || 'Custom Upgrade'}</h3>
               <p className="gallery-lightbox__desc">
                 {activeItem.car && (<>Vehicle: <strong>{activeItem.car}</strong> · </>)}
-                Upgraded by Best Car Accessories.
+                Upgraded by Best Car Accessories NMS.
               </p>
               <Link to="/contact" className="gallery-lightbox__enquire" onClick={() => setActiveItem(null)}>
                 <span>Enquire for This Setup</span>

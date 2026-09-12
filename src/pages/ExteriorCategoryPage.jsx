@@ -43,7 +43,7 @@ export default function ExteriorCategoryPage() {
   ];
 
   const pageTitle = 'Exterior Car Accessories in Chennai | Best Car Accessories NMS Road';
-  const pageDescription = 'Explore all 20 exterior car accessories at Best Car Accessories, NMS Road, Chennai. High-performance fog lights, LED headlight upgrades, DRLs, aerodynamic spoilers, side foot steps, and OEM fitment.';
+  const pageDescription = 'Explore all 20 exterior car accessories at Best Car Accessories NMS, NMS Road, Chennai. High-performance fog lights, LED headlight upgrades, DRLs, aerodynamic spoilers, side foot steps, and OEM fitment.';
 
   const isGroupedView = activeTag === 'All' && !search.trim();
   const whatsappHref = business.whatsapp
@@ -214,7 +214,7 @@ export default function ExteriorCategoryPage() {
         title="Ready to Transform Your Vehicle's Exterior?"
         subtitle="Contact our technicians with your car model for accurate compatibility and pricing."
         primaryCta={{ label: 'Book Fitment Slot', href: '/contact' }}
-        whatsappMessage="Hi Best Car Accessories, I am interested in exterior car accessories for my car."
+        whatsappMessage="Hi Best Car Accessories NMS, I am interested in exterior car accessories for my car."
         dark={true}
       />
     </>

@@ -4,7 +4,7 @@ import './WhatsAppButton.css';
 
 export default function WhatsAppButton() {
   const whatsappNumber = business.whatsapp;
-  const whatsappMessage = encodeURIComponent("Hello Best Car Accessories, I would like to enquire about your car accessories and services.");
+  const whatsappMessage = encodeURIComponent("Hello Best Car Accessories NMS, I would like to enquire about your car accessories and services.");
   const whatsappUrl = whatsappNumber ? `https://wa.me/${whatsappNumber}?text=${whatsappMessage}` : '#';
   const [hovered, setHovered] = useState(false);
 

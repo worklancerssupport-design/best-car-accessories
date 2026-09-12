@@ -4,7 +4,7 @@ import './PremiumHero.css';
 
 export default function PremiumHero() {
   return (
-    <section className="premium-hero" aria-label="Best Car Accessories — Chennai's premium auto studio">
+    <section className="premium-hero" aria-label="Best Car Accessories NMS — Chennai's premium auto studio">
       <div className="premium-hero__bg" aria-hidden="true">
         <img
           src="/hero_car.jpg"

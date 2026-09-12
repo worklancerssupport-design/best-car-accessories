@@ -49,7 +49,7 @@ export default function ContactSection() {
   };
 
   const whatsappMessage = encodeURIComponent(
-    "Hello Best Car Accessories, I would like to get a quote for my car."
+    "Hello Best Car Accessories NMS, I would like to get a quote for my car."
   );
   const whatsappLink = `https://wa.me/${business.whatsapp}?text=${whatsappMessage}`;
   const phoneCallLink = `tel:${business.phone.replace(/\s+/g, '')}`;
@@ -183,6 +183,11 @@ export default function ContactSection() {
                   <div className="contact-info-row-body">
                     <span className="contact-info-row-label">Phone</span>
                     <a href={phoneCallLink} className="contact-info-row-value">{business.phone}</a>
+                    {business.phone2 && (
+                      <a href={`tel:${business.phone2.replace(/\s+/g, '')}`} className="contact-info-row-value">
+                        {business.phone2}
+                      </a>
+                    )}
                   </div>
                 </li>
                 <li className="contact-info-row">

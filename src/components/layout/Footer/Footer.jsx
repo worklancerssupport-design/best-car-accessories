@@ -18,6 +18,8 @@ const popularUpgrades = [
 export default function Footer() {
   const phoneDisplay = business.phone || '+91 98400 12345';
   const phoneHref = phoneDisplay.replace(/\s+/g, '');
+  const phone2Display = business.phone2 || null;
+  const phone2Href = phone2Display ? phone2Display.replace(/\s+/g, '') : null;
   const instaUrl = business.instagram || business.social?.instagram || null;
   const facebookUrl = business.social?.facebook || null;
   const youtubeUrl = business.social?.youtube || null;
@@ -32,12 +34,12 @@ export default function Footer() {
               <Link to="/" className="footer-logo">
                 <img
                   src="/logo.png"
-                  alt="Best Car Accessories"
+                  alt="Best Car Accessories NMS"
                   className="footer-logo-img"
                 />
                 <span className="footer__brand-name">
                   <span className="footer__brand-name-top">Best Car</span>
-                  <span className="footer__brand-name-bottom">Accessories</span>
+                  <span className="footer__brand-name-bottom">Accessories NMS</span>
                 </span>
               </Link>
               <p className="footer-desc">
@@ -71,7 +73,6 @@ export default function Footer() {
               <li><Link to="/interior-car-accessories-chennai">Interior Customization</Link></li>
               <li><Link to="/gallery">Gallery</Link></li>
               <li><Link to="/about">About</Link></li>
-              <li><Link to="/franchise">Franchise</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -110,6 +111,17 @@ export default function Footer() {
                   </div>
                 </a>
               </li>
+              {phone2Display && (
+                <li>
+                  <a href={`tel:${phone2Href}`} className="footer-contact-item">
+                    <span className="footer-contact-item-icon"><Phone size={14} /></span>
+                    <div className="footer-contact-item-body">
+                      <span className="footer-contact-item-label">Phone</span>
+                      <span className="footer-contact-item-value">{phone2Display}</span>
+                    </div>
+                  </a>
+                </li>
+              )}
               <li>
                 <a href={`mailto:${business.email}`} className="footer-contact-item">
                   <span className="footer-contact-item-icon"><Mail size={14} /></span>
@@ -135,7 +147,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Best Car Accessories. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Best Car Accessories NMS. All rights reserved.</p>
           <div className="footer-bottom-meta">
             <span>{business.location}</span>
             <span className="footer-bottom-meta-sep">·</span>

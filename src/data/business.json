@@ -2,8 +2,9 @@
     "name": "Best Car Accessories NMS",
     "tagline": "Premium Car Accessories & Customization",
     "location": "Royapettah, Chennai",
-    "phone": "+91 95512 01731",
-    "whatsapp": "9551201731",
+  "phone": "+91 95512 01731",
+  "phone2": "+91 87545 85673",
+  "whatsapp": "9551201731",
     "email": "lathief9551@gmail.com",
     "address": "Palani Murugan Building, No: 21, Westcott Rd, next to Woodlands Theater, Royapettah, Chennai, Tamil Nadu 600014",
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1273.2666481195483!2d80.264319065697!3d13.056689762847377!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526755f0430a09%3A0xc7012468284e06ca!2sBest%20Car%20Accessories%20NMS!5e0!3m2!1sen!2sus!4v1789149770763!5m2!1sen!2sus",
@@ -23,7 +24,7 @@
     "clientsServed": 1000,
     "accessoryCategories": 20,
     "siteUrl": "https://bestcaraccessorieschennai.in",
-    "siteName": "Best Car Accessories Chennai",
+    "siteName": "Best Car Accessories NMS Chennai",
     "hours": {
         "weekdays": {
             "days": "Mon - Sat",

@@ -30,10 +30,10 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Best Car Accessories Chennai | 3D Automotive Showroom &amp; Upgrades</title>
-        <meta name="description" content="Best Car Accessories on NMS Road, Royapettah, Chennai — 15+ years experience, 1000+ clients. Premium car accessories, interior & exterior customization, lighting, infotainment, cameras and professional installation." />
+        <title>Best Car Accessories NMS Chennai | 3D Automotive Showroom &amp; Upgrades</title>
+        <meta name="description" content="Best Car Accessories NMS on NMS Road, Royapettah, Chennai — 15+ years experience, 1000+ clients. Premium car accessories, interior & exterior customization, lighting, infotainment, cameras and professional installation." />
         <link rel="canonical" href={business.siteUrl} />
-        <meta property="og:title" content="Best Car Accessories Chennai | 3D Automotive Showroom & Upgrades" />
+        <meta property="og:title" content="Best Car Accessories NMS Chennai | 3D Automotive Showroom & Upgrades" />
         <meta property="og:description" content="Premium car accessories and customization shop on NMS Road, Chennai. 15+ years experience, 1000+ clients served." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={business.siteUrl} />
