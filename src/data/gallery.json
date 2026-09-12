@@ -29,13 +29,13 @@
             "featured": true
         },
         {
-            "id": 3,
-            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789202898/best-car-accessories/gx5mvc5dqcxex7kyazem.jpg",
-            "alt": "New gallery item",
-            "category": "Seat Covers",
-            "title": "Nappa seat cover ",
-            "car": "Tata  Tiago",
-            "featured": false
+            "id": 10,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205303/best-car-accessories/ktgkdutx3mgp8zrcwxlj.jpg",
+            "alt": "Colorful Neon Ambient Lighting",
+            "category": "Lighting",
+            "title": "Ambient Lighting ",
+            "car": "Mahindra Thar",
+            "featured": true
         },
         {
             "id": 4,
@@ -47,8 +47,17 @@
             "featured": false
         },
         {
+            "id": 3,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789202898/best-car-accessories/gx5mvc5dqcxex7kyazem.jpg",
+            "alt": "New gallery item",
+            "category": "Seat Covers",
+            "title": "Nappa seat cover ",
+            "car": "Tata  Tiago",
+            "featured": false
+        },
+        {
             "id": 5,
-            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789204042/best-car-accessories/jcjdeljvoc4hrdkzn1ax.jpg",
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205844/best-car-accessories/qisl7fw6gadko8xlxfs3.jpg",
             "alt": "Customized Soft Premium Luxury Napa Leather Seat Cover",
             "category": "Seat Covers",
             "title": "Customized Napa Leather Back Seat Cover",
@@ -92,34 +101,34 @@
             "featured": false
         },
         {
-            "id": 10,
-            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205303/best-car-accessories/ktgkdutx3mgp8zrcwxlj.jpg",
-            "alt": "Colorful Neon Ambient Lighting",
-            "category": "Lighting",
-            "title": "Ambient Lighting ",
-            "car": "Mahindra Thar",
-            "featured": true
-        },
-        {
             "id": 11,
-            "src": "",
-            "alt": "New gallery item",
-            "category": "Exterior",
-            "title": "New Gallery Item",
-            "car": "Car Model",
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205467/best-car-accessories/dauhxl1r5tj2ea1c0rut.jpg",
+            "alt": "Tweeter Connection With Speaker For Better Voice Capture In Audio",
+            "category": "Audio",
+            "title": "Tweeter",
+            "car": "Maruti Suzuki Shift Dezire",
             "featured": false
         },
         {
             "id": 12,
-            "src": "",
-            "alt": "New gallery item",
-            "category": "Exterior",
-            "title": "New Gallery Item",
-            "car": "Car Model",
-            "featured": false
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205550/best-car-accessories/ouqpbuim5haji91bq2qg.jpg",
+            "alt": "Soft Premium Steering Leather Cover",
+            "category": "Seat Covers",
+            "title": "Steering Leather Cover",
+            "car": "Kia Carens",
+            "featured": true
         },
         {
             "id": 13,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205598/best-car-accessories/tllc2qv3vl4bkn8ejfox.jpg",
+            "alt": "Car Life Long Mat 3D",
+            "category": "Interior",
+            "title": "Car Floor LLM Mat",
+            "car": "Renault Kwid",
+            "featured": false
+        },
+        {
+            "id": 14,
             "src": "",
             "alt": "New gallery item",
             "category": "Exterior",
