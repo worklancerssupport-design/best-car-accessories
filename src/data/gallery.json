@@ -66,12 +66,12 @@
         },
         {
             "id": 7,
-            "src": "",
-            "alt": "New gallery item",
-            "category": "Exterior",
-            "title": "New Gallery Item",
-            "car": "Car Model",
-            "featured": false
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789204216/best-car-accessories/dvc69t2s8xwagbqdpuu1.jpg",
+            "alt": "Customized Luxury Premium Napa Leather Sear Cover and Colourful Ambient Lighting",
+            "category": "Interior",
+            "title": "Customized Napa Seat Cover and Ambient Lighting",
+            "car": "Maruti Suzuki XL6",
+            "featured": true
         }
     ]
 }
