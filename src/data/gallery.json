@@ -45,6 +45,33 @@
             "title": "AC Vent Ambient Light",
             "car": "Mahindra Thar",
             "featured": true
+        },
+        {
+            "id": 5,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789204042/best-car-accessories/jcjdeljvoc4hrdkzn1ax.jpg",
+            "alt": "Customized Soft Premium Luxury Napa Leather Seat Cover",
+            "category": "Seat Covers",
+            "title": "Customized Napa Leather Back Seat Cover",
+            "car": "Kia Seltos New",
+            "featured": false
+        },
+        {
+            "id": 6,
+            "src": "",
+            "alt": "New gallery item",
+            "category": "Exterior",
+            "title": "New Gallery Item",
+            "car": "Car Model",
+            "featured": false
+        },
+        {
+            "id": 7,
+            "src": "",
+            "alt": "New gallery item",
+            "category": "Exterior",
+            "title": "New Gallery Item",
+            "car": "Car Model",
+            "featured": false
         }
     ]
 }
