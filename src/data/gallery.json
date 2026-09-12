@@ -153,6 +153,15 @@
             "title": "Door Pad Leather Wrap",
             "car": "Maruti Suzuki S - Presso",
             "featured": false
+        },
+        {
+            "id": 17,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789208291/best-car-accessories/wrlxupeke4lxwtoxeyu4.jpg",
+            "alt": "4 Door Veiser ",
+            "category": "Exterior",
+            "title": "Door Veiser",
+            "car": "Honda City ",
+            "featured": false
         }
     ]
 }
