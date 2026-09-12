@@ -1,49 +1,49 @@
 {
-  "name": "Best Car Accessories",
-  "tagline": "Premium Car Accessories & Customization",
-  "location": "Royapettah, Chennai",
-  "phone": "+91 95512 01731",
-  "whatsapp": "9551201731",
-  "email": "lathief9551@gmail.com",
-  "address": "Palani Murugan Building, No: 21, Westcott Rd, next to Woodlands Theater, Royapettah, Chennai, Tamil Nadu 600014",
-  "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1273.2666481195483!2d80.264319065697!3d13.056689762847377!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526755f0430a09%3A0xc7012468284e06ca!2sBest%20Car%20Accessories%20NMS!5e0!3m2!1sen!2sus!4v1789149770763!5m2!1sen!2sus",
-  "googleMapsUrl": "https://maps.app.goo.gl/UipicbpWsbieENDv7",
-  "googleBusinessUrl": "https://share.google/aHZB1IOgDdMndM8JV",
-  "googleReviewsUrl": "",
-  "instagram": "https://www.instagram.com/best_car_accessories_nms/",
-  "instagramHandle": "@best_car_accessories_nms",
-  "instagramUsername": "best_car_accessories_nms",
-  "social": {
+    "name": "Best Car Accessories",
+    "tagline": "Premium Car Accessories & Customization",
+    "location": "Royapettah, Chennai",
+    "phone": "+91 95512 01731",
+    "whatsapp": "9551201731",
+    "email": "lathief9551@gmail.com",
+    "address": "Palani Murugan Building, No: 21, Westcott Rd, next to Woodlands Theater, Royapettah, Chennai, Tamil Nadu 600014",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1273.2666481195483!2d80.264319065697!3d13.056689762847377!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526755f0430a09%3A0xc7012468284e06ca!2sBest%20Car%20Accessories%20NMS!5e0!3m2!1sen!2sus!4v1789149770763!5m2!1sen!2sus",
+    "googleMapsUrl": "https://maps.app.goo.gl/UipicbpWsbieENDv7",
+    "googleBusinessUrl": "https://share.google/aHZB1IOgDdMndM8JV",
+    "googleReviewsUrl": "",
     "instagram": "https://www.instagram.com/best_car_accessories_nms/",
-    "facebook": "",
-    "youtube": "",
-    "twitter": ""
-  },
-  "yearsExperience": 15,
-  "clientsServed": 1000,
-  "accessoryCategories": 20,
-  "siteUrl": "https://bestcaraccessorieschennai.in",
-  "siteName": "Best Car Accessories Chennai",
-  "hours": {
-    "weekdays": {
-      "days": "Mon - Sat",
-      "open": "10:00 AM",
-      "close": "10:00 PM"
+    "instagramHandle": "@best_car_accessories_nms",
+    "instagramUsername": "best_car_accessories_nms",
+    "social": {
+        "instagram": "https://www.instagram.com/best_car_accessories_nms/",
+        "facebook": "",
+        "youtube": "https://youtube.com/@bestcaraccessoriesnms?si=GpUygpWXNn15hBBM",
+        "twitter": ""
     },
-    "sunday": {
-      "days": "Sun",
-      "open": "On",
-      "close": "Appointment"
-    }
-  },
-  "stats": {
     "yearsExperience": 15,
     "clientsServed": 1000,
     "accessoryCategories": 20,
-    "labels": {
-      "yearsExperience": "Years of Experience",
-      "clientsServed": "Clients Served",
-      "accessoryCategories": "Accessory Categories"
+    "siteUrl": "https://bestcaraccessorieschennai.in",
+    "siteName": "Best Car Accessories Chennai",
+    "hours": {
+        "weekdays": {
+            "days": "Mon - Sat",
+            "open": "10:00 AM",
+            "close": "10:00 PM"
+        },
+        "sunday": {
+            "days": "Sun",
+            "open": "On",
+            "close": "Appointment"
+        }
+    },
+    "stats": {
+        "yearsExperience": 15,
+        "clientsServed": 1000,
+        "accessoryCategories": 20,
+        "labels": {
+            "yearsExperience": "Years of Experience",
+            "clientsServed": "Clients Served",
+            "accessoryCategories": "Accessory Categories"
+        }
     }
-  }
 }
