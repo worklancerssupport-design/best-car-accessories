@@ -27,6 +27,15 @@
             "title": "JBL Speakers",
             "car": "Hyundai Exter",
             "featured": true
+        },
+        {
+            "id": 3,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789202898/best-car-accessories/gx5mvc5dqcxex7kyazem.jpg",
+            "alt": "New gallery item",
+            "category": "Seat Covers",
+            "title": "Nappa seat cover ",
+            "car": "Tata  Tiago",
+            "featured": false
         }
     ]
 }
