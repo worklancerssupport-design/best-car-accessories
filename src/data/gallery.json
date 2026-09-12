@@ -36,6 +36,15 @@
             "title": "Nappa seat cover ",
             "car": "Tata  Tiago",
             "featured": false
+        },
+        {
+            "id": 4,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789203905/best-car-accessories/i7ffxaiulfrkydcqqpfi.jpg",
+            "alt": "AC OEM Neon Ambient Luxury Lights",
+            "category": "Lighting",
+            "title": "AC Vent Ambient Light",
+            "car": "Mahindra Thar",
+            "featured": false
         }
     ]
 }
