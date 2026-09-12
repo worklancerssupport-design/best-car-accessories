@@ -44,7 +44,7 @@
             "category": "Lighting",
             "title": "AC Vent Ambient Light",
             "car": "Mahindra Thar",
-            "featured": true
+            "featured": false
         },
         {
             "id": 5,
@@ -72,6 +72,60 @@
             "title": "Customized Napa Seat Cover and Ambient Lighting",
             "car": "Maruti Suzuki XL6",
             "featured": true
+        },
+        {
+            "id": 8,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205151/best-car-accessories/bcuyohyc8yygo0jz2qhc.jpg",
+            "alt": "Android Infotainment System & Colorful Ambient Lighting",
+            "category": "Interior",
+            "title": "Infotainment System & Ambient Lighting",
+            "car": "Mahindra Thar",
+            "featured": true
+        },
+        {
+            "id": 9,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205231/best-car-accessories/tbjbtnurdp3mrob9wb95.jpg",
+            "alt": "Soft Leather Steering Cover & Premium Napa Seat Cover",
+            "category": "Interior",
+            "title": "Leather Steering & Napa Seat Cover",
+            "car": "Kia Seltos",
+            "featured": false
+        },
+        {
+            "id": 10,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789205303/best-car-accessories/ktgkdutx3mgp8zrcwxlj.jpg",
+            "alt": "Colorful Neon Ambient Lighting",
+            "category": "Lighting",
+            "title": "Ambient Lighting ",
+            "car": "Mahindra Thar",
+            "featured": true
+        },
+        {
+            "id": 11,
+            "src": "",
+            "alt": "New gallery item",
+            "category": "Exterior",
+            "title": "New Gallery Item",
+            "car": "Car Model",
+            "featured": false
+        },
+        {
+            "id": 12,
+            "src": "",
+            "alt": "New gallery item",
+            "category": "Exterior",
+            "title": "New Gallery Item",
+            "car": "Car Model",
+            "featured": false
+        },
+        {
+            "id": 13,
+            "src": "",
+            "alt": "New gallery item",
+            "category": "Exterior",
+            "title": "New Gallery Item",
+            "car": "Car Model",
+            "featured": false
         }
     ]
 }
