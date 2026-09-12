@@ -57,11 +57,11 @@
         },
         {
             "id": 6,
-            "src": "",
-            "alt": "New gallery item",
-            "category": "Exterior",
-            "title": "New Gallery Item",
-            "car": "Car Model",
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789204121/best-car-accessories/ccfduocem9pc4xck2sxx.jpg",
+            "alt": "Android Infotainment System",
+            "category": "Infotainment",
+            "title": "Infotainment System",
+            "car": "Maruti Fronx",
             "featured": false
         },
         {
