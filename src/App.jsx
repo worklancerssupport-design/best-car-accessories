@@ -1,6 +1,7 @@
 import CustomCursor from './components/ui/CustomCursor/CustomCursor';
 import { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
 import ScrollToTop from './components/layout/ScrollToTop/ScrollToTop';
@@ -34,6 +35,7 @@ function App() {
 
     return (
         <ErrorBoundary>
+            <Analytics />
             <CustomCursor />
             <ScrollToTop />
             {!isEdit && <Header />}
