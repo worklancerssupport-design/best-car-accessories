@@ -162,6 +162,105 @@
             "title": "Door Veiser",
             "car": "Honda City ",
             "featured": false
+        },
+        {
+            "id": 18,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789465566/best-car-accessories/ll4ur5n5hfpr7m0jtxkt.jpg",
+            "alt": "New gallery item",
+            "category": "Lighting",
+            "title": "Fog light projector ",
+            "car": "Mahindra Thar",
+            "featured": true
+        },
+        {
+            "id": 19,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789465625/best-car-accessories/hc1k9p6aarz2couthgk1.jpg",
+            "alt": "Maruti suzuki XL6 ",
+            "category": "Lighting",
+            "title": "Tricolour fog light projector ",
+            "car": "Maruti suzuki XL6",
+            "featured": true
+        },
+        {
+            "id": 20,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789465743/best-car-accessories/dy1d08tuh0vrebnwzyhd.jpg",
+            "alt": "New gallery item",
+            "category": "Lighting",
+            "title": "Fog light projector ",
+            "car": "Maruti suzuki ertiga ",
+            "featured": true
+        },
+        {
+            "id": 21,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789465797/best-car-accessories/ogz7l5nqhhnreeo0fjfu.jpg",
+            "alt": "7D Floor mat ",
+            "category": "Interior",
+            "title": "7D Floor mat ",
+            "car": "Tata Altroz ",
+            "featured": true
+        },
+        {
+            "id": 22,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789465888/best-car-accessories/ie0ghtn8pt91kbpzdvbv.jpg",
+            "alt": "LXF LUXURY Floor Mat ",
+            "category": "Interior",
+            "title": "LXF LUXURY FLOOR MAT ",
+            "car": "Mahindra XUV 7XO",
+            "featured": true
+        },
+        {
+            "id": 23,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789465985/best-car-accessories/iwgupmhapsfrdpf0huc8.jpg",
+            "alt": "Side Foot Step ",
+            "category": "Exterior",
+            "title": "SIDE FOOT STEP ",
+            "car": "Mahindra XUV 7XO ",
+            "featured": true
+        },
+        {
+            "id": 24,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789466046/best-car-accessories/fgpjpoateu0fjnrggryw.jpg",
+            "alt": "New gallery item",
+            "category": "Exterior",
+            "title": "REAR SAFETY BUMPER ",
+            "car": "Mahindra XUV 7XO ",
+            "featured": true
+        },
+        {
+            "id": 25,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789466449/best-car-accessories/euwvoozkjpytutgejkme.jpg",
+            "alt": "Roof Top Carrier ",
+            "category": "Exterior",
+            "title": "ROOF TOP CARRIER ",
+            "car": "BOLERO NEO PLUS ",
+            "featured": true
+        },
+        {
+            "id": 26,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789467171/best-car-accessories/qimqhpxhchc0obez4q1z.jpg",
+            "alt": "FLAG POST CLAMP WITH VEL POST ",
+            "category": "Interior",
+            "title": "FLAG POST CLAMP WITH VEL POST ",
+            "car": "BOLERO NEO PLUS ",
+            "featured": true
+        },
+        {
+            "id": 27,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789467316/best-car-accessories/lutegix6ap55vkjhcdr7.jpg",
+            "alt": "REAR SAFETY BUMPER GUARD ",
+            "category": "Exterior",
+            "title": "REAR SAFETY BUMPER ",
+            "car": "KIA CARENS ",
+            "featured": true
+        },
+        {
+            "id": 28,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789467426/best-car-accessories/w6j5iwezghyu5z1bwcbf.jpg",
+            "alt": "Rear safety bumper guard ",
+            "category": "Exterior",
+            "title": "REAR SAFETY BUMPER GUARD ",
+            "car": "S PRESSO ",
+            "featured": true
         }
     ]
 }
