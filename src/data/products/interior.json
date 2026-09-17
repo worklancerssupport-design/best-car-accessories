@@ -225,9 +225,9 @@
             "image": "https://res.cloudinary.com/fthteymu/image/upload/v1789629693/best-car-accessories/elqixtcydmu8pybrwwiz.jpg",
             "imageAlt": "Android touchscreen infotainment system installation in Chennai",
             "gallery": [
-                "/images/interior/infotainment-1.png",
-                "/images/interior/infotainment-2.jpg",
-                "/images/interior/infotainment-3.webp"
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789629773/best-car-accessories/xzp0e27ljp5ew6ckqaq4.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789629792/best-car-accessories/psgtgk4hajaeebr7x47a.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789629816/best-car-accessories/b5oryyftpls7vra5aiu8.jpg"
             ],
             "relatedServices": [
                 "oem-infotainment",
@@ -296,7 +296,7 @@
             "image": "/images/interior/dashcam-ai-1.jpg",
             "imageAlt": "Dash camera and AI safety dongle installation in Chennai",
             "gallery": [
-                "/images/interior/dashcam-ai-1.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789629885/best-car-accessories/t7bv11b3ozauad58wdea.jpg",
                 "/images/interior/dashcam-ai-2.jpg"
             ],
             "relatedServices": [
