@@ -483,7 +483,9 @@
             "gallery": [
                 "/images/interior/dashboard-custom-1.jpg",
                 "/images/interior/dashboard-custom-2.jpg",
-                "/images/interior/dashboard-custom-3.jpg"
+                "/images/interior/dashboard-custom-3.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789972286/best-car-accessories/aissmvbsrt7slfcllhof.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789972309/best-car-accessories/g6l23tcw9t9tgpb9yrkd.jpg"
             ],
             "relatedServices": [
                 "premium-car-seat-covers",
@@ -778,7 +780,9 @@
             "gallery": [
                 "/images/interior/neck-pillows-1.jpg",
                 "/images/interior/neck-pillows-2.webp",
-                "/images/interior/neck-pillows-3.jpg"
+                "/images/interior/neck-pillows-3.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789972186/best-car-accessories/um7xvdteuc7ihpznwltb.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789972214/best-car-accessories/govls2ydqdrjl97tgnwb.jpg"
             ],
             "relatedServices": [
                 "premium-car-seat-covers",
@@ -1060,7 +1064,8 @@
             "gallery": [
                 "/images/interior/curtains-air-1.jpg",
                 "/images/interior/curtains-air-2.webp",
-                "/images/interior/curtains-air-3.jpg"
+                "/images/interior/curtains-air-3.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789972118/best-car-accessories/d7om2ak9enizjkusl9vy.jpg"
             ],
             "relatedServices": [
                 "sun-control-films",
@@ -1111,7 +1116,8 @@
             "imageAlt": "360 degree surround view camera and OEM reverse camera in Chennai",
             "gallery": [
                 "/images/interior/360-camera-1.jpg",
-                "/images/interior/360-camera-2.jpg"
+                "/images/interior/360-camera-2.jpg",
+                ""
             ],
             "relatedServices": [
                 "dash-cameras-ai-dongles",
@@ -1168,7 +1174,7 @@
                     "description": "Electric power window system"
                 }
             ],
-            "image": "/images/interior/seat-organizers-vacuum-cleaners-chennai.webp",
+            "image": "https://res.cloudinary.com/fthteymu/image/upload/v1789971939/best-car-accessories/wpi5fhhbzorjvace6gel.jpg",
             "imageAlt": "Seat organizer, vacuum cleaner and remote lock in Chennai",
             "relatedServices": [
                 "premium-car-seat-covers",
@@ -1188,7 +1194,11 @@
             ],
             "showInNav": false,
             "navName": null,
-            "megaMenuGroup": null
+            "megaMenuGroup": null,
+            "gallery": [
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789971978/best-car-accessories/nqwwuggwujemwlcregkm.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1789972008/best-car-accessories/cibvsjcr2i0jj219nnh7.jpg"
+            ]
         },
         {
             "id": "int-20",
