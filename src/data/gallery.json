@@ -270,6 +270,24 @@
             "title": "CAR REAR SPOILER SPORTY",
             "car": "Tata Tiago ",
             "featured": true
+        },
+        {
+            "id": 30,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789970878/best-car-accessories/okn84vdbzbm7nexqpokw.jpg",
+            "alt": "New gallery item",
+            "category": "Seat Covers",
+            "title": "Customized premium Nappa seats covers ",
+            "car": "Tata Nexon ",
+            "featured": false
+        },
+        {
+            "id": 31,
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789970967/best-car-accessories/sykcy6tu272kvmcpsyp4.jpg",
+            "alt": "New gallery item",
+            "category": "Seat Covers",
+            "title": "Customized premium Nappa seats covers ",
+            "car": "Tata Nexon ",
+            "featured": false
         }
     ]
 }
