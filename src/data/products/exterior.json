@@ -997,7 +997,7 @@
                     "description": "Motorised electric steps that extend when doors open"
                 }
             ],
-            "image": "/images/exterior/side-foot-steps-chennai.webp",
+            "image": "https://res.cloudinary.com/fthteymu/image/upload/v1790172138/best-car-accessories/thiizwoouuvd3ws87p00.jpg",
             "imageAlt": "Side foot step installation in Chennai",
             "relatedServices": [
                 "mud-flaps",
@@ -1017,7 +1017,18 @@
             ],
             "showInNav": true,
             "navName": "Side Foot Steps",
-            "megaMenuGroup": "Utility"
+            "megaMenuGroup": "Utility",
+            "gallery": [
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790172151/best-car-accessories/dp9urdrgv4nvlgfpyu30.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790172171/best-car-accessories/aomf9qbpkjcg3qoyx5hl.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790172187/best-car-accessories/zsvbuxygemqu6kaif8b9.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790172203/best-car-accessories/xelectw82vl9qs5m96of.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790172216/best-car-accessories/lqc3fbue6bnmrstmh97u.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790172231/best-car-accessories/tps9ejkd2lqrqklu8nqn.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790172247/best-car-accessories/c2n8f4ugzijzb8llfdj6.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790172266/best-car-accessories/g308jrsjoyqdmdaabumo.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790172282/best-car-accessories/m9tox07zykwtbqfvdeaw.jpg"
+            ]
         },
         {
             "id": "ext-18",
