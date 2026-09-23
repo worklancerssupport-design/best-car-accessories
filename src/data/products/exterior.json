@@ -217,8 +217,8 @@
                     "description": "DRL units with sequential indicator function"
                 }
             ],
-            "image": "/images/exterior/drl-headlight-fog-chennai.webp",
-            "imageAlt": "https://m.media-amazon.com/images/I/71dtPz9y+EL._AC_UF1000,1000_QL80_.jpg",
+            "image": "https://m.media-amazon.com/images/I/71dtPz9y+EL._AC_UF1000,1000_QL80_.jpg",
+            "imageAlt": "DRL-Headlight",
             "relatedServices": [
                 "fog-light-fog-projector",
                 "headlight-led-upgrade",
@@ -277,7 +277,7 @@
                     "description": "Letters + damping sheet together"
                 }
             ],
-            "image": "/images/exterior/bonnet-letters-damping-chennai.webp",
+            "image": "https://res.cloudinary.com/fthteymu/image/upload/v1790157587/best-car-accessories/h67fqu5rgspkdfkntzc4.jpg",
             "imageAlt": "Bonnet letters and damping sheet installation in Chennai",
             "relatedServices": [
                 "rear-spoiler-tail-light",
