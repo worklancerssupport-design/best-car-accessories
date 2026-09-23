@@ -579,7 +579,8 @@
                 "https://res.cloudinary.com/fthteymu/image/upload/v1790171234/best-car-accessories/sawvuk5izggrfgdegfol.jpg",
                 "https://res.cloudinary.com/fthteymu/image/upload/v1790171251/best-car-accessories/soqlq7z80nqfns0gaxeg.jpg",
                 "https://res.cloudinary.com/fthteymu/image/upload/v1790171265/best-car-accessories/lskvioeojllneljyrgq7.jpg",
-                "https://res.cloudinary.com/fthteymu/image/upload/v1790171407/best-car-accessories/bepgx6u2elzmtlqqqdcg.jpg"
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171407/best-car-accessories/bepgx6u2elzmtlqqqdcg.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171873/best-car-accessories/abxbspehh4x2hhzoi0s2.jpg"
             ]
         },
         {
@@ -938,7 +939,7 @@
                     "description": "Exterior flag post mounts"
                 }
             ],
-            "image": "/images/exterior/heavy-clamp-post-covers-chennai.webp",
+            "image": "https://res.cloudinary.com/fthteymu/image/upload/v1790171648/best-car-accessories/xmej72afzgn40ohsld52.jpg",
             "imageAlt": "Heavy clamp and post covers installation in Chennai",
             "relatedServices": [
                 "roof-rails-sharkfin-antenna",
@@ -951,7 +952,16 @@
                     "a": "Proper installation with appropriate brackets and padding ensures no damage to paint or body panels."
                 }
             ],
-            "showInNav": false
+            "showInNav": false,
+            "gallery": [
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171671/best-car-accessories/yyzv4sf6a9f5ffywidcy.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171689/best-car-accessories/ruhgcowxbadkwz1ykicg.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171723/best-car-accessories/kb8vdywfcsbudzyzbhyw.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171776/best-car-accessories/rwxv0zhi4wnmzsaa2udw.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171805/best-car-accessories/bjbr83ka1jwfa33k4hkd.jpg",
+                "",
+                ""
+            ]
         },
         {
             "id": "ext-17",
