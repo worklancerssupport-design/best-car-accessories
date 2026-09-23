@@ -91,7 +91,7 @@
                     "description": "Fog lights with integrated daytime running lights for a premium look"
                 }
             ],
-            "image": "/images/exterior/fog-light-projector-chennai.webp",
+            "image": "https://m.media-amazon.com/images/I/71SLuHWlNjL._AC_UF1000,1000_QL80_.jpg",
             "imageAlt": "Fog light and projector fog lamp installation in Chennai",
             "relatedServices": [
                 "drl-headlight-fog",
@@ -218,7 +218,7 @@
                 }
             ],
             "image": "/images/exterior/drl-headlight-fog-chennai.webp",
-            "imageAlt": "DRL daytime running light installation in Chennai",
+            "imageAlt": "https://m.media-amazon.com/images/I/71dtPz9y+EL._AC_UF1000,1000_QL80_.jpg",
             "relatedServices": [
                 "fog-light-fog-projector",
                 "headlight-led-upgrade",
