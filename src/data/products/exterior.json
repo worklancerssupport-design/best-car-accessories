@@ -616,7 +616,7 @@
                     "description": "Integrated with existing infotainment display"
                 }
             ],
-            "image": "/images/exterior/reverse-camera-sensor-monitor-chennai.webp",
+            "image": "https://res.cloudinary.com/fthteymu/image/upload/v1790171427/best-car-accessories/qw3epurbr3lrw3yrf6aj.jpg",
             "imageAlt": "Reverse camera and parking sensor installation in Chennai",
             "relatedServices": [
                 "dash-cameras-ai-dongles",
@@ -638,7 +638,13 @@
                     "a": "Many units include night vision or wide dynamic range capability. Premium units offer better low-light performance."
                 }
             ],
-            "showInNav": false
+            "showInNav": false,
+            "gallery": [
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171447/best-car-accessories/niilbejt4mlejnbb71e1.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171465/best-car-accessories/d2zsfm28l2ydjoxalnwo.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790171505/best-car-accessories/rx77oeb0tx1ywn3glegb.jpg",
+                ""
+            ]
         },
         {
             "id": "ext-11",
