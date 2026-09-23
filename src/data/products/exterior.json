@@ -91,7 +91,7 @@
                     "description": "Fog lights with integrated daytime running lights for a premium look"
                 }
             ],
-            "image": "https://m.media-amazon.com/images/I/71SLuHWlNjL._AC_UF1000,1000_QL80_.jpg",
+            "image": "https://res.cloudinary.com/fthteymu/image/upload/v1790172382/best-car-accessories/f4nn9jmcu0t8c0qunuex.jpg",
             "imageAlt": "Fog light and projector fog lamp installation in Chennai",
             "relatedServices": [
                 "drl-headlight-fog",
@@ -124,7 +124,19 @@
             "showInNav": true,
             "showInFooter": true,
             "navName": "Fog Lights & Projectors",
-            "megaMenuGroup": "Lighting"
+            "megaMenuGroup": "Lighting",
+            "gallery": [
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174024/best-car-accessories/skkwsxt75cf04y7m1haw.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174077/best-car-accessories/yyohtxqbfnsjhyhmgysj.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174116/best-car-accessories/cmoi9xo2rjmkxkqxzpfx.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174181/best-car-accessories/loxmjnzubic2ml8kktgg.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174224/best-car-accessories/wve53rxiiwdg1cnfjnr8.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174253/best-car-accessories/mvgkodtj0n0qgyd71wdz.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174293/best-car-accessories/qj6rxcyi1yvw5ut13wyt.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174336/best-car-accessories/sweoi9euebx803g3c93c.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174360/best-car-accessories/qvushrsnima5xibmuuie.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1790174384/best-car-accessories/ogugozgmw3yikyapuuvw.jpg"
+            ]
         },
         {
             "id": "ext-02",
