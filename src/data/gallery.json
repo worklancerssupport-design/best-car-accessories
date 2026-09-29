@@ -12,7 +12,7 @@
     "items": [
         {
             "id": 1,
-            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1789202309/best-car-accessories/ijtbk116lfunrxiycvrz.jpg",
+            "src": "https://res.cloudinary.com/fthteymu/image/upload/v1790692277/best-car-accessories/rasedy9pkgbgh9xq0vos.jpg",
             "alt": "New gallery item",
             "category": "Seat Covers",
             "title": "Seat Cover",
@@ -35,7 +35,7 @@
             "category": "Seat Covers",
             "title": "Customized Napa Leather Back Seat Cover",
             "car": "Kia Seltos New",
-            "featured": false
+            "featured": true
         },
         {
             "id": 10,
