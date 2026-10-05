@@ -251,7 +251,9 @@
                 "https://res.cloudinary.com/fthteymu/image/upload/v1790691620/best-car-accessories/dum7dxxwucujydcum7se.jpg",
                 "https://res.cloudinary.com/fthteymu/image/upload/v1790691634/best-car-accessories/relwuq4uq428ey0mt3kj.jpg",
                 "https://res.cloudinary.com/fthteymu/image/upload/v1790691650/best-car-accessories/ohp91pw9j4trimoj6tll.jpg",
-                ""
+                "https://res.cloudinary.com/fthteymu/image/upload/v1791187603/best-car-accessories/czcumhbu6dppsnmwxrgk.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1791187617/best-car-accessories/xy7vkbozhx94b2pqj3uk.jpg",
+                "https://res.cloudinary.com/fthteymu/image/upload/v1791187638/best-car-accessories/jv27rewyr1hj24mycje0.jpg"
             ],
             "relatedServices": [
                 "oem-infotainment",
@@ -1333,6 +1335,26 @@
             "showInFooter": true,
             "navName": "Premium Seat Covers",
             "megaMenuGroup": null
+        },
+        {
+            "id": "int-21",
+            "name": "New Product",
+            "slug": "new-product",
+            "category": "interior",
+            "shortDescription": "Short description...",
+            "description": "Full description...",
+            "installation": "Installation notes...",
+            "benefits": [
+                "New benefit"
+            ],
+            "options": [],
+            "faqs": [],
+            "gallery": [],
+            "showInNav": false,
+            "showInFooter": false,
+            "navName": "New Product",
+            "megaMenuGroup": null,
+            "relatedServices": []
         }
     ]
 }
