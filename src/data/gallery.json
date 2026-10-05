@@ -278,7 +278,7 @@
             "category": "Seat Covers",
             "title": "Customized premium Nappa seats covers ",
             "car": "Tata Nexon ",
-            "featured": false
+            "featured": true
         },
         {
             "id": 31,
@@ -287,7 +287,7 @@
             "category": "Seat Covers",
             "title": "Customized premium Nappa seats covers ",
             "car": "Tata Nexon ",
-            "featured": false
+            "featured": true
         }
     ]
 }
